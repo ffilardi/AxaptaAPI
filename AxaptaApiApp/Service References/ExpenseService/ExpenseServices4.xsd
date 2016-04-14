@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.microsoft.com/dynamics/2011/01/services" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/dynamics/2011/01/services" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" />
+  <xs:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="TrvExpenseCategoryServiceGetCategoriesRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="legalEntityDataAreaId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isForUnreconciledExpense" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrvExpenseCategoryServiceGetCategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" minOccurs="0" name="response" nillable="true" type="q1:ArrayOfTrvCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrvExpenseConfigurationServiceGetConfigurationRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_userId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_company" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrvExpenseConfigurationServiceGetConfigurationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" minOccurs="0" name="response" nillable="true" type="q2:TrvConfiguration" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrvUnreconciledExpenseServiceDetachFromExpenseReportRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="_recIds" nillable="true" type="q3:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrvUnreconciledExpenseServiceDetachFromExpenseReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="response" nillable="true" type="q4:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrvUnreconciledExpenseServiceDeleteRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="_recIds" nillable="true" type="q5:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrvUnreconciledExpenseServiceDeleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="response" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrvUnreconciledExpenseServiceAddUnreconciledExpenseRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_trvCategory" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_transactionDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="_notes" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_transactionCurrencyAmount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="_transactionCurrencyCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_merchantId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" minOccurs="0" name="_documentFileList" nillable="true" type="q6:DocumentFileList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrvUnreconciledExpenseServiceAddUnreconciledExpenseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="response" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrvUnreconciledExpenseServiceAttachToExpenseReportRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_expNumber" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" minOccurs="0" name="_unreconciledExpenses" nillable="true" type="q7:ArrayOfTrvUnreconciledExpenseAttachContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrvUnreconciledExpenseServiceAttachToExpenseReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="response" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrvUnreconciledExpenseServiceGetLabelTranslationsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="_labelsToTranslate" nillable="true" type="q8:ArrayOfstring" />
+        <xs:element minOccurs="0" name="_language" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrvUnreconciledExpenseServiceGetLabelTranslationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="response" nillable="true" type="q9:ArrayOfKeyValueOfstringstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrvUnreconciledExpenseServiceReadRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_hcmPersonnelNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_dataAreaId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrvUnreconciledExpenseServiceReadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" minOccurs="0" name="response" nillable="true" type="q10:ArrayOfTrvUnreconciledExpenseContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrvUnreconciledExpenseServiceCreateRecordRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" minOccurs="0" name="_trvUnreconciledExpense" nillable="true" type="q11:TrvUnreconciledExpenseRecord" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" minOccurs="0" name="_documentFileList" nillable="true" type="q12:DocumentFileList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrvUnreconciledExpenseServiceCreateRecordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="response" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

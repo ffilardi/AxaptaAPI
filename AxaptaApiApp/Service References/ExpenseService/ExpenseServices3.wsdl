@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.microsoft.com/dynamics/2011/01/services" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.microsoft.com/dynamics/2011/01/services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.microsoft.com/dynamics/2011/01/services/Imports">
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd9" namespace="http://schemas.microsoft.com/dynamics/2011/01/services" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd5" namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd6" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd4" namespace="http://schemas.microsoft.com/dynamics/2008/01/services" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd8" namespace="http://tempuri.org" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="TrvExpenseCategoryServiceGetCategoriesRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpenseCategoryServiceGetCategoriesRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseCategoryServiceGetCategoriesRequest_Headers">
+    <wsdl:part xmlns:q1="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q1:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseCategoryServiceGetCategoriesResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpenseCategoryServiceGetCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseCategoryService_getCategories_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q2:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseConfigurationServiceGetConfigurationRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpenseConfigurationServiceGetConfigurationRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseConfigurationServiceGetConfigurationRequest_Headers">
+    <wsdl:part xmlns:q3="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q3:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseConfigurationServiceGetConfigurationResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpenseConfigurationServiceGetConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseConfigurationService_getConfiguration_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q4:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseServiceDetachFromExpenseReportRequest">
+    <wsdl:part name="parameters" element="tns:TrvUnreconciledExpenseServiceDetachFromExpenseReportRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseServiceDetachFromExpenseReportRequest_Headers">
+    <wsdl:part xmlns:q5="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q5:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseServiceDetachFromExpenseReportResponse">
+    <wsdl:part name="parameters" element="tns:TrvUnreconciledExpenseServiceDetachFromExpenseReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseService_detachFromExpenseReport_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q6:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseServiceDeleteRequest">
+    <wsdl:part name="parameters" element="tns:TrvUnreconciledExpenseServiceDeleteRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseServiceDeleteRequest_Headers">
+    <wsdl:part xmlns:q7="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q7:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseServiceDeleteResponse">
+    <wsdl:part name="parameters" element="tns:TrvUnreconciledExpenseServiceDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseService_delete_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q8:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseServiceAddUnreconciledExpenseRequest">
+    <wsdl:part name="parameters" element="tns:TrvUnreconciledExpenseServiceAddUnreconciledExpenseRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseServiceAddUnreconciledExpenseRequest_Headers">
+    <wsdl:part xmlns:q9="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q9:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseServiceAddUnreconciledExpenseResponse">
+    <wsdl:part name="parameters" element="tns:TrvUnreconciledExpenseServiceAddUnreconciledExpenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseService_addUnreconciledExpense_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q10:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseServiceAttachToExpenseReportRequest">
+    <wsdl:part name="parameters" element="tns:TrvUnreconciledExpenseServiceAttachToExpenseReportRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseServiceAttachToExpenseReportRequest_Headers">
+    <wsdl:part xmlns:q11="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q11:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseServiceAttachToExpenseReportResponse">
+    <wsdl:part name="parameters" element="tns:TrvUnreconciledExpenseServiceAttachToExpenseReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseService_attachToExpenseReport_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q12:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseServiceGetLabelTranslationsRequest">
+    <wsdl:part name="parameters" element="tns:TrvUnreconciledExpenseServiceGetLabelTranslationsRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseServiceGetLabelTranslationsRequest_Headers">
+    <wsdl:part xmlns:q13="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q13:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseServiceGetLabelTranslationsResponse">
+    <wsdl:part name="parameters" element="tns:TrvUnreconciledExpenseServiceGetLabelTranslationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseService_getLabelTranslations_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q14:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseServiceReadRequest">
+    <wsdl:part name="parameters" element="tns:TrvUnreconciledExpenseServiceReadRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseServiceReadRequest_Headers">
+    <wsdl:part xmlns:q15="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q15:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseServiceReadResponse">
+    <wsdl:part name="parameters" element="tns:TrvUnreconciledExpenseServiceReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseService_read_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q16:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseServiceCreateRecordRequest">
+    <wsdl:part name="parameters" element="tns:TrvUnreconciledExpenseServiceCreateRecordRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseServiceCreateRecordRequest_Headers">
+    <wsdl:part xmlns:q17="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q17:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseServiceCreateRecordResponse">
+    <wsdl:part name="parameters" element="tns:TrvUnreconciledExpenseServiceCreateRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvUnreconciledExpenseService_createRecord_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q18:AifFault" />
+  </wsdl:message>
+  <wsdl:portType name="TrvExpenseCategoryService">
+    <wsdl:operation name="getCategories">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2011/01/services/TrvExpenseCategoryService/getCategories" name="TrvExpenseCategoryServiceGetCategoriesRequest" message="tns:TrvExpenseCategoryServiceGetCategoriesRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2011/01/services/TrvExpenseCategoryService/getCategoriesResponse" name="TrvExpenseCategoryServiceGetCategoriesResponse" message="tns:TrvExpenseCategoryServiceGetCategoriesResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2011/01/services/TrvExpenseCategoryService/getCategoriesAifFaultFault" name="AifFaultFault" message="tns:TrvExpenseCategoryService_getCategories_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TrvExpenseConfigurationService">
+    <wsdl:operation name="getConfiguration">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2011/01/services/TrvExpenseConfigurationService/getConfiguration" name="TrvExpenseConfigurationServiceGetConfigurationRequest" message="tns:TrvExpenseConfigurationServiceGetConfigurationRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2011/01/services/TrvExpenseConfigurationService/getConfigurationResponse" name="TrvExpenseConfigurationServiceGetConfigurationResponse" message="tns:TrvExpenseConfigurationServiceGetConfigurationResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2011/01/services/TrvExpenseConfigurationService/getConfigurationAifFaultFault" name="AifFaultFault" message="tns:TrvExpenseConfigurationService_getConfiguration_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TrvUnreconciledExpenseService">
+    <wsdl:operation name="detachFromExpenseReport">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/detachFromExpenseReport" name="TrvUnreconciledExpenseServiceDetachFromExpenseReportRequest" message="tns:TrvUnreconciledExpenseServiceDetachFromExpenseReportRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/detachFromExpenseReportResponse" name="TrvUnreconciledExpenseServiceDetachFromExpenseReportResponse" message="tns:TrvUnreconciledExpenseServiceDetachFromExpenseReportResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/detachFromExpenseReportAifFaultFault" name="AifFaultFault" message="tns:TrvUnreconciledExpenseService_detachFromExpenseReport_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/delete" name="TrvUnreconciledExpenseServiceDeleteRequest" message="tns:TrvUnreconciledExpenseServiceDeleteRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/deleteResponse" name="TrvUnreconciledExpenseServiceDeleteResponse" message="tns:TrvUnreconciledExpenseServiceDeleteResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/deleteAifFaultFault" name="AifFaultFault" message="tns:TrvUnreconciledExpenseService_delete_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addUnreconciledExpense">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/addUnreconciledExpense" name="TrvUnreconciledExpenseServiceAddUnreconciledExpenseRequest" message="tns:TrvUnreconciledExpenseServiceAddUnreconciledExpenseRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/addUnreconciledExpenseResponse" name="TrvUnreconciledExpenseServiceAddUnreconciledExpenseResponse" message="tns:TrvUnreconciledExpenseServiceAddUnreconciledExpenseResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/addUnreconciledExpenseAifFaultFault" name="AifFaultFault" message="tns:TrvUnreconciledExpenseService_addUnreconciledExpense_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="attachToExpenseReport">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/attachToExpenseReport" name="TrvUnreconciledExpenseServiceAttachToExpenseReportRequest" message="tns:TrvUnreconciledExpenseServiceAttachToExpenseReportRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/attachToExpenseReportResponse" name="TrvUnreconciledExpenseServiceAttachToExpenseReportResponse" message="tns:TrvUnreconciledExpenseServiceAttachToExpenseReportResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/attachToExpenseReportAifFaultFault" name="AifFaultFault" message="tns:TrvUnreconciledExpenseService_attachToExpenseReport_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getLabelTranslations">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/getLabelTranslations" name="TrvUnreconciledExpenseServiceGetLabelTranslationsRequest" message="tns:TrvUnreconciledExpenseServiceGetLabelTranslationsRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/getLabelTranslationsResponse" name="TrvUnreconciledExpenseServiceGetLabelTranslationsResponse" message="tns:TrvUnreconciledExpenseServiceGetLabelTranslationsResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/getLabelTranslationsAifFaultFault" name="AifFaultFault" message="tns:TrvUnreconciledExpenseService_getLabelTranslations_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="read">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/read" name="TrvUnreconciledExpenseServiceReadRequest" message="tns:TrvUnreconciledExpenseServiceReadRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/readResponse" name="TrvUnreconciledExpenseServiceReadResponse" message="tns:TrvUnreconciledExpenseServiceReadResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/readAifFaultFault" name="AifFaultFault" message="tns:TrvUnreconciledExpenseService_read_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createRecord">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/createRecord" name="TrvUnreconciledExpenseServiceCreateRecordRequest" message="tns:TrvUnreconciledExpenseServiceCreateRecordRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/createRecordResponse" name="TrvUnreconciledExpenseServiceCreateRecordResponse" message="tns:TrvUnreconciledExpenseServiceCreateRecordResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/createRecordAifFaultFault" name="AifFaultFault" message="tns:TrvUnreconciledExpenseService_createRecord_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

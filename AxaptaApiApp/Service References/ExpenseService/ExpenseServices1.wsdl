@@ -1,0 +1,1393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:i1="http://tempuri.org" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:i2="http://schemas.microsoft.com/dynamics/2011/01/services" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ExpenseServices" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_DimensionService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_DimensionValueService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_ExchangeRateForCurrenciesService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_LogisticsAddressCountryRegionService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_ProjActivitiesService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_ProjLinePropertyService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_TrvAdminCustomFieldsService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_TrvExpenseCategoryService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_TrvExpenseConfigurationService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_TrvExpenseLineCustomService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_TrvExpenseReferenceDataService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_TrvExpenseReportCustomService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_TrvExpGuestService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_TrvReceiptService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_TrvUnreconciledExpenseService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://schemas.microsoft.com/dynamics/2008/01/services" location="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?wsdl=wsdl0" />
+  <wsdl:import namespace="http://tempuri.org" location="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?wsdl=wsdl1" />
+  <wsdl:import namespace="http://schemas.microsoft.com/dynamics/2011/01/services" location="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?wsdl=wsdl2" />
+  <wsdl:types />
+  <wsdl:binding name="NetTcpBinding_DimensionService" type="i0:DimensionService">
+    <wsp:PolicyReference URI="#NetTcpBinding_DimensionService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="getActiveDimensionsFromLedger">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/DimensionService/getActiveDimensionsFromLedger" style="document" />
+      <wsdl:input name="DimensionServiceGetActiveDimensionsFromLedgerRequest">
+        <soap12:header message="i0:DimensionServiceGetActiveDimensionsFromLedgerRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DimensionServiceGetActiveDimensionsFromLedgerResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDimensions">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/DimensionService/getDimensions" style="document" />
+      <wsdl:input name="DimensionServiceGetDimensionsRequest">
+        <soap12:header message="i0:DimensionServiceGetDimensionsRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DimensionServiceGetDimensionsResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDimensionsAll">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/DimensionService/getDimensionsAll" style="document" />
+      <wsdl:input name="DimensionServiceGetDimensionsAllRequest">
+        <soap12:header message="i0:DimensionServiceGetDimensionsAllRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DimensionServiceGetDimensionsAllResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_DimensionValueService" type="i0:DimensionValueService">
+    <wsp:PolicyReference URI="#NetTcpBinding_DimensionValueService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="createDimensionValue">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/DimensionValueService/createDimensionValue" style="document" />
+      <wsdl:input name="DimensionValueServiceCreateDimensionValueRequest">
+        <soap12:header message="i0:DimensionValueServiceCreateDimensionValueRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DimensionValueServiceCreateDimensionValueResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDimensionValues">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/DimensionValueService/getDimensionValues" style="document" />
+      <wsdl:input name="DimensionValueServiceGetDimensionValuesRequest">
+        <soap12:header message="i0:DimensionValueServiceGetDimensionValuesRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DimensionValueServiceGetDimensionValuesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_ExchangeRateForCurrenciesService" type="i1:ExchangeRateForCurrenciesService">
+    <wsp:PolicyReference URI="#NetTcpBinding_ExchangeRateForCurrenciesService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="getCompanyCurAmount">
+      <soap12:operation soapAction="http://tempuri.org/ExchangeRateForCurrenciesService/getCompanyCurAmount" style="document" />
+      <wsdl:input name="ExchangeRateForCurrenciesServiceGetCompanyCurAmountRequest">
+        <soap12:header message="i1:ExchangeRateForCurrenciesServiceGetCompanyCurAmountRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ExchangeRateForCurrenciesServiceGetCompanyCurAmountResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getExchangeRateForCurrencies">
+      <soap12:operation soapAction="http://tempuri.org/ExchangeRateForCurrenciesService/getExchangeRateForCurrencies" style="document" />
+      <wsdl:input name="ExchangeRateForCurrenciesServiceGetExchangeRateForCurrenciesRequest">
+        <soap12:header message="i1:ExchangeRateForCurrenciesServiceGetExchangeRateForCurrenciesRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ExchangeRateForCurrenciesServiceGetExchangeRateForCurrenciesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_LogisticsAddressCountryRegionService" type="i1:LogisticsAddressCountryRegionService">
+    <wsp:PolicyReference URI="#NetTcpBinding_LogisticsAddressCountryRegionService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="getLogisticsAddressCountryRegions">
+      <soap12:operation soapAction="http://tempuri.org/LogisticsAddressCountryRegionService/getLogisticsAddressCountryRegions" style="document" />
+      <wsdl:input name="LogisticsAddressCountryRegionServiceGetLogisticsAddressCountryRegionsRequest">
+        <soap12:header message="i1:LogisticsAddressCountryRegionServiceGetLogisticsAddressCountryRegionsRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="LogisticsAddressCountryRegionServiceGetLogisticsAddressCountryRegionsResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_ProjActivitiesService" type="i1:ProjActivitiesService">
+    <wsp:PolicyReference URI="#NetTcpBinding_ProjActivitiesService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="getProjectActivities">
+      <soap12:operation soapAction="http://tempuri.org/ProjActivitiesService/getProjectActivities" style="document" />
+      <wsdl:input name="ProjActivitiesServiceGetProjectActivitiesRequest">
+        <soap12:header message="i1:ProjActivitiesServiceGetProjectActivitiesRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ProjActivitiesServiceGetProjectActivitiesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_ProjLinePropertyService" type="i1:ProjLinePropertyService">
+    <wsp:PolicyReference URI="#NetTcpBinding_ProjLinePropertyService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="getLineProperty">
+      <soap12:operation soapAction="http://tempuri.org/ProjLinePropertyService/getLineProperty" style="document" />
+      <wsdl:input name="ProjLinePropertyServiceGetLinePropertyRequest">
+        <soap12:header message="i1:ProjLinePropertyServiceGetLinePropertyRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ProjLinePropertyServiceGetLinePropertyResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getProjLineProperty">
+      <soap12:operation soapAction="http://tempuri.org/ProjLinePropertyService/getProjLineProperty" style="document" />
+      <wsdl:input name="ProjLinePropertyServiceGetProjLinePropertyRequest">
+        <soap12:header message="i1:ProjLinePropertyServiceGetProjLinePropertyRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ProjLinePropertyServiceGetProjLinePropertyResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_TrvAdminCustomFieldsService" type="i1:TrvAdminCustomFieldsService">
+    <wsp:PolicyReference URI="#NetTcpBinding_TrvAdminCustomFieldsService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="getFieldVisibilities">
+      <soap12:operation soapAction="http://tempuri.org/TrvAdminCustomFieldsService/getFieldVisibilities" style="document" />
+      <wsdl:input name="TrvAdminCustomFieldsServiceGetFieldVisibilitiesRequest">
+        <soap12:header message="i1:TrvAdminCustomFieldsServiceGetFieldVisibilitiesRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvAdminCustomFieldsServiceGetFieldVisibilitiesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_TrvExpenseCategoryService" type="i2:TrvExpenseCategoryService">
+    <wsp:PolicyReference URI="#NetTcpBinding_TrvExpenseCategoryService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="getCategories">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2011/01/services/TrvExpenseCategoryService/getCategories" style="document" />
+      <wsdl:input name="TrvExpenseCategoryServiceGetCategoriesRequest">
+        <soap12:header message="i2:TrvExpenseCategoryServiceGetCategoriesRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpenseCategoryServiceGetCategoriesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_TrvExpenseConfigurationService" type="i2:TrvExpenseConfigurationService">
+    <wsp:PolicyReference URI="#NetTcpBinding_TrvExpenseConfigurationService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="getConfiguration">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2011/01/services/TrvExpenseConfigurationService/getConfiguration" style="document" />
+      <wsdl:input name="TrvExpenseConfigurationServiceGetConfigurationRequest">
+        <soap12:header message="i2:TrvExpenseConfigurationServiceGetConfigurationRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpenseConfigurationServiceGetConfigurationResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_TrvExpenseLineCustomService" type="i0:TrvExpenseLineCustomService">
+    <wsp:PolicyReference URI="#NetTcpBinding_TrvExpenseLineCustomService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="find">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseLineCustomService/find" style="document" />
+      <wsdl:input name="TrvExpenseLineCustomServiceFindRequest">
+        <soap12:header message="i0:TrvExpenseLineCustomServiceFindRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpenseLineCustomServiceFindResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseLineCustomService/delete" style="document" />
+      <wsdl:input name="TrvExpenseLineCustomServiceDeleteRequest">
+        <soap12:header message="i0:TrvExpenseLineCustomServiceDeleteRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpenseLineCustomServiceDeleteResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="read">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseLineCustomService/read" style="document" />
+      <wsdl:input name="TrvExpenseLineCustomServiceReadRequest">
+        <soap12:header message="i0:TrvExpenseLineCustomServiceReadRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpenseLineCustomServiceReadResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseLineCustomService/update" style="document" />
+      <wsdl:input name="TrvExpenseLineCustomServiceUpdateRequest">
+        <soap12:header message="i0:TrvExpenseLineCustomServiceUpdateRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpenseLineCustomServiceUpdateResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="calculateTaxAmount">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseLineCustomService/calculateTaxAmount" style="document" />
+      <wsdl:input name="TrvExpenseLineCustomServiceCalculateTaxAmountRequest">
+        <soap12:header message="i0:TrvExpenseLineCustomServiceCalculateTaxAmountRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpenseLineCustomServiceCalculateTaxAmountResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseLineCustomService/create" style="document" />
+      <wsdl:input name="TrvExpenseLineCustomServiceCreateRequest">
+        <soap12:header message="i0:TrvExpenseLineCustomServiceCreateRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpenseLineCustomServiceCreateResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_TrvExpenseReferenceDataService" type="i0:TrvExpenseReferenceDataService">
+    <wsp:PolicyReference URI="#NetTcpBinding_TrvExpenseReferenceDataService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="getExpenseLinePurposes">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReferenceDataService/getExpenseLinePurposes" style="document" />
+      <wsdl:input name="TrvExpenseReferenceDataServiceGetExpenseLinePurposesRequest">
+        <soap12:header message="i0:TrvExpenseReferenceDataServiceGetExpenseLinePurposesRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpenseReferenceDataServiceGetExpenseLinePurposesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getExpenseSalesTaxGroups">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReferenceDataService/getExpenseSalesTaxGroups" style="document" />
+      <wsdl:input name="TrvExpenseReferenceDataServiceGetExpenseSalesTaxGroupsRequest">
+        <soap12:header message="i0:TrvExpenseReferenceDataServiceGetExpenseSalesTaxGroupsRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpenseReferenceDataServiceGetExpenseSalesTaxGroupsResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getExpenseMerchants">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReferenceDataService/getExpenseMerchants" style="document" />
+      <wsdl:input name="TrvExpenseReferenceDataServiceGetExpenseMerchantsRequest">
+        <soap12:header message="i0:TrvExpenseReferenceDataServiceGetExpenseMerchantsRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpenseReferenceDataServiceGetExpenseMerchantsResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPerdiemLocations">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReferenceDataService/getPerdiemLocations" style="document" />
+      <wsdl:input name="TrvExpenseReferenceDataServiceGetPerdiemLocationsRequest">
+        <soap12:header message="i0:TrvExpenseReferenceDataServiceGetPerdiemLocationsRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpenseReferenceDataServiceGetPerdiemLocationsResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getExpenseLocations">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReferenceDataService/getExpenseLocations" style="document" />
+      <wsdl:input name="TrvExpenseReferenceDataServiceGetExpenseLocationsRequest">
+        <soap12:header message="i0:TrvExpenseReferenceDataServiceGetExpenseLocationsRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpenseReferenceDataServiceGetExpenseLocationsResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getExpensePurposes">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReferenceDataService/getExpensePurposes" style="document" />
+      <wsdl:input name="TrvExpenseReferenceDataServiceGetExpensePurposesRequest">
+        <soap12:header message="i0:TrvExpenseReferenceDataServiceGetExpensePurposesRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpenseReferenceDataServiceGetExpensePurposesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_TrvExpenseReportCustomService" type="i0:TrvExpenseReportCustomService">
+    <wsp:PolicyReference URI="#NetTcpBinding_TrvExpenseReportCustomService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="resubmit">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/resubmit" style="document" />
+      <wsdl:input name="TrvExpenseReportCustomServiceResubmitRequest">
+        <soap12:header message="i0:TrvExpenseReportCustomServiceResubmitRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpenseReportCustomServiceResubmitResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="find">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/find" style="document" />
+      <wsdl:input name="TrvExpenseReportCustomServiceFindRequest">
+        <soap12:header message="i0:TrvExpenseReportCustomServiceFindRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpenseReportCustomServiceFindResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/create" style="document" />
+      <wsdl:input name="TrvExpenseReportCustomServiceCreateRequest">
+        <soap12:header message="i0:TrvExpenseReportCustomServiceCreateRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpenseReportCustomServiceCreateResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findExpenseHeaders">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/findExpenseHeaders" style="document" />
+      <wsdl:input name="TrvExpenseReportCustomServiceFindExpenseHeadersRequest">
+        <soap12:header message="i0:TrvExpenseReportCustomServiceFindExpenseHeadersRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpenseReportCustomServiceFindExpenseHeadersResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="read">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/read" style="document" />
+      <wsdl:input name="TrvExpenseReportCustomServiceReadRequest">
+        <soap12:header message="i0:TrvExpenseReportCustomServiceReadRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpenseReportCustomServiceReadResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="recall">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/recall" style="document" />
+      <wsdl:input name="TrvExpenseReportCustomServiceRecallRequest">
+        <soap12:header message="i0:TrvExpenseReportCustomServiceRecallRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpenseReportCustomServiceRecallResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="readExpenseHeader">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/readExpenseHeader" style="document" />
+      <wsdl:input name="TrvExpenseReportCustomServiceReadExpenseHeaderRequest">
+        <soap12:header message="i0:TrvExpenseReportCustomServiceReadExpenseHeaderRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpenseReportCustomServiceReadExpenseHeaderResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createExpenseWithUnreconciledLineReceipt">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/createExpenseWithUnreconciledLineReceipt" style="document" />
+      <wsdl:input name="TrvExpenseReportCustomServiceCreateExpenseWithUnreconciledLineReceiptRequest">
+        <soap12:header message="i0:TrvExpenseReportCustomServiceCreateExpenseWithUnreconciledLineReceiptRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpenseReportCustomServiceCreateExpenseWithUnreconciledLineReceiptResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/delete" style="document" />
+      <wsdl:input name="TrvExpenseReportCustomServiceDeleteRequest">
+        <soap12:header message="i0:TrvExpenseReportCustomServiceDeleteRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpenseReportCustomServiceDeleteResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/update" style="document" />
+      <wsdl:input name="TrvExpenseReportCustomServiceUpdateRequest">
+        <soap12:header message="i0:TrvExpenseReportCustomServiceUpdateRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpenseReportCustomServiceUpdateResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="submit">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/submit" style="document" />
+      <wsdl:input name="TrvExpenseReportCustomServiceSubmitRequest">
+        <soap12:header message="i0:TrvExpenseReportCustomServiceSubmitRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpenseReportCustomServiceSubmitResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPolicyViolations">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/getPolicyViolations" style="document" />
+      <wsdl:input name="TrvExpenseReportCustomServiceGetPolicyViolationsRequest">
+        <soap12:header message="i0:TrvExpenseReportCustomServiceGetPolicyViolationsRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpenseReportCustomServiceGetPolicyViolationsResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_TrvExpGuestService" type="i0:TrvExpGuestService">
+    <wsp:PolicyReference URI="#NetTcpBinding_TrvExpGuestService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="read">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/read" style="document" />
+      <wsdl:input name="TrvExpGuestServiceReadRequest">
+        <soap12:header message="i0:TrvExpGuestServiceReadRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpGuestServiceReadResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/create" style="document" />
+      <wsdl:input name="TrvExpGuestServiceCreateRequest">
+        <soap12:header message="i0:TrvExpGuestServiceCreateRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpGuestServiceCreateResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/delete" style="document" />
+      <wsdl:input name="TrvExpGuestServiceDeleteRequest">
+        <soap12:header message="i0:TrvExpGuestServiceDeleteRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpGuestServiceDeleteResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deletePreviousGuests">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/deletePreviousGuests" style="document" />
+      <wsdl:input name="TrvExpGuestServiceDeletePreviousGuestsRequest">
+        <soap12:header message="i0:TrvExpGuestServiceDeletePreviousGuestsRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpGuestServiceDeletePreviousGuestsResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/update" style="document" />
+      <wsdl:input name="TrvExpGuestServiceUpdateRequest">
+        <soap12:header message="i0:TrvExpGuestServiceUpdateRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpGuestServiceUpdateResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="find">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/find" style="document" />
+      <wsdl:input name="TrvExpGuestServiceFindRequest">
+        <soap12:header message="i0:TrvExpGuestServiceFindRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpGuestServiceFindResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findPreviousGuests">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/findPreviousGuests" style="document" />
+      <wsdl:input name="TrvExpGuestServiceFindPreviousGuestsRequest">
+        <soap12:header message="i0:TrvExpGuestServiceFindPreviousGuestsRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvExpGuestServiceFindPreviousGuestsResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_TrvReceiptService" type="i0:TrvReceiptService">
+    <wsp:PolicyReference URI="#NetTcpBinding_TrvReceiptService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="attach">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvReceiptService/attach" style="document" />
+      <wsdl:input name="TrvReceiptServiceAttachRequest">
+        <soap12:header message="i0:TrvReceiptServiceAttachRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvReceiptServiceAttachResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvReceiptService/delete" style="document" />
+      <wsdl:input name="TrvReceiptServiceDeleteRequest">
+        <soap12:header message="i0:TrvReceiptServiceDeleteRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvReceiptServiceDeleteResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDocumentContents">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvReceiptService/getDocumentContents" style="document" />
+      <wsdl:input name="TrvReceiptServiceGetDocumentContentsRequest">
+        <soap12:header message="i0:TrvReceiptServiceGetDocumentContentsRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvReceiptServiceGetDocumentContentsResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="read">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvReceiptService/read" style="document" />
+      <wsdl:input name="TrvReceiptServiceReadRequest">
+        <soap12:header message="i0:TrvReceiptServiceReadRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvReceiptServiceReadResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvReceiptService/create" style="document" />
+      <wsdl:input name="TrvReceiptServiceCreateRequest">
+        <soap12:header message="i0:TrvReceiptServiceCreateRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvReceiptServiceCreateResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="detach">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2008/01/services/TrvReceiptService/detach" style="document" />
+      <wsdl:input name="TrvReceiptServiceDetachRequest">
+        <soap12:header message="i0:TrvReceiptServiceDetachRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvReceiptServiceDetachResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_TrvUnreconciledExpenseService" type="i2:TrvUnreconciledExpenseService">
+    <wsp:PolicyReference URI="#NetTcpBinding_TrvUnreconciledExpenseService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="detachFromExpenseReport">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/detachFromExpenseReport" style="document" />
+      <wsdl:input name="TrvUnreconciledExpenseServiceDetachFromExpenseReportRequest">
+        <soap12:header message="i2:TrvUnreconciledExpenseServiceDetachFromExpenseReportRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvUnreconciledExpenseServiceDetachFromExpenseReportResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/delete" style="document" />
+      <wsdl:input name="TrvUnreconciledExpenseServiceDeleteRequest">
+        <soap12:header message="i2:TrvUnreconciledExpenseServiceDeleteRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvUnreconciledExpenseServiceDeleteResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addUnreconciledExpense">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/addUnreconciledExpense" style="document" />
+      <wsdl:input name="TrvUnreconciledExpenseServiceAddUnreconciledExpenseRequest">
+        <soap12:header message="i2:TrvUnreconciledExpenseServiceAddUnreconciledExpenseRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvUnreconciledExpenseServiceAddUnreconciledExpenseResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="attachToExpenseReport">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/attachToExpenseReport" style="document" />
+      <wsdl:input name="TrvUnreconciledExpenseServiceAttachToExpenseReportRequest">
+        <soap12:header message="i2:TrvUnreconciledExpenseServiceAttachToExpenseReportRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvUnreconciledExpenseServiceAttachToExpenseReportResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLabelTranslations">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/getLabelTranslations" style="document" />
+      <wsdl:input name="TrvUnreconciledExpenseServiceGetLabelTranslationsRequest">
+        <soap12:header message="i2:TrvUnreconciledExpenseServiceGetLabelTranslationsRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvUnreconciledExpenseServiceGetLabelTranslationsResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="read">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/read" style="document" />
+      <wsdl:input name="TrvUnreconciledExpenseServiceReadRequest">
+        <soap12:header message="i2:TrvUnreconciledExpenseServiceReadRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvUnreconciledExpenseServiceReadResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createRecord">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2011/01/services/TrvUnreconciledExpenseService/createRecord" style="document" />
+      <wsdl:input name="TrvUnreconciledExpenseServiceCreateRecordRequest">
+        <soap12:header message="i2:TrvUnreconciledExpenseServiceCreateRecordRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TrvUnreconciledExpenseServiceCreateRecordResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ExpenseServices">
+    <wsdl:port name="NetTcpBinding_DimensionService" binding="tns:NetTcpBinding_DimensionService">
+      <soap12:address location="net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>Admin@contoso.com</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_DimensionValueService" binding="tns:NetTcpBinding_DimensionValueService">
+      <soap12:address location="net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>Admin@contoso.com</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_ExchangeRateForCurrenciesService" binding="tns:NetTcpBinding_ExchangeRateForCurrenciesService">
+      <soap12:address location="net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>Admin@contoso.com</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_LogisticsAddressCountryRegionService" binding="tns:NetTcpBinding_LogisticsAddressCountryRegionService">
+      <soap12:address location="net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>Admin@contoso.com</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_ProjActivitiesService" binding="tns:NetTcpBinding_ProjActivitiesService">
+      <soap12:address location="net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>Admin@contoso.com</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_ProjLinePropertyService" binding="tns:NetTcpBinding_ProjLinePropertyService">
+      <soap12:address location="net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>Admin@contoso.com</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_TrvAdminCustomFieldsService" binding="tns:NetTcpBinding_TrvAdminCustomFieldsService">
+      <soap12:address location="net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>Admin@contoso.com</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_TrvExpenseCategoryService" binding="tns:NetTcpBinding_TrvExpenseCategoryService">
+      <soap12:address location="net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>Admin@contoso.com</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_TrvExpenseConfigurationService" binding="tns:NetTcpBinding_TrvExpenseConfigurationService">
+      <soap12:address location="net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>Admin@contoso.com</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_TrvExpenseLineCustomService" binding="tns:NetTcpBinding_TrvExpenseLineCustomService">
+      <soap12:address location="net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>Admin@contoso.com</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_TrvExpenseReferenceDataService" binding="tns:NetTcpBinding_TrvExpenseReferenceDataService">
+      <soap12:address location="net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>Admin@contoso.com</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_TrvExpenseReportCustomService" binding="tns:NetTcpBinding_TrvExpenseReportCustomService">
+      <soap12:address location="net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>Admin@contoso.com</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_TrvExpGuestService" binding="tns:NetTcpBinding_TrvExpGuestService">
+      <soap12:address location="net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>Admin@contoso.com</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_TrvReceiptService" binding="tns:NetTcpBinding_TrvReceiptService">
+      <soap12:address location="net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>Admin@contoso.com</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_TrvUnreconciledExpenseService" binding="tns:NetTcpBinding_TrvUnreconciledExpenseService">
+      <soap12:address location="net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://ax2012r2a:8201/DynamicsAx/Services/ExpenseServices</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>Admin@contoso.com</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

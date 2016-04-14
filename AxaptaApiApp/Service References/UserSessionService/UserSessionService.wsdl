@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://schemas.microsoft.com/dynamics/2011/01/services" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UserSessionService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_UserSessionService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://schemas.microsoft.com/dynamics/2011/01/services" location="http://ax2012r2a:8101/DynamicsAx/Services/UserSessionService?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="NetTcpBinding_UserSessionService" type="i0:UserSessionService">
+    <wsp:PolicyReference URI="#NetTcpBinding_UserSessionService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetAccessRights">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/GetAccessRights" style="document" />
+      <wsdl:input name="UserSessionServiceGetAccessRightsRequest">
+        <soap12:header message="i0:UserSessionServiceGetAccessRightsRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="UserSessionServiceGetAccessRightsResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="IsSinglePartitionSystem">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/IsSinglePartitionSystem" style="document" />
+      <wsdl:input name="UserSessionServiceIsSinglePartitionSystemRequest">
+        <soap12:header message="i0:UserSessionServiceIsSinglePartitionSystemRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="UserSessionServiceIsSinglePartitionSystemResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartitionKeysForUser">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/GetPartitionKeysForUser" style="document" />
+      <wsdl:input name="UserSessionServiceGetPartitionKeysForUserRequest">
+        <soap12:header message="i0:UserSessionServiceGetPartitionKeysForUserRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="UserSessionServiceGetPartitionKeysForUserResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartitionKey">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/GetPartitionKey" style="document" />
+      <wsdl:input name="UserSessionServiceGetPartitionKeyRequest">
+        <soap12:header message="i0:UserSessionServiceGetPartitionKeyRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="UserSessionServiceGetPartitionKeyResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSessionInfo">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/GetUserSessionInfo" style="document" />
+      <wsdl:input name="UserSessionServiceGetUserSessionInfoRequest">
+        <soap12:header message="i0:UserSessionServiceGetUserSessionInfoRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="UserSessionServiceGetUserSessionInfoResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTimeZone">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/RemoveTimeZone" style="document" />
+      <wsdl:input name="UserSessionServiceRemoveTimeZoneRequest">
+        <soap12:header message="i0:UserSessionServiceRemoveTimeZoneRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="UserSessionServiceRemoveTimeZoneResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ApplyTimeZone">
+      <soap12:operation soapAction="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/ApplyTimeZone" style="document" />
+      <wsdl:input name="UserSessionServiceApplyTimeZoneRequest">
+        <soap12:header message="i0:UserSessionServiceApplyTimeZoneRequest_Headers" part="context" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="UserSessionServiceApplyTimeZoneResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap12:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserSessionService">
+    <wsdl:port name="NetTcpBinding_UserSessionService" binding="tns:NetTcpBinding_UserSessionService">
+      <soap12:address location="net.tcp://ax2012r2a:8201/DynamicsAx/Services/UserSessionService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://ax2012r2a:8201/DynamicsAx/Services/UserSessionService</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>admin@contoso.com</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

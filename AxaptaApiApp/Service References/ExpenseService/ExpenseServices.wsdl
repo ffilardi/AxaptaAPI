@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tempuri.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd8" namespace="http://tempuri.org" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd5" namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd6" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd4" namespace="http://schemas.microsoft.com/dynamics/2008/01/services" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ExchangeRateForCurrenciesServiceGetCompanyCurAmountRequest">
+    <wsdl:part name="parameters" element="tns:ExchangeRateForCurrenciesServiceGetCompanyCurAmountRequest" />
+  </wsdl:message>
+  <wsdl:message name="ExchangeRateForCurrenciesServiceGetCompanyCurAmountRequest_Headers">
+    <wsdl:part xmlns:q1="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q1:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="ExchangeRateForCurrenciesServiceGetCompanyCurAmountResponse">
+    <wsdl:part name="parameters" element="tns:ExchangeRateForCurrenciesServiceGetCompanyCurAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExchangeRateForCurrenciesService_getCompanyCurAmount_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q2:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="ExchangeRateForCurrenciesServiceGetExchangeRateForCurrenciesRequest">
+    <wsdl:part name="parameters" element="tns:ExchangeRateForCurrenciesServiceGetExchangeRateForCurrenciesRequest" />
+  </wsdl:message>
+  <wsdl:message name="ExchangeRateForCurrenciesServiceGetExchangeRateForCurrenciesRequest_Headers">
+    <wsdl:part xmlns:q3="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q3:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="ExchangeRateForCurrenciesServiceGetExchangeRateForCurrenciesResponse">
+    <wsdl:part name="parameters" element="tns:ExchangeRateForCurrenciesServiceGetExchangeRateForCurrenciesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExchangeRateForCurrenciesService_getExchangeRateForCurrencies_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q4:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="LogisticsAddressCountryRegionServiceGetLogisticsAddressCountryRegionsRequest">
+    <wsdl:part name="parameters" element="tns:LogisticsAddressCountryRegionServiceGetLogisticsAddressCountryRegionsRequest" />
+  </wsdl:message>
+  <wsdl:message name="LogisticsAddressCountryRegionServiceGetLogisticsAddressCountryRegionsRequest_Headers">
+    <wsdl:part xmlns:q5="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q5:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="LogisticsAddressCountryRegionServiceGetLogisticsAddressCountryRegionsResponse">
+    <wsdl:part name="parameters" element="tns:LogisticsAddressCountryRegionServiceGetLogisticsAddressCountryRegionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogisticsAddressCountryRegionService_getLogisticsAddressCountryRegions_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q6:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="ProjActivitiesServiceGetProjectActivitiesRequest">
+    <wsdl:part name="parameters" element="tns:ProjActivitiesServiceGetProjectActivitiesRequest" />
+  </wsdl:message>
+  <wsdl:message name="ProjActivitiesServiceGetProjectActivitiesRequest_Headers">
+    <wsdl:part xmlns:q7="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q7:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="ProjActivitiesServiceGetProjectActivitiesResponse">
+    <wsdl:part name="parameters" element="tns:ProjActivitiesServiceGetProjectActivitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProjActivitiesService_getProjectActivities_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q8:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="ProjLinePropertyServiceGetLinePropertyRequest">
+    <wsdl:part name="parameters" element="tns:ProjLinePropertyServiceGetLinePropertyRequest" />
+  </wsdl:message>
+  <wsdl:message name="ProjLinePropertyServiceGetLinePropertyRequest_Headers">
+    <wsdl:part xmlns:q9="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q9:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="ProjLinePropertyServiceGetLinePropertyResponse">
+    <wsdl:part name="parameters" element="tns:ProjLinePropertyServiceGetLinePropertyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProjLinePropertyService_getLineProperty_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q10:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="ProjLinePropertyServiceGetProjLinePropertyRequest">
+    <wsdl:part name="parameters" element="tns:ProjLinePropertyServiceGetProjLinePropertyRequest" />
+  </wsdl:message>
+  <wsdl:message name="ProjLinePropertyServiceGetProjLinePropertyRequest_Headers">
+    <wsdl:part xmlns:q11="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q11:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="ProjLinePropertyServiceGetProjLinePropertyResponse">
+    <wsdl:part name="parameters" element="tns:ProjLinePropertyServiceGetProjLinePropertyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProjLinePropertyService_getProjLineProperty_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q12:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvAdminCustomFieldsServiceGetFieldVisibilitiesRequest">
+    <wsdl:part name="parameters" element="tns:TrvAdminCustomFieldsServiceGetFieldVisibilitiesRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvAdminCustomFieldsServiceGetFieldVisibilitiesRequest_Headers">
+    <wsdl:part xmlns:q13="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q13:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvAdminCustomFieldsServiceGetFieldVisibilitiesResponse">
+    <wsdl:part name="parameters" element="tns:TrvAdminCustomFieldsServiceGetFieldVisibilitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvAdminCustomFieldsService_getFieldVisibilities_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q14:AifFault" />
+  </wsdl:message>
+  <wsdl:portType name="ExchangeRateForCurrenciesService">
+    <wsdl:operation name="getCompanyCurAmount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ExchangeRateForCurrenciesService/getCompanyCurAmount" name="ExchangeRateForCurrenciesServiceGetCompanyCurAmountRequest" message="tns:ExchangeRateForCurrenciesServiceGetCompanyCurAmountRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ExchangeRateForCurrenciesService/getCompanyCurAmountResponse" name="ExchangeRateForCurrenciesServiceGetCompanyCurAmountResponse" message="tns:ExchangeRateForCurrenciesServiceGetCompanyCurAmountResponse" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ExchangeRateForCurrenciesService/getCompanyCurAmountAifFaultFault" name="AifFaultFault" message="tns:ExchangeRateForCurrenciesService_getCompanyCurAmount_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getExchangeRateForCurrencies">
+      <wsdl:input wsaw:Action="http://tempuri.org/ExchangeRateForCurrenciesService/getExchangeRateForCurrencies" name="ExchangeRateForCurrenciesServiceGetExchangeRateForCurrenciesRequest" message="tns:ExchangeRateForCurrenciesServiceGetExchangeRateForCurrenciesRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ExchangeRateForCurrenciesService/getExchangeRateForCurrenciesResponse" name="ExchangeRateForCurrenciesServiceGetExchangeRateForCurrenciesResponse" message="tns:ExchangeRateForCurrenciesServiceGetExchangeRateForCurrenciesResponse" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ExchangeRateForCurrenciesService/getExchangeRateForCurrenciesAifFaultFault" name="AifFaultFault" message="tns:ExchangeRateForCurrenciesService_getExchangeRateForCurrencies_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="LogisticsAddressCountryRegionService">
+    <wsdl:operation name="getLogisticsAddressCountryRegions">
+      <wsdl:input wsaw:Action="http://tempuri.org/LogisticsAddressCountryRegionService/getLogisticsAddressCountryRegions" name="LogisticsAddressCountryRegionServiceGetLogisticsAddressCountryRegionsRequest" message="tns:LogisticsAddressCountryRegionServiceGetLogisticsAddressCountryRegionsRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/LogisticsAddressCountryRegionService/getLogisticsAddressCountryRegionsResponse" name="LogisticsAddressCountryRegionServiceGetLogisticsAddressCountryRegionsResponse" message="tns:LogisticsAddressCountryRegionServiceGetLogisticsAddressCountryRegionsResponse" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/LogisticsAddressCountryRegionService/getLogisticsAddressCountryRegionsAifFaultFault" name="AifFaultFault" message="tns:LogisticsAddressCountryRegionService_getLogisticsAddressCountryRegions_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ProjActivitiesService">
+    <wsdl:operation name="getProjectActivities">
+      <wsdl:input wsaw:Action="http://tempuri.org/ProjActivitiesService/getProjectActivities" name="ProjActivitiesServiceGetProjectActivitiesRequest" message="tns:ProjActivitiesServiceGetProjectActivitiesRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ProjActivitiesService/getProjectActivitiesResponse" name="ProjActivitiesServiceGetProjectActivitiesResponse" message="tns:ProjActivitiesServiceGetProjectActivitiesResponse" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ProjActivitiesService/getProjectActivitiesAifFaultFault" name="AifFaultFault" message="tns:ProjActivitiesService_getProjectActivities_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ProjLinePropertyService">
+    <wsdl:operation name="getLineProperty">
+      <wsdl:input wsaw:Action="http://tempuri.org/ProjLinePropertyService/getLineProperty" name="ProjLinePropertyServiceGetLinePropertyRequest" message="tns:ProjLinePropertyServiceGetLinePropertyRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ProjLinePropertyService/getLinePropertyResponse" name="ProjLinePropertyServiceGetLinePropertyResponse" message="tns:ProjLinePropertyServiceGetLinePropertyResponse" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ProjLinePropertyService/getLinePropertyAifFaultFault" name="AifFaultFault" message="tns:ProjLinePropertyService_getLineProperty_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProjLineProperty">
+      <wsdl:input wsaw:Action="http://tempuri.org/ProjLinePropertyService/getProjLineProperty" name="ProjLinePropertyServiceGetProjLinePropertyRequest" message="tns:ProjLinePropertyServiceGetProjLinePropertyRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ProjLinePropertyService/getProjLinePropertyResponse" name="ProjLinePropertyServiceGetProjLinePropertyResponse" message="tns:ProjLinePropertyServiceGetProjLinePropertyResponse" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ProjLinePropertyService/getProjLinePropertyAifFaultFault" name="AifFaultFault" message="tns:ProjLinePropertyService_getProjLineProperty_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TrvAdminCustomFieldsService">
+    <wsdl:operation name="getFieldVisibilities">
+      <wsdl:input wsaw:Action="http://tempuri.org/TrvAdminCustomFieldsService/getFieldVisibilities" name="TrvAdminCustomFieldsServiceGetFieldVisibilitiesRequest" message="tns:TrvAdminCustomFieldsServiceGetFieldVisibilitiesRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TrvAdminCustomFieldsService/getFieldVisibilitiesResponse" name="TrvAdminCustomFieldsServiceGetFieldVisibilitiesResponse" message="tns:TrvAdminCustomFieldsServiceGetFieldVisibilitiesResponse" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/TrvAdminCustomFieldsService/getFieldVisibilitiesAifFaultFault" name="AifFaultFault" message="tns:TrvAdminCustomFieldsService_getFieldVisibilities_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

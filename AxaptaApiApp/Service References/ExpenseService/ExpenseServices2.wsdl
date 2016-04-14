@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.microsoft.com/dynamics/2008/01/services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.microsoft.com/dynamics/2008/01/services/Imports">
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd4" namespace="http://schemas.microsoft.com/dynamics/2008/01/services" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd5" namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd6" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd8" namespace="http://tempuri.org" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd9" namespace="http://schemas.microsoft.com/dynamics/2011/01/services" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="DimensionServiceGetActiveDimensionsFromLedgerRequest">
+    <wsdl:part name="parameters" element="tns:DimensionServiceGetActiveDimensionsFromLedgerRequest" />
+  </wsdl:message>
+  <wsdl:message name="DimensionServiceGetActiveDimensionsFromLedgerRequest_Headers">
+    <wsdl:part xmlns:q1="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q1:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="DimensionServiceGetActiveDimensionsFromLedgerResponse">
+    <wsdl:part name="parameters" element="tns:DimensionServiceGetActiveDimensionsFromLedgerResponse" />
+  </wsdl:message>
+  <wsdl:message name="DimensionService_getActiveDimensionsFromLedger_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q2:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="DimensionServiceGetDimensionsRequest">
+    <wsdl:part name="parameters" element="tns:DimensionServiceGetDimensionsRequest" />
+  </wsdl:message>
+  <wsdl:message name="DimensionServiceGetDimensionsRequest_Headers">
+    <wsdl:part xmlns:q3="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q3:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="DimensionServiceGetDimensionsResponse">
+    <wsdl:part name="parameters" element="tns:DimensionServiceGetDimensionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DimensionService_getDimensions_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q4:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="DimensionServiceGetDimensionsAllRequest">
+    <wsdl:part name="parameters" element="tns:DimensionServiceGetDimensionsAllRequest" />
+  </wsdl:message>
+  <wsdl:message name="DimensionServiceGetDimensionsAllRequest_Headers">
+    <wsdl:part xmlns:q5="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q5:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="DimensionServiceGetDimensionsAllResponse">
+    <wsdl:part name="parameters" element="tns:DimensionServiceGetDimensionsAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="DimensionService_getDimensionsAll_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q6:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="DimensionValueServiceCreateDimensionValueRequest">
+    <wsdl:part name="parameters" element="tns:DimensionValueServiceCreateDimensionValueRequest" />
+  </wsdl:message>
+  <wsdl:message name="DimensionValueServiceCreateDimensionValueRequest_Headers">
+    <wsdl:part xmlns:q7="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q7:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="DimensionValueServiceCreateDimensionValueResponse">
+    <wsdl:part name="parameters" element="tns:DimensionValueServiceCreateDimensionValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="DimensionValueService_createDimensionValue_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q8:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="DimensionValueServiceGetDimensionValuesRequest">
+    <wsdl:part name="parameters" element="tns:DimensionValueServiceGetDimensionValuesRequest" />
+  </wsdl:message>
+  <wsdl:message name="DimensionValueServiceGetDimensionValuesRequest_Headers">
+    <wsdl:part xmlns:q9="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q9:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="DimensionValueServiceGetDimensionValuesResponse">
+    <wsdl:part name="parameters" element="tns:DimensionValueServiceGetDimensionValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="DimensionValueService_getDimensionValues_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q10:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseLineCustomServiceFindRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpenseLineCustomServiceFindRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseLineCustomServiceFindRequest_Headers">
+    <wsdl:part xmlns:q11="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q11:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseLineCustomServiceFindResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpenseLineCustomServiceFindResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseLineCustomService_find_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q12:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseLineCustomServiceDeleteRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpenseLineCustomServiceDeleteRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseLineCustomServiceDeleteRequest_Headers">
+    <wsdl:part xmlns:q13="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q13:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseLineCustomServiceDeleteResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpenseLineCustomServiceDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseLineCustomService_delete_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q14:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseLineCustomServiceReadRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpenseLineCustomServiceReadRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseLineCustomServiceReadRequest_Headers">
+    <wsdl:part xmlns:q15="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q15:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseLineCustomServiceReadResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpenseLineCustomServiceReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseLineCustomService_read_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q16:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseLineCustomServiceUpdateRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpenseLineCustomServiceUpdateRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseLineCustomServiceUpdateRequest_Headers">
+    <wsdl:part xmlns:q17="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q17:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseLineCustomServiceUpdateResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpenseLineCustomServiceUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseLineCustomService_update_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q18:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseLineCustomServiceCalculateTaxAmountRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpenseLineCustomServiceCalculateTaxAmountRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseLineCustomServiceCalculateTaxAmountRequest_Headers">
+    <wsdl:part xmlns:q19="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q19:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseLineCustomServiceCalculateTaxAmountResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpenseLineCustomServiceCalculateTaxAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseLineCustomService_calculateTaxAmount_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q20:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseLineCustomServiceCreateRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpenseLineCustomServiceCreateRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseLineCustomServiceCreateRequest_Headers">
+    <wsdl:part xmlns:q21="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q21:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseLineCustomServiceCreateResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpenseLineCustomServiceCreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseLineCustomService_create_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q22:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReferenceDataServiceGetExpenseLinePurposesRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReferenceDataServiceGetExpenseLinePurposesRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReferenceDataServiceGetExpenseLinePurposesRequest_Headers">
+    <wsdl:part xmlns:q23="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q23:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReferenceDataServiceGetExpenseLinePurposesResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReferenceDataServiceGetExpenseLinePurposesResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReferenceDataService_getExpenseLinePurposes_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q24:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReferenceDataServiceGetExpenseSalesTaxGroupsRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReferenceDataServiceGetExpenseSalesTaxGroupsRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReferenceDataServiceGetExpenseSalesTaxGroupsRequest_Headers">
+    <wsdl:part xmlns:q25="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q25:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReferenceDataServiceGetExpenseSalesTaxGroupsResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReferenceDataServiceGetExpenseSalesTaxGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReferenceDataService_getExpenseSalesTaxGroups_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q26:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReferenceDataServiceGetExpenseMerchantsRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReferenceDataServiceGetExpenseMerchantsRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReferenceDataServiceGetExpenseMerchantsRequest_Headers">
+    <wsdl:part xmlns:q27="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q27:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReferenceDataServiceGetExpenseMerchantsResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReferenceDataServiceGetExpenseMerchantsResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReferenceDataService_getExpenseMerchants_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q28:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReferenceDataServiceGetPerdiemLocationsRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReferenceDataServiceGetPerdiemLocationsRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReferenceDataServiceGetPerdiemLocationsRequest_Headers">
+    <wsdl:part xmlns:q29="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q29:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReferenceDataServiceGetPerdiemLocationsResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReferenceDataServiceGetPerdiemLocationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReferenceDataService_getPerdiemLocations_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q30:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReferenceDataServiceGetExpenseLocationsRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReferenceDataServiceGetExpenseLocationsRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReferenceDataServiceGetExpenseLocationsRequest_Headers">
+    <wsdl:part xmlns:q31="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q31:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReferenceDataServiceGetExpenseLocationsResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReferenceDataServiceGetExpenseLocationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReferenceDataService_getExpenseLocations_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q32:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReferenceDataServiceGetExpensePurposesRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReferenceDataServiceGetExpensePurposesRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReferenceDataServiceGetExpensePurposesRequest_Headers">
+    <wsdl:part xmlns:q33="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q33:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReferenceDataServiceGetExpensePurposesResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReferenceDataServiceGetExpensePurposesResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReferenceDataService_getExpensePurposes_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q34="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q34:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceResubmitRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReportCustomServiceResubmitRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceResubmitRequest_Headers">
+    <wsdl:part xmlns:q35="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q35:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceResubmitResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReportCustomServiceResubmitResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomService_resubmit_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q36="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q36:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceFindRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReportCustomServiceFindRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceFindRequest_Headers">
+    <wsdl:part xmlns:q37="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q37:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceFindResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReportCustomServiceFindResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomService_find_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q38="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q38:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceCreateRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReportCustomServiceCreateRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceCreateRequest_Headers">
+    <wsdl:part xmlns:q39="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q39:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceCreateResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReportCustomServiceCreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomService_create_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q40="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q40:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceFindExpenseHeadersRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReportCustomServiceFindExpenseHeadersRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceFindExpenseHeadersRequest_Headers">
+    <wsdl:part xmlns:q41="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q41:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceFindExpenseHeadersResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReportCustomServiceFindExpenseHeadersResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomService_findExpenseHeaders_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q42="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q42:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceReadRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReportCustomServiceReadRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceReadRequest_Headers">
+    <wsdl:part xmlns:q43="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q43:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceReadResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReportCustomServiceReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomService_read_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q44="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q44:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceRecallRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReportCustomServiceRecallRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceRecallRequest_Headers">
+    <wsdl:part xmlns:q45="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q45:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceRecallResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReportCustomServiceRecallResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomService_recall_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q46="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q46:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceReadExpenseHeaderRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReportCustomServiceReadExpenseHeaderRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceReadExpenseHeaderRequest_Headers">
+    <wsdl:part xmlns:q47="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q47:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceReadExpenseHeaderResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReportCustomServiceReadExpenseHeaderResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomService_readExpenseHeader_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q48="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q48:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceCreateExpenseWithUnreconciledLineReceiptRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReportCustomServiceCreateExpenseWithUnreconciledLineReceiptRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceCreateExpenseWithUnreconciledLineReceiptRequest_Headers">
+    <wsdl:part xmlns:q49="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q49:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceCreateExpenseWithUnreconciledLineReceiptResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReportCustomServiceCreateExpenseWithUnreconciledLineReceiptResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomService_createExpenseWithUnreconciledLineReceipt_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q50="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q50:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceDeleteRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReportCustomServiceDeleteRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceDeleteRequest_Headers">
+    <wsdl:part xmlns:q51="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q51:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceDeleteResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReportCustomServiceDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomService_delete_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q52="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q52:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceUpdateRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReportCustomServiceUpdateRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceUpdateRequest_Headers">
+    <wsdl:part xmlns:q53="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q53:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceUpdateResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReportCustomServiceUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomService_update_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q54="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q54:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceSubmitRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReportCustomServiceSubmitRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceSubmitRequest_Headers">
+    <wsdl:part xmlns:q55="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q55:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceSubmitResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReportCustomServiceSubmitResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomService_submit_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q56="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q56:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceGetPolicyViolationsRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReportCustomServiceGetPolicyViolationsRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceGetPolicyViolationsRequest_Headers">
+    <wsdl:part xmlns:q57="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q57:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomServiceGetPolicyViolationsResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpenseReportCustomServiceGetPolicyViolationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpenseReportCustomService_getPolicyViolations_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q58="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q58:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestServiceReadRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpGuestServiceReadRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestServiceReadRequest_Headers">
+    <wsdl:part xmlns:q59="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q59:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestServiceReadResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpGuestServiceReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestService_read_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q60="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q60:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestServiceCreateRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpGuestServiceCreateRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestServiceCreateRequest_Headers">
+    <wsdl:part xmlns:q61="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q61:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestServiceCreateResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpGuestServiceCreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestService_create_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q62="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q62:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestServiceDeleteRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpGuestServiceDeleteRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestServiceDeleteRequest_Headers">
+    <wsdl:part xmlns:q63="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q63:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestServiceDeleteResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpGuestServiceDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestService_delete_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q64="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q64:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestServiceDeletePreviousGuestsRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpGuestServiceDeletePreviousGuestsRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestServiceDeletePreviousGuestsRequest_Headers">
+    <wsdl:part xmlns:q65="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q65:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestServiceDeletePreviousGuestsResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpGuestServiceDeletePreviousGuestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestService_deletePreviousGuests_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q66="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q66:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestServiceUpdateRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpGuestServiceUpdateRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestServiceUpdateRequest_Headers">
+    <wsdl:part xmlns:q67="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q67:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestServiceUpdateResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpGuestServiceUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestService_update_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q68="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q68:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestServiceFindRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpGuestServiceFindRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestServiceFindRequest_Headers">
+    <wsdl:part xmlns:q69="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q69:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestServiceFindResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpGuestServiceFindResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestService_find_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q70="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q70:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestServiceFindPreviousGuestsRequest">
+    <wsdl:part name="parameters" element="tns:TrvExpGuestServiceFindPreviousGuestsRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestServiceFindPreviousGuestsRequest_Headers">
+    <wsdl:part xmlns:q71="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q71:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestServiceFindPreviousGuestsResponse">
+    <wsdl:part name="parameters" element="tns:TrvExpGuestServiceFindPreviousGuestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvExpGuestService_findPreviousGuests_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q72="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q72:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvReceiptServiceAttachRequest">
+    <wsdl:part name="parameters" element="tns:TrvReceiptServiceAttachRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvReceiptServiceAttachRequest_Headers">
+    <wsdl:part xmlns:q73="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q73:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvReceiptServiceAttachResponse">
+    <wsdl:part name="parameters" element="tns:TrvReceiptServiceAttachResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvReceiptService_attach_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q74="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q74:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvReceiptServiceDeleteRequest">
+    <wsdl:part name="parameters" element="tns:TrvReceiptServiceDeleteRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvReceiptServiceDeleteRequest_Headers">
+    <wsdl:part xmlns:q75="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q75:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvReceiptServiceDeleteResponse">
+    <wsdl:part name="parameters" element="tns:TrvReceiptServiceDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvReceiptService_delete_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q76="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q76:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvReceiptServiceGetDocumentContentsRequest">
+    <wsdl:part name="parameters" element="tns:TrvReceiptServiceGetDocumentContentsRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvReceiptServiceGetDocumentContentsRequest_Headers">
+    <wsdl:part xmlns:q77="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q77:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvReceiptServiceGetDocumentContentsResponse">
+    <wsdl:part name="parameters" element="tns:TrvReceiptServiceGetDocumentContentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvReceiptService_getDocumentContents_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q78="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q78:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvReceiptServiceReadRequest">
+    <wsdl:part name="parameters" element="tns:TrvReceiptServiceReadRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvReceiptServiceReadRequest_Headers">
+    <wsdl:part xmlns:q79="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q79:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvReceiptServiceReadResponse">
+    <wsdl:part name="parameters" element="tns:TrvReceiptServiceReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvReceiptService_read_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q80="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q80:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvReceiptServiceCreateRequest">
+    <wsdl:part name="parameters" element="tns:TrvReceiptServiceCreateRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvReceiptServiceCreateRequest_Headers">
+    <wsdl:part xmlns:q81="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q81:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvReceiptServiceCreateResponse">
+    <wsdl:part name="parameters" element="tns:TrvReceiptServiceCreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvReceiptService_create_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q82="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q82:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="TrvReceiptServiceDetachRequest">
+    <wsdl:part name="parameters" element="tns:TrvReceiptServiceDetachRequest" />
+  </wsdl:message>
+  <wsdl:message name="TrvReceiptServiceDetachRequest_Headers">
+    <wsdl:part xmlns:q83="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q83:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="TrvReceiptServiceDetachResponse">
+    <wsdl:part name="parameters" element="tns:TrvReceiptServiceDetachResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrvReceiptService_detach_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q84="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q84:AifFault" />
+  </wsdl:message>
+  <wsdl:portType name="DimensionService">
+    <wsdl:operation name="getActiveDimensionsFromLedger">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/DimensionService/getActiveDimensionsFromLedger" name="DimensionServiceGetActiveDimensionsFromLedgerRequest" message="tns:DimensionServiceGetActiveDimensionsFromLedgerRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/DimensionService/getActiveDimensionsFromLedgerResponse" name="DimensionServiceGetActiveDimensionsFromLedgerResponse" message="tns:DimensionServiceGetActiveDimensionsFromLedgerResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/DimensionService/getActiveDimensionsFromLedgerAifFaultFault" name="AifFaultFault" message="tns:DimensionService_getActiveDimensionsFromLedger_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDimensions">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/DimensionService/getDimensions" name="DimensionServiceGetDimensionsRequest" message="tns:DimensionServiceGetDimensionsRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/DimensionService/getDimensionsResponse" name="DimensionServiceGetDimensionsResponse" message="tns:DimensionServiceGetDimensionsResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/DimensionService/getDimensionsAifFaultFault" name="AifFaultFault" message="tns:DimensionService_getDimensions_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDimensionsAll">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/DimensionService/getDimensionsAll" name="DimensionServiceGetDimensionsAllRequest" message="tns:DimensionServiceGetDimensionsAllRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/DimensionService/getDimensionsAllResponse" name="DimensionServiceGetDimensionsAllResponse" message="tns:DimensionServiceGetDimensionsAllResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/DimensionService/getDimensionsAllAifFaultFault" name="AifFaultFault" message="tns:DimensionService_getDimensionsAll_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="DimensionValueService">
+    <wsdl:operation name="createDimensionValue">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/DimensionValueService/createDimensionValue" name="DimensionValueServiceCreateDimensionValueRequest" message="tns:DimensionValueServiceCreateDimensionValueRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/DimensionValueService/createDimensionValueResponse" name="DimensionValueServiceCreateDimensionValueResponse" message="tns:DimensionValueServiceCreateDimensionValueResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/DimensionValueService/createDimensionValueAifFaultFault" name="AifFaultFault" message="tns:DimensionValueService_createDimensionValue_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDimensionValues">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/DimensionValueService/getDimensionValues" name="DimensionValueServiceGetDimensionValuesRequest" message="tns:DimensionValueServiceGetDimensionValuesRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/DimensionValueService/getDimensionValuesResponse" name="DimensionValueServiceGetDimensionValuesResponse" message="tns:DimensionValueServiceGetDimensionValuesResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/DimensionValueService/getDimensionValuesAifFaultFault" name="AifFaultFault" message="tns:DimensionValueService_getDimensionValues_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TrvExpenseLineCustomService">
+    <wsdl:operation name="find">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseLineCustomService/find" name="TrvExpenseLineCustomServiceFindRequest" message="tns:TrvExpenseLineCustomServiceFindRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseLineCustomService/findResponse" name="TrvExpenseLineCustomServiceFindResponse" message="tns:TrvExpenseLineCustomServiceFindResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseLineCustomService/findAifFaultFault" name="AifFaultFault" message="tns:TrvExpenseLineCustomService_find_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseLineCustomService/delete" name="TrvExpenseLineCustomServiceDeleteRequest" message="tns:TrvExpenseLineCustomServiceDeleteRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseLineCustomService/deleteResponse" name="TrvExpenseLineCustomServiceDeleteResponse" message="tns:TrvExpenseLineCustomServiceDeleteResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseLineCustomService/deleteAifFaultFault" name="AifFaultFault" message="tns:TrvExpenseLineCustomService_delete_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="read">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseLineCustomService/read" name="TrvExpenseLineCustomServiceReadRequest" message="tns:TrvExpenseLineCustomServiceReadRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseLineCustomService/readResponse" name="TrvExpenseLineCustomServiceReadResponse" message="tns:TrvExpenseLineCustomServiceReadResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseLineCustomService/readAifFaultFault" name="AifFaultFault" message="tns:TrvExpenseLineCustomService_read_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseLineCustomService/update" name="TrvExpenseLineCustomServiceUpdateRequest" message="tns:TrvExpenseLineCustomServiceUpdateRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseLineCustomService/updateResponse" name="TrvExpenseLineCustomServiceUpdateResponse" message="tns:TrvExpenseLineCustomServiceUpdateResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseLineCustomService/updateAifFaultFault" name="AifFaultFault" message="tns:TrvExpenseLineCustomService_update_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="calculateTaxAmount">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseLineCustomService/calculateTaxAmount" name="TrvExpenseLineCustomServiceCalculateTaxAmountRequest" message="tns:TrvExpenseLineCustomServiceCalculateTaxAmountRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseLineCustomService/calculateTaxAmountResponse" name="TrvExpenseLineCustomServiceCalculateTaxAmountResponse" message="tns:TrvExpenseLineCustomServiceCalculateTaxAmountResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseLineCustomService/calculateTaxAmountAifFaultFault" name="AifFaultFault" message="tns:TrvExpenseLineCustomService_calculateTaxAmount_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseLineCustomService/create" name="TrvExpenseLineCustomServiceCreateRequest" message="tns:TrvExpenseLineCustomServiceCreateRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseLineCustomService/createResponse" name="TrvExpenseLineCustomServiceCreateResponse" message="tns:TrvExpenseLineCustomServiceCreateResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseLineCustomService/createAifFaultFault" name="AifFaultFault" message="tns:TrvExpenseLineCustomService_create_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TrvExpenseReferenceDataService">
+    <wsdl:operation name="getExpenseLinePurposes">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReferenceDataService/getExpenseLinePurposes" name="TrvExpenseReferenceDataServiceGetExpenseLinePurposesRequest" message="tns:TrvExpenseReferenceDataServiceGetExpenseLinePurposesRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReferenceDataService/getExpenseLinePurposesResponse" name="TrvExpenseReferenceDataServiceGetExpenseLinePurposesResponse" message="tns:TrvExpenseReferenceDataServiceGetExpenseLinePurposesResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReferenceDataService/getExpenseLinePurposesAifFaultFault" name="AifFaultFault" message="tns:TrvExpenseReferenceDataService_getExpenseLinePurposes_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getExpenseSalesTaxGroups">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReferenceDataService/getExpenseSalesTaxGroups" name="TrvExpenseReferenceDataServiceGetExpenseSalesTaxGroupsRequest" message="tns:TrvExpenseReferenceDataServiceGetExpenseSalesTaxGroupsRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReferenceDataService/getExpenseSalesTaxGroupsResponse" name="TrvExpenseReferenceDataServiceGetExpenseSalesTaxGroupsResponse" message="tns:TrvExpenseReferenceDataServiceGetExpenseSalesTaxGroupsResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReferenceDataService/getExpenseSalesTaxGroupsAifFaultFault" name="AifFaultFault" message="tns:TrvExpenseReferenceDataService_getExpenseSalesTaxGroups_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getExpenseMerchants">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReferenceDataService/getExpenseMerchants" name="TrvExpenseReferenceDataServiceGetExpenseMerchantsRequest" message="tns:TrvExpenseReferenceDataServiceGetExpenseMerchantsRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReferenceDataService/getExpenseMerchantsResponse" name="TrvExpenseReferenceDataServiceGetExpenseMerchantsResponse" message="tns:TrvExpenseReferenceDataServiceGetExpenseMerchantsResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReferenceDataService/getExpenseMerchantsAifFaultFault" name="AifFaultFault" message="tns:TrvExpenseReferenceDataService_getExpenseMerchants_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPerdiemLocations">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReferenceDataService/getPerdiemLocations" name="TrvExpenseReferenceDataServiceGetPerdiemLocationsRequest" message="tns:TrvExpenseReferenceDataServiceGetPerdiemLocationsRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReferenceDataService/getPerdiemLocationsResponse" name="TrvExpenseReferenceDataServiceGetPerdiemLocationsResponse" message="tns:TrvExpenseReferenceDataServiceGetPerdiemLocationsResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReferenceDataService/getPerdiemLocationsAifFaultFault" name="AifFaultFault" message="tns:TrvExpenseReferenceDataService_getPerdiemLocations_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getExpenseLocations">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReferenceDataService/getExpenseLocations" name="TrvExpenseReferenceDataServiceGetExpenseLocationsRequest" message="tns:TrvExpenseReferenceDataServiceGetExpenseLocationsRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReferenceDataService/getExpenseLocationsResponse" name="TrvExpenseReferenceDataServiceGetExpenseLocationsResponse" message="tns:TrvExpenseReferenceDataServiceGetExpenseLocationsResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReferenceDataService/getExpenseLocationsAifFaultFault" name="AifFaultFault" message="tns:TrvExpenseReferenceDataService_getExpenseLocations_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getExpensePurposes">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReferenceDataService/getExpensePurposes" name="TrvExpenseReferenceDataServiceGetExpensePurposesRequest" message="tns:TrvExpenseReferenceDataServiceGetExpensePurposesRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReferenceDataService/getExpensePurposesResponse" name="TrvExpenseReferenceDataServiceGetExpensePurposesResponse" message="tns:TrvExpenseReferenceDataServiceGetExpensePurposesResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReferenceDataService/getExpensePurposesAifFaultFault" name="AifFaultFault" message="tns:TrvExpenseReferenceDataService_getExpensePurposes_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TrvExpenseReportCustomService">
+    <wsdl:operation name="resubmit">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/resubmit" name="TrvExpenseReportCustomServiceResubmitRequest" message="tns:TrvExpenseReportCustomServiceResubmitRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/resubmitResponse" name="TrvExpenseReportCustomServiceResubmitResponse" message="tns:TrvExpenseReportCustomServiceResubmitResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/resubmitAifFaultFault" name="AifFaultFault" message="tns:TrvExpenseReportCustomService_resubmit_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="find">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/find" name="TrvExpenseReportCustomServiceFindRequest" message="tns:TrvExpenseReportCustomServiceFindRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/findResponse" name="TrvExpenseReportCustomServiceFindResponse" message="tns:TrvExpenseReportCustomServiceFindResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/findAifFaultFault" name="AifFaultFault" message="tns:TrvExpenseReportCustomService_find_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/create" name="TrvExpenseReportCustomServiceCreateRequest" message="tns:TrvExpenseReportCustomServiceCreateRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/createResponse" name="TrvExpenseReportCustomServiceCreateResponse" message="tns:TrvExpenseReportCustomServiceCreateResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/createAifFaultFault" name="AifFaultFault" message="tns:TrvExpenseReportCustomService_create_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="findExpenseHeaders">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/findExpenseHeaders" name="TrvExpenseReportCustomServiceFindExpenseHeadersRequest" message="tns:TrvExpenseReportCustomServiceFindExpenseHeadersRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/findExpenseHeadersResponse" name="TrvExpenseReportCustomServiceFindExpenseHeadersResponse" message="tns:TrvExpenseReportCustomServiceFindExpenseHeadersResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/findExpenseHeadersAifFaultFault" name="AifFaultFault" message="tns:TrvExpenseReportCustomService_findExpenseHeaders_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="read">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/read" name="TrvExpenseReportCustomServiceReadRequest" message="tns:TrvExpenseReportCustomServiceReadRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/readResponse" name="TrvExpenseReportCustomServiceReadResponse" message="tns:TrvExpenseReportCustomServiceReadResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/readAifFaultFault" name="AifFaultFault" message="tns:TrvExpenseReportCustomService_read_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="recall">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/recall" name="TrvExpenseReportCustomServiceRecallRequest" message="tns:TrvExpenseReportCustomServiceRecallRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/recallResponse" name="TrvExpenseReportCustomServiceRecallResponse" message="tns:TrvExpenseReportCustomServiceRecallResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/recallAifFaultFault" name="AifFaultFault" message="tns:TrvExpenseReportCustomService_recall_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="readExpenseHeader">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/readExpenseHeader" name="TrvExpenseReportCustomServiceReadExpenseHeaderRequest" message="tns:TrvExpenseReportCustomServiceReadExpenseHeaderRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/readExpenseHeaderResponse" name="TrvExpenseReportCustomServiceReadExpenseHeaderResponse" message="tns:TrvExpenseReportCustomServiceReadExpenseHeaderResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/readExpenseHeaderAifFaultFault" name="AifFaultFault" message="tns:TrvExpenseReportCustomService_readExpenseHeader_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createExpenseWithUnreconciledLineReceipt">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/createExpenseWithUnreconciledLineReceipt" name="TrvExpenseReportCustomServiceCreateExpenseWithUnreconciledLineReceiptRequest" message="tns:TrvExpenseReportCustomServiceCreateExpenseWithUnreconciledLineReceiptRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/createExpenseWithUnreconciledLineReceiptResponse" name="TrvExpenseReportCustomServiceCreateExpenseWithUnreconciledLineReceiptResponse" message="tns:TrvExpenseReportCustomServiceCreateExpenseWithUnreconciledLineReceiptResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/createExpenseWithUnreconciledLineReceiptAifFaultFault" name="AifFaultFault" message="tns:TrvExpenseReportCustomService_createExpenseWithUnreconciledLineReceipt_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/delete" name="TrvExpenseReportCustomServiceDeleteRequest" message="tns:TrvExpenseReportCustomServiceDeleteRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/deleteResponse" name="TrvExpenseReportCustomServiceDeleteResponse" message="tns:TrvExpenseReportCustomServiceDeleteResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/deleteAifFaultFault" name="AifFaultFault" message="tns:TrvExpenseReportCustomService_delete_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/update" name="TrvExpenseReportCustomServiceUpdateRequest" message="tns:TrvExpenseReportCustomServiceUpdateRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/updateResponse" name="TrvExpenseReportCustomServiceUpdateResponse" message="tns:TrvExpenseReportCustomServiceUpdateResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/updateAifFaultFault" name="AifFaultFault" message="tns:TrvExpenseReportCustomService_update_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="submit">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/submit" name="TrvExpenseReportCustomServiceSubmitRequest" message="tns:TrvExpenseReportCustomServiceSubmitRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/submitResponse" name="TrvExpenseReportCustomServiceSubmitResponse" message="tns:TrvExpenseReportCustomServiceSubmitResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/submitAifFaultFault" name="AifFaultFault" message="tns:TrvExpenseReportCustomService_submit_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPolicyViolations">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/getPolicyViolations" name="TrvExpenseReportCustomServiceGetPolicyViolationsRequest" message="tns:TrvExpenseReportCustomServiceGetPolicyViolationsRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/getPolicyViolationsResponse" name="TrvExpenseReportCustomServiceGetPolicyViolationsResponse" message="tns:TrvExpenseReportCustomServiceGetPolicyViolationsResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpenseReportCustomService/getPolicyViolationsAifFaultFault" name="AifFaultFault" message="tns:TrvExpenseReportCustomService_getPolicyViolations_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TrvExpGuestService">
+    <wsdl:operation name="read">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/read" name="TrvExpGuestServiceReadRequest" message="tns:TrvExpGuestServiceReadRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/readResponse" name="TrvExpGuestServiceReadResponse" message="tns:TrvExpGuestServiceReadResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/readAifFaultFault" name="AifFaultFault" message="tns:TrvExpGuestService_read_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/create" name="TrvExpGuestServiceCreateRequest" message="tns:TrvExpGuestServiceCreateRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/createResponse" name="TrvExpGuestServiceCreateResponse" message="tns:TrvExpGuestServiceCreateResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/createAifFaultFault" name="AifFaultFault" message="tns:TrvExpGuestService_create_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/delete" name="TrvExpGuestServiceDeleteRequest" message="tns:TrvExpGuestServiceDeleteRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/deleteResponse" name="TrvExpGuestServiceDeleteResponse" message="tns:TrvExpGuestServiceDeleteResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/deleteAifFaultFault" name="AifFaultFault" message="tns:TrvExpGuestService_delete_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deletePreviousGuests">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/deletePreviousGuests" name="TrvExpGuestServiceDeletePreviousGuestsRequest" message="tns:TrvExpGuestServiceDeletePreviousGuestsRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/deletePreviousGuestsResponse" name="TrvExpGuestServiceDeletePreviousGuestsResponse" message="tns:TrvExpGuestServiceDeletePreviousGuestsResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/deletePreviousGuestsAifFaultFault" name="AifFaultFault" message="tns:TrvExpGuestService_deletePreviousGuests_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/update" name="TrvExpGuestServiceUpdateRequest" message="tns:TrvExpGuestServiceUpdateRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/updateResponse" name="TrvExpGuestServiceUpdateResponse" message="tns:TrvExpGuestServiceUpdateResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/updateAifFaultFault" name="AifFaultFault" message="tns:TrvExpGuestService_update_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="find">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/find" name="TrvExpGuestServiceFindRequest" message="tns:TrvExpGuestServiceFindRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/findResponse" name="TrvExpGuestServiceFindResponse" message="tns:TrvExpGuestServiceFindResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/findAifFaultFault" name="AifFaultFault" message="tns:TrvExpGuestService_find_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="findPreviousGuests">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/findPreviousGuests" name="TrvExpGuestServiceFindPreviousGuestsRequest" message="tns:TrvExpGuestServiceFindPreviousGuestsRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/findPreviousGuestsResponse" name="TrvExpGuestServiceFindPreviousGuestsResponse" message="tns:TrvExpGuestServiceFindPreviousGuestsResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvExpGuestService/findPreviousGuestsAifFaultFault" name="AifFaultFault" message="tns:TrvExpGuestService_findPreviousGuests_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TrvReceiptService">
+    <wsdl:operation name="attach">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvReceiptService/attach" name="TrvReceiptServiceAttachRequest" message="tns:TrvReceiptServiceAttachRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvReceiptService/attachResponse" name="TrvReceiptServiceAttachResponse" message="tns:TrvReceiptServiceAttachResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvReceiptService/attachAifFaultFault" name="AifFaultFault" message="tns:TrvReceiptService_attach_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvReceiptService/delete" name="TrvReceiptServiceDeleteRequest" message="tns:TrvReceiptServiceDeleteRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvReceiptService/deleteResponse" name="TrvReceiptServiceDeleteResponse" message="tns:TrvReceiptServiceDeleteResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvReceiptService/deleteAifFaultFault" name="AifFaultFault" message="tns:TrvReceiptService_delete_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDocumentContents">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvReceiptService/getDocumentContents" name="TrvReceiptServiceGetDocumentContentsRequest" message="tns:TrvReceiptServiceGetDocumentContentsRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvReceiptService/getDocumentContentsResponse" name="TrvReceiptServiceGetDocumentContentsResponse" message="tns:TrvReceiptServiceGetDocumentContentsResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvReceiptService/getDocumentContentsAifFaultFault" name="AifFaultFault" message="tns:TrvReceiptService_getDocumentContents_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="read">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvReceiptService/read" name="TrvReceiptServiceReadRequest" message="tns:TrvReceiptServiceReadRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvReceiptService/readResponse" name="TrvReceiptServiceReadResponse" message="tns:TrvReceiptServiceReadResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvReceiptService/readAifFaultFault" name="AifFaultFault" message="tns:TrvReceiptService_read_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvReceiptService/create" name="TrvReceiptServiceCreateRequest" message="tns:TrvReceiptServiceCreateRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvReceiptService/createResponse" name="TrvReceiptServiceCreateResponse" message="tns:TrvReceiptServiceCreateResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvReceiptService/createAifFaultFault" name="AifFaultFault" message="tns:TrvReceiptService_create_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="detach">
+      <wsdl:input wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvReceiptService/detach" name="TrvReceiptServiceDetachRequest" message="tns:TrvReceiptServiceDetachRequest" />
+      <wsdl:output wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvReceiptService/detachResponse" name="TrvReceiptServiceDetachResponse" message="tns:TrvReceiptServiceDetachResponse" />
+      <wsdl:fault wsaw:Action="http://schemas.microsoft.com/dynamics/2008/01/services/TrvReceiptService/detachAifFaultFault" name="AifFaultFault" message="tns:TrvReceiptService_detach_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

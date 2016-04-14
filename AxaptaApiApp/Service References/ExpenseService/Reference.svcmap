@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1f2700b4-0f28-43de-950c-0993a822c206" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://AX2012R2A:8101/DynamicsAx/Services/ExpenseServices" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ExpenseServices.xsd" MetadataType="Schema" ID="d2331e46-bf7d-4a43-a76d-23ed86cb0f01" SourceId="1" SourceUrl="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd6" />
+    <MetadataFile FileName="ExpenseServices.wsdl" MetadataType="Wsdl" ID="fdcb6e93-c9a2-487f-b12b-7bbb08ca63ef" SourceId="1" SourceUrl="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?wsdl=wsdl1" />
+    <MetadataFile FileName="ExpenseServices1.xsd" MetadataType="Schema" ID="5a76e9eb-040e-47de-b75b-a4db46c1d72c" SourceId="1" SourceUrl="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd5" />
+    <MetadataFile FileName="ExpenseServices2.xsd" MetadataType="Schema" ID="3b020d67-1e2b-475b-9bfe-363331482dd6" SourceId="1" SourceUrl="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd1" />
+    <MetadataFile FileName="ExpenseServices3.xsd" MetadataType="Schema" ID="5a9dcf6e-500d-4597-aa6a-1d0969903aba" SourceId="1" SourceUrl="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd4" />
+    <MetadataFile FileName="ExpenseServices4.xsd" MetadataType="Schema" ID="e0a5a229-ab0a-4e3b-90fe-e514408bdaf6" SourceId="1" SourceUrl="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd9" />
+    <MetadataFile FileName="ExpenseServices1.wsdl" MetadataType="Wsdl" ID="3b7b5290-5032-4a78-baa0-e861a7a58cd4" SourceId="1" SourceUrl="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices" />
+    <MetadataFile FileName="ExpenseServices5.xsd" MetadataType="Schema" ID="24d17590-ab33-4fb9-b86d-28782d404702" SourceId="1" SourceUrl="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd0" />
+    <MetadataFile FileName="ExpenseServices2.wsdl" MetadataType="Wsdl" ID="8553137b-5ecb-4a47-873e-72a19e1661c3" SourceId="1" SourceUrl="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?wsdl=wsdl0" />
+    <MetadataFile FileName="ExpenseServices6.xsd" MetadataType="Schema" ID="4529ac12-db9c-434c-b073-15213c95019a" SourceId="1" SourceUrl="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd8" />
+    <MetadataFile FileName="ExpenseServices3.wsdl" MetadataType="Wsdl" ID="c7720b32-aa2a-4a2c-bd8d-db52f0ee8c1a" SourceId="1" SourceUrl="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?wsdl=wsdl2" />
+    <MetadataFile FileName="ExpenseServices7.xsd" MetadataType="Schema" ID="bcaac3fb-302c-425a-819c-cb0b3dcef0a4" SourceId="1" SourceUrl="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd3" />
+    <MetadataFile FileName="ExpenseServices8.xsd" MetadataType="Schema" ID="a324945b-5bc9-4ceb-8c55-304acd38a467" SourceId="1" SourceUrl="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd7" />
+    <MetadataFile FileName="ExpenseServices9.xsd" MetadataType="Schema" ID="92c03ea6-863d-4283-98e1-8168005c3387" SourceId="1" SourceUrl="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

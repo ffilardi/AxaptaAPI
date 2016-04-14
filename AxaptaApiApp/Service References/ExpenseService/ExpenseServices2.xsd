@@ -1,0 +1,1733 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" />
+  <xs:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/ExpenseServices?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="AccountStructureContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q1:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AccountStructureContract" nillable="true" type="tns:AccountStructureContract" />
+  <xs:complexType name="DimensionContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q2:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmBackingEntityType" type="xs:int" />
+          <xs:element minOccurs="0" name="parmDimensionName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DimensionContract" nillable="true" type="tns:DimensionContract" />
+  <xs:complexType name="DimensionValueContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q3:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmActiveFrom" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="parmActiveTo" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="parmBackingEntityType" type="xs:int" />
+          <xs:element minOccurs="0" name="parmDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmDimensionAttribute" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmGroupDimension" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmIsBlockedForManualEntry" type="q3:NoYes" />
+          <xs:element minOccurs="0" name="parmIsSuspended" type="q3:NoYes" />
+          <xs:element minOccurs="0" name="parmPersonnelNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DimensionValueContract" nillable="true" type="tns:DimensionValueContract" />
+  <xs:complexType name="DocumentFileList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q4:XppObjectBase">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmContentTypeList" nillable="true" type="q5:ArrayOfstring" />
+          <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmDocumentContentsList" nillable="true" type="q6:ArrayOfstring" />
+          <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmDocumentNameList" nillable="true" type="q7:ArrayOfstring" />
+          <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmDocumentUrlList" nillable="true" type="q8:ArrayOfstring" />
+          <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmReceiveDateList" nillable="true" type="q9:ArrayOfdateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DocumentFileList" nillable="true" type="tns:DocumentFileList" />
+  <xs:complexType name="LogisticsAddressCountryRegionContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q10:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AddressFormat" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CountryRegion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LogisticsAddressCountryRegionContract" nillable="true" type="tns:LogisticsAddressCountryRegionContract" />
+  <xs:complexType name="ProjActivitiesContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q11:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Purpose" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProjActivitiesContract" nillable="true" type="tns:ProjActivitiesContract" />
+  <xs:complexType name="ProjLinePropertyContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q12:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProjectLineProperty" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProjLinePropertyContract" nillable="true" type="tns:ProjLinePropertyContract" />
+  <xs:complexType name="TrvAdminCustomFieldsContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q13:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsMandatory" type="q13:NoYes" />
+          <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Visibility" type="tns:TrvFieldVisibility" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvAdminCustomFieldsContract" nillable="true" type="tns:TrvAdminCustomFieldsContract" />
+  <xs:simpleType name="TrvFieldVisibility">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DoNotDisplay" />
+      <xs:enumeration value="Display" />
+      <xs:enumeration value="ReadOnly" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TrvFieldVisibility" nillable="true" type="tns:TrvFieldVisibility" />
+  <xs:complexType name="TrvCategory">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q14:XppObjectBase">
+        <xs:sequence>
+          <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="merchantList" nillable="true" type="q15:ArrayOfstring" />
+          <xs:element minOccurs="0" name="parmCategory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmDefaultPaymentMethod" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmExpType" type="tns:TrvExpType" />
+          <xs:element minOccurs="0" name="parmIsInactive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="parmIsItemizationRequired" type="xs:boolean" />
+          <xs:element minOccurs="0" name="parmIsProjectCategory" type="xs:boolean" />
+          <xs:element minOccurs="0" name="paymentMethodsList" nillable="true" type="tns:ArrayOfTrvPayMethodContract" />
+          <xs:element minOccurs="0" name="subCategoryList" nillable="true" type="tns:ArrayOfTrvSubCategory" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvCategory" nillable="true" type="tns:TrvCategory" />
+  <xs:simpleType name="TrvExpType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Empty" />
+      <xs:enumeration value="Expense" />
+      <xs:enumeration value="Advance" />
+      <xs:enumeration value="Allowance" />
+      <xs:enumeration value="Transport" />
+      <xs:enumeration value="Personal" />
+      <xs:enumeration value="Airline" />
+      <xs:enumeration value="CarRental" />
+      <xs:enumeration value="Conference" />
+      <xs:enumeration value="Entertainment" />
+      <xs:enumeration value="Hotel" />
+      <xs:enumeration value="Meals" />
+      <xs:enumeration value="Gift" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TrvExpType" nillable="true" type="tns:TrvExpType" />
+  <xs:complexType name="ArrayOfTrvPayMethodContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrvPayMethodContract" nillable="true" type="tns:TrvPayMethodContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrvPayMethodContract" nillable="true" type="tns:ArrayOfTrvPayMethodContract" />
+  <xs:complexType name="TrvPayMethodContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q16:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PayMethod" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PostMethod" type="tns:TrvPostMethod" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvPayMethodContract" nillable="true" type="tns:TrvPayMethodContract" />
+  <xs:simpleType name="TrvPostMethod">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Employee" />
+      <xs:enumeration value="Ledger" />
+      <xs:enumeration value="Bank" />
+      <xs:enumeration value="Vendor" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TrvPostMethod" nillable="true" type="tns:TrvPostMethod" />
+  <xs:complexType name="ArrayOfTrvSubCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrvSubCategory" nillable="true" type="tns:TrvSubCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrvSubCategory" nillable="true" type="tns:ArrayOfTrvSubCategory" />
+  <xs:complexType name="TrvSubCategory">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q17:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsInactive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RecId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvSubCategory" nillable="true" type="tns:TrvSubCategory" />
+  <xs:complexType name="TrvConfiguration">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q18:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AttestationAffirmButton" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AttestationContent" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AttestationDenyButton" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AttestationTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CurrencyCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DefaultDimensions" nillable="true" type="tns:ArrayOfTrvDimensionValue" />
+          <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PersonnelNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserTimeZoneEnum" type="tns:Timezone" />
+          <xs:element minOccurs="0" name="UserTimeZoneOffset" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkerCompanies" nillable="true" type="tns:ArrayOfTrvCompanyContract" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvConfiguration" nillable="true" type="tns:TrvConfiguration" />
+  <xs:complexType name="ArrayOfTrvDimensionValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrvDimensionValue" nillable="true" type="tns:TrvDimensionValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrvDimensionValue" nillable="true" type="tns:ArrayOfTrvDimensionValue" />
+  <xs:complexType name="TrvDimensionValue">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q19="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q19:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DimensionAttributeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DimensionValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DimensionValueDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvDimensionValue" nillable="true" type="tns:TrvDimensionValue" />
+  <xs:simpleType name="Timezone">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GMTMINUS1200INTERNATIONALDATELINEWEST">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">24</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS1100COORDINATEDUNIVERSALTIME">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS1000HAWAII">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">39</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0900ALASKA">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0800PACIFICTIME">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">58</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0800TIJUANA_BAJACALIFORNIA">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">59</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0700ARIZONA">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">75</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0700MOUNTAINTIME">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">47</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0700CHIHUAHUA_LAPAZ_MAZATLAN">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">48</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0600CENTRALAMERICA">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">15</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0600CENTRALTIME">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">21</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0600GUADALAJARA_MEXICOCITY">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">22</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0600SASKATCHEWAN">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0500BOGOTA_LIMA_QUITO_RIOBRANCO">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">63</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0500EASTERNTIME">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">29</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0500INDIANA">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">74</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0430CARACAS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">85</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0400ASUNCION">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">95</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0400ATLANTICTIME">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0400LAPAZ">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">64</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0400MANAUS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">17</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0400SANTIAGO">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">57</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0330NEWFOUNDLAND">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">54</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0300BRASILIA">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">28</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0300BUENOSAIRES">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">86</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0300BUENOSAIRES_GEORGETOWN">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">62</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0300GREENLAND">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">36</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0300MONTEVIDEO">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">83</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0300_SALVADOR">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">87</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0200MIDATLANTIC">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">45</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0100AZORES">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS0100CAPEVERDIS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">12</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMT_CASABLANCA">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">93</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMT_COORDINATEDUNIVERSALTIME">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">89</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMT_CASABLANCA_MONTROVIA_REYKJAVIK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">37</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMT_DUBLIN_EDINBURGH_LISBON_LONDON" />
+      <xs:enumeration value="GMTPLUS0100_AMSTERDAM_BERLIN_BERN_ROME">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">79</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0100BELGRADE_BRATISLAVA_BUDAPEST">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">18</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0100BRUSSELS_COPENHAGEN_MADRID">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">60</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0100SARAJEVO_SKOPJE_WARSAW_ZAGREB">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">19</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0100TRIPOLI">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">101</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0100WESTCENTRALAFRICA">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">78</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0200AMMAN">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">43</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0200ATHENS_BUCHAREST_ISTANBUL">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">38</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0200BEIRUT">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">46</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0200MINSK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">27</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0200CAIRO">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">30</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0200_DAMASCUS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">96</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0200HARARE_PRETORIA">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">68</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0200HELSINKI_KYIV_RIGA_VILNIUS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">33</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0200ISTANBUL">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">98</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0200JERUSALEM">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">42</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0200WINDHOEK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">51</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMT_PLUS0300KALININGRAD_MINSK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">90</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0300BAGHDAD">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0300KUWAIT_RIYADH">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0300MOSCOW_STPETERSBURG_VOLGOGRAD">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">61</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0400PORTLOUIS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">92</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0300NAIROBI">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">25</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0300TBILISI">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">34</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0330TEHRAN">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">41</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0400ABUDHABI_MUSCAT">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0400BAKU">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0400IZHEVSK_SAMARA">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">104</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0400CAUCASUSSTANDARDTIME">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">84</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0400YEREVAN">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">13</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0430KABUL">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0500EKATERINBURG">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">31</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0500ISLAMABAD_KARACHI">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">94</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0500ISLAMABAD_KARACHI_TASHKENT">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">80</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0530CHENNAI_KOLKATA_MUMBAI">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">40</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0530SRIJAYAWARDENEPURA">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">69</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0545KATHMANDU">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">52</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0600ASTANA_DHAKA">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0600DHAKA">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">88</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0600ALMATY_NOVOSIBIRSK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">50</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0630_YANGON">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">49</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0700_BANGKOK_HANOI_JAKARTA">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">66</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0700KRASNOYARSK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">56</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0800BEIJING_CHONGQING_HONGKONG">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">23</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0800IRKUTSK_ULAANBATAAR">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">55</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0800_ULAANBAATAR">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">97</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0800KUALALUMPUR_SINGAPORE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">67</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0800PERTH">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">77</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0800TAIPEI">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">70</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0900OSAKA_SAPPORO_TOKYO">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">72</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0900SEOUL">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">44</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0900YAKUTSK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">82</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0930ADELAIDE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">14</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0930DARWIN">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS1000BRISBANE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">26</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS1000CANBERRA_MELBOURNE_SYDNEY">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS1000GUAM_PORTMORESBY">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">81</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS1000HOBART">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">71</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS1000VLADIVOSTOK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">76</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS1100CHOKURDAKH">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">102</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS1100MAGADAN_SOLOMONIS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">20</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS0600MAGADAN">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">91</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS1200ANADYR_PETRO_KAMCHATSKY">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">103</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS1200AUCKLAND_WELLINGTON">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">53</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS1200COORDINATEDUNIVERSALTIME" />
+      <xs:enumeration value="GMTPLUS1200FIJI_KAMCHATKA_MARSHALLIS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTMINUS1100MIDWAYISLAND_SAMOA">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GMTPLUS1300NUKU_ALOFA">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">73</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Timezone" nillable="true" type="tns:Timezone" />
+  <xs:complexType name="ArrayOfTrvCompanyContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrvCompanyContract" nillable="true" type="tns:TrvCompanyContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrvCompanyContract" nillable="true" type="tns:ArrayOfTrvCompanyContract" />
+  <xs:complexType name="TrvCompanyContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q20="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q20:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CurrencyCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvCompanyContract" nillable="true" type="tns:TrvCompanyContract" />
+  <xs:complexType name="TrvEnhancedCarRentalContract">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TrvEnhancedDataContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CarRentalCheckOutDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CheckOutLocation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DailyRentalRate" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DaysRented" type="xs:decimal" />
+          <xs:element minOccurs="0" name="MonthlyRentalRate" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Partition" type="xs:long" />
+          <xs:element minOccurs="0" name="RecId" type="xs:long" />
+          <xs:element minOccurs="0" name="RecVersion" type="xs:int" />
+          <xs:element minOccurs="0" name="RegularMileageCharges" type="xs:decimal" />
+          <xs:element minOccurs="0" name="RenterName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReservationNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReturnDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ReturnLocation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotalMiles" type="xs:decimal" />
+          <xs:element minOccurs="0" name="VehicleClass" type="tns:TrvCarRentalVehicleClassEnum" />
+          <xs:element minOccurs="0" name="WeeklyRentalRate" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvEnhancedCarRentalContract" nillable="true" type="tns:TrvEnhancedCarRentalContract" />
+  <xs:complexType name="TrvEnhancedDataContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q21:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="InstanceRelationType" type="xs:long" />
+          <xs:element minOccurs="0" name="PBSRecid" type="xs:long" />
+          <xs:element minOccurs="0" name="TransactionRecord" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvEnhancedDataContract" nillable="true" type="tns:TrvEnhancedDataContract" />
+  <xs:simpleType name="TrvCarRentalVehicleClassEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Compact" />
+      <xs:enumeration value="Intermediate" />
+      <xs:enumeration value="Full" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TrvCarRentalVehicleClassEnum" nillable="true" type="tns:TrvCarRentalVehicleClassEnum" />
+  <xs:complexType name="TrvEnhancedHotelContract">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TrvEnhancedDataContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CheckInDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CheckOutDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FolioNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GuestName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GuestNumber" type="xs:int" />
+          <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" minOccurs="0" name="NoShowIndicator" type="q22:NoYes" />
+          <xs:element minOccurs="0" name="Partition" type="xs:long" />
+          <xs:element minOccurs="0" name="RecId" type="xs:long" />
+          <xs:element minOccurs="0" name="RecVersion" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalRoomNights" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalRoomRent" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalTaxAmount" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvEnhancedHotelContract" nillable="true" type="tns:TrvEnhancedHotelContract" />
+  <xs:complexType name="TrvEnhancedItineraryContract">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TrvEnhancedDataContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DepartureDate" type="xs:dateTime" />
+          <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" minOccurs="0" name="DomesticIndicator" type="q23:NoYes" />
+          <xs:element minOccurs="0" name="EnhancedTripLegDetail" nillable="true" type="tns:TrvEnhancedTripLegDetailContract" />
+          <xs:element minOccurs="0" name="ExchangeTicketNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IssuingCarrier" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumberOfLegs" type="xs:int" />
+          <xs:element minOccurs="0" name="OriginalTicketNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Partition" type="xs:long" />
+          <xs:element minOccurs="0" name="PassengerName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RecId" type="xs:long" />
+          <xs:element minOccurs="0" name="RecVersion" type="xs:int" />
+          <xs:element minOccurs="0" name="TicketIssueDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TravelAgencyCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TravelAgencyInvoiceNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TravelAgencyName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvEnhancedItineraryContract" nillable="true" type="tns:TrvEnhancedItineraryContract" />
+  <xs:complexType name="TrvEnhancedTripLegDetailContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q24="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q24:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ArrivalDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CarrierCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CityOfOrigin" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DepartureTax" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DestinationCity" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FareAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="FeeAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="FlightNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ItineraryRecId" type="xs:long" />
+          <xs:element minOccurs="0" name="Partition" type="xs:long" />
+          <xs:element minOccurs="0" name="RecId" type="xs:long" />
+          <xs:element minOccurs="0" name="RecVersion" type="xs:int" />
+          <xs:element minOccurs="0" name="ServiceClass" type="tns:TrvAirlineServiceClassEnum" />
+          <xs:element minOccurs="0" name="StopOverCity" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TaxAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TravelDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TripLegNumber" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvEnhancedTripLegDetailContract" nillable="true" type="tns:TrvEnhancedTripLegDetailContract" />
+  <xs:simpleType name="TrvAirlineServiceClassEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EconomyClass" />
+      <xs:enumeration value="FrstClass" />
+      <xs:enumeration value="BusinessClass" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TrvAirlineServiceClassEnum" nillable="true" type="tns:TrvAirlineServiceClassEnum" />
+  <xs:complexType name="TrvExpenseLineContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q25="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q25:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountingCurrencyOverBudgetAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="AccountingCurrencyReconciledAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="AdditionalInformation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AddressCity" type="xs:long" />
+          <xs:element minOccurs="0" name="AddressZipCode" type="xs:long" />
+          <xs:element minOccurs="0" name="AmountCurr" type="xs:decimal" />
+          <xs:element minOccurs="0" name="AmountMST" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ApplyAction" type="q25:NoYes" />
+          <xs:element minOccurs="0" name="ApprovalStatus" type="tns:TrvAppStatus" />
+          <xs:element minOccurs="0" name="ApprovedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="BillIssuedTo" type="tns:TrvBillIssuedTo" />
+          <xs:element minOccurs="0" name="BusinessPurpose" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CalculatedTaxAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="CashAdvanceNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CorrectedTaxAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="CostOwner" type="tns:TrvCostOwner" />
+          <xs:element minOccurs="0" name="CostType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CountryRegion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDateTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CreditCardTransactionCurrency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreditCardTransactionCurrencyAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="CustomFields" nillable="true" type="tns:ArrayOfSysCustomFieldContract" />
+          <xs:element minOccurs="0" name="DateFrom" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateTo" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Deduction" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DeductionBreakfast" type="xs:int" />
+          <xs:element minOccurs="0" name="DeductionDinner" type="xs:int" />
+          <xs:element minOccurs="0" name="DeductionLunch" type="xs:int" />
+          <xs:element minOccurs="0" name="DefaultDimension" type="xs:long" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EnhancedData" nillable="true" type="tns:TrvEnhancedDataContract" />
+          <xs:element minOccurs="0" name="EntertainmentLocation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExchangeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExchangeRate" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ExpNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExpType" type="tns:TrvExpType" />
+          <xs:element minOccurs="0" name="InterCompanyCategory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InterCompanyLegalEntity" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InvoiceAmt" type="xs:decimal" />
+          <xs:element minOccurs="0" name="IsBudgetCheckPending" type="q25:NoYes" />
+          <xs:element minOccurs="0" name="IsPreAuthorized" type="q25:NoYes" />
+          <xs:element minOccurs="0" name="IsSplit" type="q25:NoYes" />
+          <xs:element minOccurs="0" name="Justification" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LineNumber" type="xs:decimal" />
+          <xs:element minOccurs="0" name="LineType" type="tns:TrvExpLineType" />
+          <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MappedToRequisitionLine" type="xs:long" />
+          <xs:element minOccurs="0" name="MerchantId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Mileage" type="xs:decimal" />
+          <xs:element minOccurs="0" name="MileageFromAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MileageToAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ModifiedDateTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="NetTransactionAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="NotApprovedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="NumberOfPassengers" type="xs:int" />
+          <xs:element minOccurs="0" name="OriginalReceiptsRecvd" type="q25:NoYes" />
+          <xs:element minOccurs="0" name="OriginalSourceDocumentLine" type="xs:long" />
+          <xs:element minOccurs="0" name="PBSRecId" type="xs:long" />
+          <xs:element minOccurs="0" name="PBS_Statement" type="q25:NoYes" />
+          <xs:element minOccurs="0" name="ParentRecId" type="xs:long" />
+          <xs:element minOccurs="0" name="Partition" type="xs:long" />
+          <xs:element minOccurs="0" name="PayMethod" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PersonnelNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PostingErrors" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProjActivityNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProjId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProjPolicyStatus" type="tns:ProjExpPolicyStatus" />
+          <xs:element minOccurs="0" name="ProjPolicyText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProjStatusId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RatePerMile" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RecId" type="xs:long" />
+          <xs:element minOccurs="0" name="RecVersion" type="xs:int" />
+          <xs:element minOccurs="0" name="ReceiptNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReceiptRequired" type="q25:NoYes" />
+          <xs:element minOccurs="0" name="ReceiptsAttached" type="q25:NoYes" />
+          <xs:element minOccurs="0" name="ReferenceDataAreaId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReimburseAmt" type="xs:decimal" />
+          <xs:element minOccurs="0" name="SourceDocumentLine" type="xs:long" />
+          <xs:element minOccurs="0" name="SubCategoryRecId" type="xs:long" />
+          <xs:element minOccurs="0" name="TaxGroup" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TaxIncluded" type="q25:NoYes" />
+          <xs:element minOccurs="0" name="TaxItemGroup" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TemporaryCredit" type="tns:TrvDisputeIsTempCredit" />
+          <xs:element minOccurs="0" name="TicketClass" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TicketNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TicketUsed" type="q25:NoYes" />
+          <xs:element minOccurs="0" name="TransDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TransRowNum" type="xs:int" />
+          <xs:element minOccurs="0" name="TransactionText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VehicleType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Voucher" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvExpenseLineContract" nillable="true" type="tns:TrvExpenseLineContract" />
+  <xs:simpleType name="TrvAppStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Create" />
+      <xs:enumeration value="Submitted" />
+      <xs:enumeration value="Approved" />
+      <xs:enumeration value="Returned" />
+      <xs:enumeration value="Ready" />
+      <xs:enumeration value="Ledger" />
+      <xs:enumeration value="Cancelled">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Pending">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TrvAppStatus" nillable="true" type="tns:TrvAppStatus" />
+  <xs:simpleType name="TrvBillIssuedTo">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="Employee" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TrvBillIssuedTo" nillable="true" type="tns:TrvBillIssuedTo" />
+  <xs:simpleType name="TrvCostOwner">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="Employee" />
+      <xs:enumeration value="CustomerOther" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TrvCostOwner" nillable="true" type="tns:TrvCostOwner" />
+  <xs:complexType name="ArrayOfSysCustomFieldContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SysCustomFieldContract" nillable="true" type="tns:SysCustomFieldContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSysCustomFieldContract" nillable="true" type="tns:ArrayOfSysCustomFieldContract" />
+  <xs:complexType name="SysCustomFieldContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q26="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q26:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:SysCustomFieldDataContract" />
+          <xs:element minOccurs="0" name="Metadata" nillable="true" type="tns:SysCustomFieldMetadataContract" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SysCustomFieldContract" nillable="true" type="tns:SysCustomFieldContract" />
+  <xs:complexType name="SysCustomFieldDataContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q27="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q27:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BooleanValue" type="xs:boolean" />
+          <xs:element minOccurs="0" name="GuidValue" type="ser:guid" />
+          <xs:element minOccurs="0" name="Int64Value" type="xs:long" />
+          <xs:element minOccurs="0" name="IntValue" type="xs:int" />
+          <xs:element minOccurs="0" name="RealValue" type="xs:decimal" />
+          <xs:element minOccurs="0" name="StringValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SysCustomFieldDataContract" nillable="true" type="tns:SysCustomFieldDataContract" />
+  <xs:complexType name="SysCustomFieldMetadataContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q28="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q28:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FieldBaseType" type="q28:Types" />
+          <xs:element minOccurs="0" name="FieldExtendedType" type="tns:SysCustomFieldExtendedType" />
+          <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsEditable" type="q28:NoYes" />
+          <xs:element minOccurs="0" name="IsMandatory" type="q28:NoYes" />
+          <xs:element minOccurs="0" name="Label" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentKey" nillable="true" type="tns:SysCustomFieldDataContract" />
+          <xs:element minOccurs="0" name="ParentTableName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SysCustomFieldMetadataContract" nillable="true" type="tns:SysCustomFieldMetadataContract" />
+  <xs:simpleType name="SysCustomFieldExtendedType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Currency" />
+      <xs:enumeration value="DocuRef" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SysCustomFieldExtendedType" nillable="true" type="tns:SysCustomFieldExtendedType" />
+  <xs:simpleType name="TrvExpLineType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="ItemizedHeader" />
+      <xs:enumeration value="ItemizedLine" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TrvExpLineType" nillable="true" type="tns:TrvExpLineType" />
+  <xs:simpleType name="ProjExpPolicyStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NoPolicy" />
+      <xs:enumeration value="ExpensePassed" />
+      <xs:enumeration value="DayPassed">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ReportPassed">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ExpenseWarning" />
+      <xs:enumeration value="DayWarning" />
+      <xs:enumeration value="ReportWarning" />
+      <xs:enumeration value="ExpenseFailed" />
+      <xs:enumeration value="DayFailed" />
+      <xs:enumeration value="ReportFailed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ProjExpPolicyStatus" nillable="true" type="tns:ProjExpPolicyStatus" />
+  <xs:simpleType name="TrvDisputeIsTempCredit">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="TempCredit" />
+      <xs:enumeration value="LegTransAction" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TrvDisputeIsTempCredit" nillable="true" type="tns:TrvDisputeIsTempCredit" />
+  <xs:complexType name="TrvExpenseLinePurposesContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q29="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q29:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ExpenseType" type="tns:TrvExpType" />
+          <xs:element minOccurs="0" name="LinePurpose" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvExpenseLinePurposesContract" nillable="true" type="tns:TrvExpenseLinePurposesContract" />
+  <xs:complexType name="TrvExpenseLocationsContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q30="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q30:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvExpenseLocationsContract" nillable="true" type="tns:TrvExpenseLocationsContract" />
+  <xs:complexType name="TrvExpenseMerchantsContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q31="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q31:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ExpenseType" type="tns:TrvExpType" />
+          <xs:element minOccurs="0" name="IsPreferredMerchant" type="q31:NoYes" />
+          <xs:element minOccurs="0" name="Merchant" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvExpenseMerchantsContract" nillable="true" type="tns:TrvExpenseMerchantsContract" />
+  <xs:complexType name="TrvExpenseReportContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q32="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q32:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ApprovalStatus" type="tns:TrvAppStatus" />
+          <xs:element minOccurs="0" name="CreatedDateTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CustAccount" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomFields" nillable="true" type="tns:ArrayOfSysCustomFieldContract" />
+          <xs:element minOccurs="0" name="DefaultDimension" type="xs:long" />
+          <xs:element minOccurs="0" name="Destination" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExpNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExpenseLines" nillable="true" type="tns:ArrayOfTrvExpenseLineContract" />
+          <xs:element minOccurs="0" name="Justification" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ModifiedDateTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Partition" type="xs:long" />
+          <xs:element minOccurs="0" name="PersonnelNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PostedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ProjId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProjStatusId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RecId" type="xs:long" />
+          <xs:element minOccurs="0" name="RecVersion" type="xs:int" />
+          <xs:element minOccurs="0" name="ReferenceDataAreaId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SourceDocumentHeader" type="xs:long" />
+          <xs:element minOccurs="0" name="SourceDocumentLine" type="xs:long" />
+          <xs:element minOccurs="0" name="TotalCreditCardAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalEmployeeAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalExpenseAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalPersonalAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Txt1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Txt2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UseInterCompanyExpense" type="q32:NoYes" />
+          <xs:element minOccurs="0" name="VendAccount" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvExpenseReportContract" nillable="true" type="tns:TrvExpenseReportContract" />
+  <xs:complexType name="ArrayOfTrvExpenseLineContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrvExpenseLineContract" nillable="true" type="tns:TrvExpenseLineContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrvExpenseLineContract" nillable="true" type="tns:ArrayOfTrvExpenseLineContract" />
+  <xs:complexType name="TrvExpGuestContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q33="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q33:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExpenseLineRecId" type="xs:long" />
+          <xs:element minOccurs="0" name="GiftAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="GuestId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GuestTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GuestType" type="tns:TrvGuestType" />
+          <xs:element minOccurs="0" name="Person" type="xs:long" />
+          <xs:element minOccurs="0" name="PersonnelNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RecId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvExpGuestContract" nillable="true" type="tns:TrvExpGuestContract" />
+  <xs:simpleType name="TrvGuestType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Internal" />
+      <xs:enumeration value="MyGuest" />
+      <xs:enumeration value="Contacts" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TrvGuestType" nillable="true" type="tns:TrvGuestType" />
+  <xs:complexType name="TrvPerdiemLocationsContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q34="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q34:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvPerdiemLocationsContract" nillable="true" type="tns:TrvPerdiemLocationsContract" />
+  <xs:complexType name="TrvPolicyViolation">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q35="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q35:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdjustedViolationLevel" type="tns:TrvPolicyViolationLevel" />
+          <xs:element minOccurs="0" name="ExpenseLineRecId" type="xs:long" />
+          <xs:element minOccurs="0" name="Justification" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ViolationLevel" type="tns:TrvPolicyViolationLevel" />
+          <xs:element minOccurs="0" name="ViolationMessage" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvPolicyViolation" nillable="true" type="tns:TrvPolicyViolation" />
+  <xs:simpleType name="TrvPolicyViolationLevel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Warning">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Error">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ApproveJustification">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SubmitJustification">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SubmitApproveJustification">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TrvPolicyViolationLevel" nillable="true" type="tns:TrvPolicyViolationLevel" />
+  <xs:complexType name="TrvReceiptAttachmentInformation">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q36="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q36:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ExpenseLineRecId" type="xs:long" />
+          <xs:element minOccurs="0" name="ExpenseLineRecVersion" type="xs:int" />
+          <xs:element minOccurs="0" name="ExpenseLineReceiptsAttached" type="q36:NoYes" />
+          <xs:element minOccurs="0" name="ExpenseReportNumber" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvReceiptAttachmentInformation" nillable="true" type="tns:TrvReceiptAttachmentInformation" />
+  <xs:complexType name="TrvReceiptContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q37="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q37:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreatedDateTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocumentContents" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocumentExtension" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocumentName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ImageThumbnail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ModifiedDateTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="RecId" type="xs:long" />
+          <xs:element minOccurs="0" name="RecVersion" type="xs:int" />
+          <xs:element minOccurs="0" name="ReceiptAttachmentInformation" nillable="true" type="tns:TrvReceiptAttachmentInformation" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvReceiptContract" nillable="true" type="tns:TrvReceiptContract" />
+  <xs:complexType name="TrvReferenceContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q38="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q38:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ExpenseLineRecId" type="xs:long" />
+          <xs:element minOccurs="0" name="ExpenseReportNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PersonnelNumber" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvReferenceContract" nillable="true" type="tns:TrvReferenceContract" />
+  <xs:complexType name="TrvSalesTaxGroupContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q39="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q39:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TaxGroup" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TaxGroupDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvSalesTaxGroupContract" nillable="true" type="tns:TrvSalesTaxGroupContract" />
+  <xs:complexType name="TrvUnreconciledExpenseAttachContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q40="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q40:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CostType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataArea" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RecId" type="xs:long" />
+          <xs:element minOccurs="0" name="TableId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvUnreconciledExpenseAttachContract" nillable="true" type="tns:TrvUnreconciledExpenseAttachContract" />
+  <xs:complexType name="TrvUnreconciledExpenseContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q41="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q41:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="AmountLocal" type="xs:decimal" />
+          <xs:element minOccurs="0" name="BusinessName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CostType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CurrencyCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataAreaId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExchCodeLocal" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MerchantId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OriginalTableId" type="xs:int" />
+          <xs:element minOccurs="0" name="PayMethod" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PersonnelNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RecId" type="xs:long" />
+          <xs:element minOccurs="0" name="TransDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TransactionSource" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UnreconciledExpenseType" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvUnreconciledExpenseContract" nillable="true" type="tns:TrvUnreconciledExpenseContract" />
+  <xs:complexType name="TrvUnreconciledExpenseRecord">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q42="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q42:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RecId" type="xs:long" />
+          <xs:element minOccurs="0" name="parmCostType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmMerchantId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmNotes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmTransactionCurrencyAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="parmTransactionCurrencyCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmTransactionDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="parmUserNetworkAlias" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmUserNetworkDomain" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvUnreconciledExpenseRecord" nillable="true" type="tns:TrvUnreconciledExpenseRecord" />
+  <xs:complexType name="ArrayOfDimensionContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DimensionContract" nillable="true" type="tns:DimensionContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDimensionContract" nillable="true" type="tns:ArrayOfDimensionContract" />
+  <xs:complexType name="ArrayOfDimensionValueContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DimensionValueContract" nillable="true" type="tns:DimensionValueContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDimensionValueContract" nillable="true" type="tns:ArrayOfDimensionValueContract" />
+  <xs:complexType name="ArrayOfLogisticsAddressCountryRegionContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LogisticsAddressCountryRegionContract" nillable="true" type="tns:LogisticsAddressCountryRegionContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLogisticsAddressCountryRegionContract" nillable="true" type="tns:ArrayOfLogisticsAddressCountryRegionContract" />
+  <xs:complexType name="ArrayOfProjActivitiesContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProjActivitiesContract" nillable="true" type="tns:ProjActivitiesContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProjActivitiesContract" nillable="true" type="tns:ArrayOfProjActivitiesContract" />
+  <xs:complexType name="ArrayOfProjLinePropertyContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProjLinePropertyContract" nillable="true" type="tns:ProjLinePropertyContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProjLinePropertyContract" nillable="true" type="tns:ArrayOfProjLinePropertyContract" />
+  <xs:complexType name="ArrayOfTrvAdminCustomFieldsContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrvAdminCustomFieldsContract" nillable="true" type="tns:TrvAdminCustomFieldsContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrvAdminCustomFieldsContract" nillable="true" type="tns:ArrayOfTrvAdminCustomFieldsContract" />
+  <xs:complexType name="ArrayOfTrvCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrvCategory" nillable="true" type="tns:TrvCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrvCategory" nillable="true" type="tns:ArrayOfTrvCategory" />
+  <xs:complexType name="ArrayOfTrvExpenseLinePurposesContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrvExpenseLinePurposesContract" nillable="true" type="tns:TrvExpenseLinePurposesContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrvExpenseLinePurposesContract" nillable="true" type="tns:ArrayOfTrvExpenseLinePurposesContract" />
+  <xs:complexType name="ArrayOfTrvSalesTaxGroupContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrvSalesTaxGroupContract" nillable="true" type="tns:TrvSalesTaxGroupContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrvSalesTaxGroupContract" nillable="true" type="tns:ArrayOfTrvSalesTaxGroupContract" />
+  <xs:complexType name="ArrayOfTrvExpenseMerchantsContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrvExpenseMerchantsContract" nillable="true" type="tns:TrvExpenseMerchantsContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrvExpenseMerchantsContract" nillable="true" type="tns:ArrayOfTrvExpenseMerchantsContract" />
+  <xs:complexType name="ArrayOfTrvPerdiemLocationsContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrvPerdiemLocationsContract" nillable="true" type="tns:TrvPerdiemLocationsContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrvPerdiemLocationsContract" nillable="true" type="tns:ArrayOfTrvPerdiemLocationsContract" />
+  <xs:complexType name="ArrayOfTrvExpenseLocationsContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrvExpenseLocationsContract" nillable="true" type="tns:TrvExpenseLocationsContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrvExpenseLocationsContract" nillable="true" type="tns:ArrayOfTrvExpenseLocationsContract" />
+  <xs:complexType name="ArrayOfTrvExpenseReportContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrvExpenseReportContract" nillable="true" type="tns:TrvExpenseReportContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrvExpenseReportContract" nillable="true" type="tns:ArrayOfTrvExpenseReportContract" />
+  <xs:complexType name="ArrayOfTrvUnreconciledExpenseAttachContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrvUnreconciledExpenseAttachContract" nillable="true" type="tns:TrvUnreconciledExpenseAttachContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrvUnreconciledExpenseAttachContract" nillable="true" type="tns:ArrayOfTrvUnreconciledExpenseAttachContract" />
+  <xs:complexType name="ArrayOfTrvPolicyViolation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrvPolicyViolation" nillable="true" type="tns:TrvPolicyViolation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrvPolicyViolation" nillable="true" type="tns:ArrayOfTrvPolicyViolation" />
+  <xs:complexType name="ArrayOfTrvExpGuestContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrvExpGuestContract" nillable="true" type="tns:TrvExpGuestContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrvExpGuestContract" nillable="true" type="tns:ArrayOfTrvExpGuestContract" />
+  <xs:complexType name="ArrayOfTrvReceiptContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrvReceiptContract" nillable="true" type="tns:TrvReceiptContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrvReceiptContract" nillable="true" type="tns:ArrayOfTrvReceiptContract" />
+  <xs:complexType name="ArrayOfTrvUnreconciledExpenseContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrvUnreconciledExpenseContract" nillable="true" type="tns:TrvUnreconciledExpenseContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrvUnreconciledExpenseContract" nillable="true" type="tns:ArrayOfTrvUnreconciledExpenseContract" />
+</xs:schema>
