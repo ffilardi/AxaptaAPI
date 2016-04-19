@@ -4,6 +4,7 @@ using System.Web.Http;
 using AxaptaApiApp.Utils;
 using System.Web.Http.Description;
 using AxaptaApiApp.ExpenseService;
+using AxaptaApiApp.Filters;
 
 namespace AxaptaApiApp.Controllers
 {
@@ -15,6 +16,7 @@ namespace AxaptaApiApp.Controllers
         [HttpGet]
         [Route("expense/{exp}")]
         [ResponseType(typeof(TrvExpenseReportContract))]
+        [CacheFilter]
         public async Task<IHttpActionResult> ReadExpense([FromUri] string exp)
         {
             try
