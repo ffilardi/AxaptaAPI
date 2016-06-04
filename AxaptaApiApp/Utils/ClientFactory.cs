@@ -1,4 +1,7 @@
-﻿namespace AxaptaApiApp.Utils
+﻿using System;
+using System.Configuration;
+
+namespace AxaptaApiApp.Utils
 {
     /// <summary>
     /// Factory to create AX service clients
@@ -19,7 +22,27 @@
 
                 return client;
             }
-            catch (System.Exception e)
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public static TClass CreateContext<TClass>() where TClass : new()
+        {
+            try
+            {
+                dynamic context = new TClass();
+
+                if (!String.IsNullOrEmpty(ConfigurationManager.AppSettings["API_LOGIN_COMPANY"]) &&
+                    !String.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["API_LOGIN_COMPANY"]))
+                {
+                    context.Company = ConfigurationManager.AppSettings["API_LOGIN_COMPANY"];
+                }
+
+                return context;
+            }
+            catch (Exception e)
             {
                 throw e;
             }

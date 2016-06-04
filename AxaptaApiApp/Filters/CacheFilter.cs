@@ -23,11 +23,12 @@ namespace AxaptaApiApp.Filters
             }
 
             HttpResponseMessage response = MemoryCacheHelper.GetValue<HttpResponseMessage>(cacheKey);
-            object content;
 
             if (response != null)
             {
+                object content;
                 response.TryGetContentValue(out content);
+
                 actionContext.Response = actionContext.Request.CreateResponse(response.StatusCode, content);
             }
             else
@@ -38,7 +39,8 @@ namespace AxaptaApiApp.Filters
 
         public override void OnActionExecuted(HttpActionExecutedContext actionExecutedContext)
         {
-            if (actionExecutedContext.ActionContext.Request.Method == HttpMethod.Get)
+            if (actionExecutedContext.ActionContext.Request.Method == HttpMethod.Get &&
+                actionExecutedContext.Response.IsSuccessStatusCode)
             {
                 MemoryCacheHelper.Add(cacheKey, actionExecutedContext.Response, DateTimeOffset.UtcNow.AddHours(cacheHours));
             }

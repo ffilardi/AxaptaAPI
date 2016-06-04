@@ -10,6 +10,8 @@ namespace AxaptaApiApp.Controllers
 {
     public class ExpenseController : ApiController
     {
+        CallContext context = ClientFactory.CreateContext<CallContext>();
+
         /// <summary>
         /// Get expense details
         /// </summary>
@@ -23,7 +25,6 @@ namespace AxaptaApiApp.Controllers
             {
                 using (var client = ClientFactory.CreateClient<TrvExpenseReportCustomServiceClient>())
                 {
-                    var context = new CallContext() { Company = "USMF" };
                     var request = await client.readExpenseHeaderAsync(context, exp);
 
                     return Ok(request.response);
@@ -47,7 +48,6 @@ namespace AxaptaApiApp.Controllers
             {
                 using (var client = ClientFactory.CreateClient<TrvExpenseReportCustomServiceClient>())
                 {
-                    var context = new CallContext() { Company = "USMF" };
                     var request = await client.createAsync(context, expenseReport);
 
                     return Ok(request.response);
@@ -76,7 +76,6 @@ namespace AxaptaApiApp.Controllers
 
                 using (var client = ClientFactory.CreateClient<TrvExpenseReportCustomServiceClient>())
                 {
-                    var context = new CallContext() { Company = "USMF" };
                     var request = await client.updateAsync(context, expenseReport);
 
                     return Ok(request.response);
@@ -100,7 +99,6 @@ namespace AxaptaApiApp.Controllers
             {
                 using (var client = ClientFactory.CreateClient<TrvExpenseReportCustomServiceClient>())
                 {
-                    var context = new CallContext() { Company = "USMF" };
                     var request = await client.deleteAsync(context, new string[] { exp });
 
                     return Ok(request.response);
@@ -124,7 +122,6 @@ namespace AxaptaApiApp.Controllers
             {
                 using (var client = ClientFactory.CreateClient<TrvExpenseReportCustomServiceClient>())
                 {
-                    var context = new CallContext() { Company = "USMF" };
                     var request = await client.submitAsync(context, exp, comment);
 
                     return Ok(request.response);
