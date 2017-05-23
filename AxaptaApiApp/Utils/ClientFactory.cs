@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Configuration;
+using System.Web;
 
 namespace AxaptaApiApp.Utils
 {
@@ -33,11 +33,18 @@ namespace AxaptaApiApp.Utils
             try
             {
                 dynamic context = new TClass();
+                var company = HttpContext.Current.Request.QueryString.Get("company");
 
-                if (!String.IsNullOrEmpty(ConfigurationManager.AppSettings["API_LOGIN_COMPANY"]) &&
-                    !String.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["API_LOGIN_COMPANY"]))
+                if (!String.IsNullOrEmpty(company))
                 {
-                    context.Company = ConfigurationManager.AppSettings["API_LOGIN_COMPANY"];
+                    context.Company = company;
+                }
+
+                if (ServiceConfig.GetAuthenticationMode() == ServiceConfig.AuthenticationMode.ThirdPartyProvider)
+                {
+                    context.LogonAsUser = String.Format("{0}\\{1}",
+                            HttpContext.Current.User.Identity.AuthenticationType,
+                            HttpContext.Current.User.Identity.Name);
                 }
 
                 return context;

@@ -10,7 +10,7 @@ namespace AxaptaApiApp.Controllers
 {
     public class ExpenseController : ApiController
     {
-        CallContext context = ClientFactory.CreateContext<CallContext>();
+        private CallContext context = ClientFactory.CreateContext<CallContext>();
 
         /// <summary>
         /// Get expense details
