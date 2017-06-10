@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="QueryService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="QueryServiceEndpoint_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <msf:Streamed xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/QueryService?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/QueryService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/QueryService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Contracts" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/QueryService?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/QueryService?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/QueryService?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Enums" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/QueryService?xsd=xsd6" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/QueryService?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/QueryService?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/XppClasses" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/QueryService?xsd=xsd9" namespace="http://schemas.microsoft.com/Message" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IQueryService_GetQuerySchema_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuerySchema" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetQuerySchema_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuerySchemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetQueryRowCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueryRowCount" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetQueryRowCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueryRowCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetQueryRowCountWithExternalContext_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueryRowCountWithExternalContext" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetQueryRowCountWithExternalContext_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueryRowCountWithExternalContextResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ExecuteQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteQuery" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ExecuteQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ExecuteQueryWithExternalContext_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteQueryWithExternalContext" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ExecuteQueryWithExternalContext_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteQueryWithExternalContextResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetStaticQuerySchema_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStaticQuerySchema" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetStaticQuerySchema_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStaticQuerySchemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetStaticQueryRowCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStaticQueryRowCount" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetStaticQueryRowCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStaticQueryRowCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ExecuteStaticQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteStaticQuery" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ExecuteStaticQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteStaticQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetDynamicQueryMetadata_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDynamicQueryMetadata" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetDynamicQueryMetadata_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDynamicQueryMetadataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetDynamicQuerySchema_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDynamicQuerySchema" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetDynamicQuerySchema_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDynamicQuerySchemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetDynamicQueryRowCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDynamicQueryRowCount" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetDynamicQueryRowCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDynamicQueryRowCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ExecuteDynamicQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteDynamicQuery" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ExecuteDynamicQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteDynamicQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ExecuteStreamedStaticQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteStreamedStaticQuery" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ExecuteStreamedStaticQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteStreamedStaticQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ExecuteStreamedQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteStreamedQuery" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ExecuteStreamedQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteStreamedQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ExecuteStreamedDynamicQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteStreamedDynamicQuery" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ExecuteStreamedDynamicQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteStreamedDynamicQueryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IQueryService">
+    <wsdl:operation name="GetQuerySchema">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetQuerySchema" message="tns:IQueryService_GetQuerySchema_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetQuerySchemaResponse" message="tns:IQueryService_GetQuerySchema_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryRowCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetQueryRowCount" message="tns:IQueryService_GetQueryRowCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetQueryRowCountResponse" message="tns:IQueryService_GetQueryRowCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryRowCountWithExternalContext">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetQueryRowCountWithExternalContext" message="tns:IQueryService_GetQueryRowCountWithExternalContext_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetQueryRowCountWithExternalContextResponse" message="tns:IQueryService_GetQueryRowCountWithExternalContext_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/ExecuteQuery" message="tns:IQueryService_ExecuteQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/ExecuteQueryResponse" message="tns:IQueryService_ExecuteQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteQueryWithExternalContext">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/ExecuteQueryWithExternalContext" message="tns:IQueryService_ExecuteQueryWithExternalContext_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/ExecuteQueryWithExternalContextResponse" message="tns:IQueryService_ExecuteQueryWithExternalContext_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStaticQuerySchema">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetStaticQuerySchema" message="tns:IQueryService_GetStaticQuerySchema_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetStaticQuerySchemaResponse" message="tns:IQueryService_GetStaticQuerySchema_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStaticQueryRowCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetStaticQueryRowCount" message="tns:IQueryService_GetStaticQueryRowCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetStaticQueryRowCountResponse" message="tns:IQueryService_GetStaticQueryRowCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteStaticQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/ExecuteStaticQuery" message="tns:IQueryService_ExecuteStaticQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/ExecuteStaticQueryResponse" message="tns:IQueryService_ExecuteStaticQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDynamicQueryMetadata">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetDynamicQueryMetadata" message="tns:IQueryService_GetDynamicQueryMetadata_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetDynamicQueryMetadataResponse" message="tns:IQueryService_GetDynamicQueryMetadata_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDynamicQuerySchema">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetDynamicQuerySchema" message="tns:IQueryService_GetDynamicQuerySchema_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetDynamicQuerySchemaResponse" message="tns:IQueryService_GetDynamicQuerySchema_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDynamicQueryRowCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetDynamicQueryRowCount" message="tns:IQueryService_GetDynamicQueryRowCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetDynamicQueryRowCountResponse" message="tns:IQueryService_GetDynamicQueryRowCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteDynamicQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/ExecuteDynamicQuery" message="tns:IQueryService_ExecuteDynamicQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/ExecuteDynamicQueryResponse" message="tns:IQueryService_ExecuteDynamicQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteStreamedStaticQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/ExecuteStreamedStaticQuery" message="tns:IQueryService_ExecuteStreamedStaticQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/ExecuteStreamedStaticQueryResponse" message="tns:IQueryService_ExecuteStreamedStaticQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteStreamedQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/ExecuteStreamedQuery" message="tns:IQueryService_ExecuteStreamedQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/ExecuteStreamedQueryResponse" message="tns:IQueryService_ExecuteStreamedQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteStreamedDynamicQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/ExecuteStreamedDynamicQuery" message="tns:IQueryService_ExecuteStreamedDynamicQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/ExecuteStreamedDynamicQueryResponse" message="tns:IQueryService_ExecuteStreamedDynamicQuery_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="QueryServiceEndpoint" type="tns:IQueryService">
+    <wsp:PolicyReference URI="#QueryServiceEndpoint_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetQuerySchema">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetQuerySchema" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryRowCount">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetQueryRowCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryRowCountWithExternalContext">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetQueryRowCountWithExternalContext" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteQuery">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/ExecuteQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteQueryWithExternalContext">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/ExecuteQueryWithExternalContext" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStaticQuerySchema">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetStaticQuerySchema" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStaticQueryRowCount">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetStaticQueryRowCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteStaticQuery">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/ExecuteStaticQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDynamicQueryMetadata">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetDynamicQueryMetadata" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDynamicQuerySchema">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetDynamicQuerySchema" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDynamicQueryRowCount">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/GetDynamicQueryRowCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteDynamicQuery">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/ExecuteDynamicQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteStreamedStaticQuery">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/ExecuteStreamedStaticQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteStreamedQuery">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/ExecuteStreamedQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteStreamedDynamicQuery">
+      <soap12:operation soapAction="http://tempuri.org/IQueryService/ExecuteStreamedDynamicQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="QueryService">
+    <wsdl:port name="QueryServiceEndpoint" binding="tns:QueryServiceEndpoint">
+      <soap12:address location="net.tcp://ax2012r2a:8201/DynamicsAx/Services/QueryService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://ax2012r2a:8201/DynamicsAx/Services/QueryService</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>Admin@contoso.com</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

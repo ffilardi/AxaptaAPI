@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="35bc77b4-adb9-4798-aeaa-f4b398abffc9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://AX2012R2A:8101/DynamicsAx/Services/MetadataService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MetadataService.xsd" MetadataType="Schema" ID="8fd82ebb-e7c5-45fe-9e7d-aacea0212605" SourceId="1" SourceUrl="http://ax2012r2a:8101/DynamicsAx/Services/MetadataService?xsd=xsd1" />
+    <MetadataFile FileName="MetadataService1.xsd" MetadataType="Schema" ID="249c91f7-f928-476b-a094-8ffe057a5899" SourceId="1" SourceUrl="http://ax2012r2a:8101/DynamicsAx/Services/MetadataService?xsd=xsd0" />
+    <MetadataFile FileName="MetadataService2.xsd" MetadataType="Schema" ID="ab0c593e-4fee-4856-a179-fe5cf254e317" SourceId="1" SourceUrl="http://ax2012r2a:8101/DynamicsAx/Services/MetadataService?xsd=xsd3" />
+    <MetadataFile FileName="MetadataService3.xsd" MetadataType="Schema" ID="6730d393-d2a2-494a-baee-370e1a58fae0" SourceId="1" SourceUrl="http://ax2012r2a:8101/DynamicsAx/Services/MetadataService?xsd=xsd2" />
+    <MetadataFile FileName="MetadataService4.xsd" MetadataType="Schema" ID="f5ac6340-a7b9-4bd5-a015-b5cbd05c2ef2" SourceId="1" SourceUrl="http://ax2012r2a:8101/DynamicsAx/Services/MetadataService?xsd=xsd5" />
+    <MetadataFile FileName="MetadataService5.xsd" MetadataType="Schema" ID="a8243e1c-3604-440c-8958-bb76bd5b941e" SourceId="1" SourceUrl="http://ax2012r2a:8101/DynamicsAx/Services/MetadataService?xsd=xsd4" />
+    <MetadataFile FileName="MetadataService6.xsd" MetadataType="Schema" ID="ab68a3b6-1cad-43bd-87cd-f6714f8c1e28" SourceId="1" SourceUrl="http://ax2012r2a:8101/DynamicsAx/Services/MetadataService?xsd=xsd7" />
+    <MetadataFile FileName="MetadataService7.xsd" MetadataType="Schema" ID="76cb23a6-a5c2-40e2-88c1-6c3060f4ba6d" SourceId="1" SourceUrl="http://ax2012r2a:8101/DynamicsAx/Services/MetadataService?xsd=xsd6" />
+    <MetadataFile FileName="AxMetadataService.wsdl" MetadataType="Wsdl" ID="7e4770f1-5ad9-4603-a349-0e5e98e419cf" SourceId="1" SourceUrl="http://ax2012r2a:8101/DynamicsAx/Services/MetadataService" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

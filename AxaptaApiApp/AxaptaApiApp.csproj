@@ -330,9 +330,119 @@
     <Content Include="Service References\ExpenseService\AxaptaApiApp.ExpenseService.TrvUnreconciledExpenseServiceReadResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\axaptaapi - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Service References\ExpenseService\configuration91.svcinfo" />
     <None Include="Service References\ExpenseService\configuration.svcinfo" />
     <None Include="Service References\ExpenseService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\MetadataService\AxaptaApiApp.MetadataService.ClassMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MetadataService\AxaptaApiApp.MetadataService.ConfigKeyMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MetadataService\AxaptaApiApp.MetadataService.CueGroupMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MetadataService\AxaptaApiApp.MetadataService.CueMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MetadataService\AxaptaApiApp.MetadataService.DimensionMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MetadataService\AxaptaApiApp.MetadataService.EdtMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MetadataService\AxaptaApiApp.MetadataService.EnumMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MetadataService\AxaptaApiApp.MetadataService.FormPartMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MetadataService\AxaptaApiApp.MetadataService.InfoPartMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MetadataService\AxaptaApiApp.MetadataService.LabelMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MetadataService\AxaptaApiApp.MetadataService.LanguageInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MetadataService\AxaptaApiApp.MetadataService.ListPageMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MetadataService\AxaptaApiApp.MetadataService.MenuItemKey.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MetadataService\AxaptaApiApp.MetadataService.MenuItemMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MetadataService\AxaptaApiApp.MetadataService.MenuMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MetadataService\AxaptaApiApp.MetadataService.QueryMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MetadataService\AxaptaApiApp.MetadataService.ServiceGroupMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MetadataService\AxaptaApiApp.MetadataService.ServiceMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MetadataService\AxaptaApiApp.MetadataService.TableInformation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MetadataService\AxaptaApiApp.MetadataService.TableMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MetadataService\AxaptaApiApp.MetadataService.VersionInformation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MetadataService\AxaptaApiApp.MetadataService.WebControlMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MetadataService\AxaptaApiApp.MetadataService.WebMenuItemKey.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MetadataService\AxaptaApiApp.MetadataService.WebMenuItemMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MetadataService\AxaptaApiApp.MetadataService.WebMenuMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MetadataService\AxaptaApiApp.MetadataService.WebPageDefinitionMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\MetadataService\configuration91.svcinfo" />
+    <None Include="Service References\MetadataService\configuration.svcinfo" />
+    <None Include="Service References\MetadataService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\QueryService\AxaptaApiApp.QueryService.ExecuteDynamicQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\QueryService\AxaptaApiApp.QueryService.ExecuteQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\QueryService\AxaptaApiApp.QueryService.ExecuteQueryWithExternalContextResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\QueryService\AxaptaApiApp.QueryService.ExecuteStaticQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\QueryService\AxaptaApiApp.QueryService.Paging.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\QueryService\AxaptaApiApp.QueryService.QueryMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\QueryService\configuration91.svcinfo" />
+    <None Include="Service References\QueryService\configuration.svcinfo" />
+    <None Include="Service References\QueryService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -397,6 +507,62 @@
     <None Include="Service References\ExpenseService\ExpenseServices9.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\MetadataService\AxMetadataService.wsdl" />
+    <None Include="Service References\MetadataService\MetadataService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MetadataService\MetadataService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MetadataService\MetadataService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MetadataService\MetadataService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MetadataService\MetadataService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MetadataService\MetadataService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MetadataService\MetadataService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MetadataService\MetadataService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QueryService\QueryService.wsdl" />
+    <None Include="Service References\QueryService\QueryService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QueryService\QueryService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QueryService\QueryService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QueryService\QueryService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QueryService\QueryService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QueryService\QueryService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QueryService\QueryService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QueryService\QueryService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QueryService\QueryService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QueryService\QueryService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\UserSessionService\configuration91.svcinfo" />
     <None Include="Service References\UserSessionService\configuration.svcinfo" />
     <None Include="Service References\UserSessionService\Reference.svcmap">
@@ -415,7 +581,10 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ExpenseController.cs" />
-    <Compile Include="Controllers\UserSessionController.cs" />
+    <Compile Include="Controllers\ExtendedDataTypeController.cs" />
+    <Compile Include="Controllers\LabelController.cs" />
+    <Compile Include="Controllers\QueryController.cs" />
+    <Compile Include="Controllers\UserInfoController.cs" />
     <Compile Include="Filters\CacheFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -428,6 +597,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\MetadataService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\QueryService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\UserSessionService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -436,6 +615,9 @@
     <Compile Include="Utils\BasicAuthIdentity.cs" />
     <Compile Include="Utils\CacheHelper.cs" />
     <Compile Include="Utils\ClientFactory.cs" />
+    <Compile Include="Utils\QueryRequest.cs" />
+    <Compile Include="Utils\QueryResult.cs" />
+    <Compile Include="Utils\QuerySettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\UserSessionService\UserSessionService.wsdl" />
@@ -477,6 +659,8 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ExpenseService\" />
+    <WCFMetadataStorage Include="Service References\MetadataService\" />
+    <WCFMetadataStorage Include="Service References\QueryService\" />
     <WCFMetadataStorage Include="Service References\UserSessionService\" />
   </ItemGroup>
   <PropertyGroup>

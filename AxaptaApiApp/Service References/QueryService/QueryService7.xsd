@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Contracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Contracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/QueryService?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/QueryService?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Enums" />
+  <xs:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/QueryService?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata" />
+  <xs:complexType name="QueryMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata" base="q1:MetadataBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AllowCheck" type="xs:boolean" />
+          <xs:element minOccurs="0" name="AllowCrossCompany" type="xs:boolean" />
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CompanyRanges" nillable="true" type="q2:ArrayOfstring" />
+          <xs:element minOccurs="0" name="DataSources" nillable="true" type="tns:ArrayOfQueryDataSourceMetadata" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EnableOnlyModified" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Filters" nillable="true" type="tns:ArrayOfQueryFilterMetadata" />
+          <xs:element minOccurs="0" name="GroupByFields" nillable="true" type="tns:ArrayOfQueryGroupByMetadata" />
+          <xs:element minOccurs="0" name="HavingFilters" nillable="true" type="tns:ArrayOfQueryHavingFilterMetadata" />
+          <xs:element minOccurs="0" name="JoinPolymorphicTables" type="xs:boolean" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Enums" minOccurs="0" name="Literals" type="q3:Literals" />
+          <xs:element minOccurs="0" name="ModifiedTimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrderByFields" nillable="true" type="tns:ArrayOfQueryOrderByMetadata" />
+          <xs:element minOccurs="0" name="OriginalAotQueryName" nillable="true" type="xs:string" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Enums" minOccurs="0" name="QueryType" type="q4:QueryType" />
+          <xs:element minOccurs="0" name="ReturnFlatDataSet" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ReturnOnlyVisible" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Searchable" type="xs:boolean" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Enums" minOccurs="0" name="TimeZonePreference" type="q5:TimeZonePreference" />
+          <xs:element minOccurs="0" name="TitleLabelId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserUpdate" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ValidTimeStateAsOfDateTime" type="xs:dateTime" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Enums" minOccurs="0" name="ValidTimeStateQueryType" type="q6:ValidTimeStateQueryType" />
+          <xs:element minOccurs="0" name="ValidTimeStateValidFromDateTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ValidTimeStateValidToDateTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryMetadata" nillable="true" type="tns:QueryMetadata" />
+  <xs:complexType name="ArrayOfQueryDataSourceMetadata">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryDataSourceMetadata" nillable="true" type="tns:QueryDataSourceMetadata" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQueryDataSourceMetadata" nillable="true" type="tns:ArrayOfQueryDataSourceMetadata" />
+  <xs:complexType name="QueryDataSourceMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata" base="q7:MetadataBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Enums" minOccurs="0" name="ConcurrencyModel" type="q8:ConcurrencyModel" />
+          <xs:element minOccurs="0" name="DataSources" nillable="true" type="tns:ArrayOfQueryDataSourceMetadata" />
+          <xs:element minOccurs="0" name="DynamicFieldList" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Enums" minOccurs="0" name="ExpansionType" type="q9:ExpansionType" />
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Enums" minOccurs="0" name="FetchMode" type="q10:FetchMode" />
+          <xs:element minOccurs="0" name="Fields" nillable="true" type="tns:ArrayOfQueryFieldMetadata" />
+          <xs:element minOccurs="0" name="FirstFast" type="xs:boolean" />
+          <xs:element minOccurs="0" name="FirstOnly" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HasRelations" type="xs:boolean" />
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Enums" minOccurs="0" name="JoinMode" type="q11:JoinMode" />
+          <xs:element minOccurs="0" name="LabelId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Enums" minOccurs="0" name="OrderMode" type="q12:OrderMode" />
+          <xs:element minOccurs="0" name="Ranges" nillable="true" type="tns:ArrayOfQueryRangeMetadata" />
+          <xs:element minOccurs="0" name="Relations" nillable="true" type="tns:ArrayOfQueryRelationMetadata" />
+          <xs:element minOccurs="0" name="SelectWithRepeatableRead" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Table" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TableId" type="xs:int" />
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Enums" minOccurs="0" name="UnionType" type="q13:UnionType" />
+          <xs:element minOccurs="0" name="Update" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDataSourceMetadata" nillable="true" type="tns:QueryDataSourceMetadata" />
+  <xs:complexType name="ArrayOfQueryFieldMetadata">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryFieldMetadata" nillable="true" type="tns:QueryFieldMetadata" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQueryFieldMetadata" nillable="true" type="tns:ArrayOfQueryFieldMetadata" />
+  <xs:complexType name="QueryFieldMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata" base="q14:MetadataBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryFieldMetadata" nillable="true" type="tns:QueryFieldMetadata" />
+  <xs:complexType name="QueryDimensionDenormalizedFieldMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryDimensionFieldMetadata">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDimensionDenormalizedFieldMetadata" nillable="true" type="tns:QueryDimensionDenormalizedFieldMetadata" />
+  <xs:complexType name="QueryDimensionFieldMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryFieldMetadata">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DimensionFieldName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDimensionFieldMetadata" nillable="true" type="tns:QueryDimensionFieldMetadata" />
+  <xs:complexType name="QueryEnumSymbolFieldMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryEnumAttributeFieldMetadata">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryEnumSymbolFieldMetadata" nillable="true" type="tns:QueryEnumSymbolFieldMetadata" />
+  <xs:complexType name="QueryEnumAttributeFieldMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryFieldMetadata">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EnumFieldName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryEnumAttributeFieldMetadata" nillable="true" type="tns:QueryEnumAttributeFieldMetadata" />
+  <xs:complexType name="QueryDataFieldMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryDataFieldMetadataBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDataFieldMetadata" nillable="true" type="tns:QueryDataFieldMetadata" />
+  <xs:complexType name="QueryDataFieldMetadataBase">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryFieldMetadata">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FieldId" type="xs:int" />
+          <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Enums" minOccurs="0" name="SelectionField" type="q15:SelectionField" />
+          <xs:element minOccurs="0" name="TableId" type="xs:int" />
+          <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDataFieldMetadataBase" nillable="true" type="tns:QueryDataFieldMetadataBase" />
+  <xs:complexType name="QueryArrayFieldMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryDataFieldMetadataBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ArrayFieldIndex" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryArrayFieldMetadata" nillable="true" type="tns:QueryArrayFieldMetadata" />
+  <xs:complexType name="QueryDimensionAttributeFieldMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryDimensionFieldMetadata">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AttributeName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDimensionAttributeFieldMetadata" nillable="true" type="tns:QueryDimensionAttributeFieldMetadata" />
+  <xs:complexType name="QueryDimensionAccountStructureFieldMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryDimensionFieldMetadata">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDimensionAccountStructureFieldMetadata" nillable="true" type="tns:QueryDimensionAccountStructureFieldMetadata" />
+  <xs:complexType name="QueryDimensionAttributeValueDescriptionFieldMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryDimensionFieldMetadata">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AttributeName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDimensionAttributeValueDescriptionFieldMetadata" nillable="true" type="tns:QueryDimensionAttributeValueDescriptionFieldMetadata" />
+  <xs:complexType name="QueryDimensionAccountStructureDescriptionFieldMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryDimensionFieldMetadata">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDimensionAccountStructureDescriptionFieldMetadata" nillable="true" type="tns:QueryDimensionAccountStructureDescriptionFieldMetadata" />
+  <xs:complexType name="QueryCalculatedFieldMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryFieldMetadata">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MethodName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryCalculatedFieldMetadata" nillable="true" type="tns:QueryCalculatedFieldMetadata" />
+  <xs:complexType name="QueryEnumLabelFieldMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryEnumAttributeFieldMetadata">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryEnumLabelFieldMetadata" nillable="true" type="tns:QueryEnumLabelFieldMetadata" />
+  <xs:complexType name="ArrayOfQueryRangeMetadata">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryRangeMetadata" nillable="true" type="tns:QueryRangeMetadata" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQueryRangeMetadata" nillable="true" type="tns:ArrayOfQueryRangeMetadata" />
+  <xs:complexType name="QueryRangeMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata" base="q16:MetadataBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LabelId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Enums" minOccurs="0" name="RangeStatus" type="q17:RangeStatus" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryRangeMetadata" nillable="true" type="tns:QueryRangeMetadata" />
+  <xs:complexType name="QueryDataRangeMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryDataRangeMetadataBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDataRangeMetadata" nillable="true" type="tns:QueryDataRangeMetadata" />
+  <xs:complexType name="QueryDataRangeMetadataBase">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryRangeMetadata">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FieldId" type="xs:int" />
+          <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TableId" type="xs:int" />
+          <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDataRangeMetadataBase" nillable="true" type="tns:QueryDataRangeMetadataBase" />
+  <xs:complexType name="QueryDimensionDenormalizedRangeMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryDimensionRangeMetadata">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDimensionDenormalizedRangeMetadata" nillable="true" type="tns:QueryDimensionDenormalizedRangeMetadata" />
+  <xs:complexType name="QueryDimensionRangeMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryRangeMetadata">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DimensionFieldName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDimensionRangeMetadata" nillable="true" type="tns:QueryDimensionRangeMetadata" />
+  <xs:complexType name="QueryArrayFieldRangeMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryDataRangeMetadataBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ArrayFieldIndex" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryArrayFieldRangeMetadata" nillable="true" type="tns:QueryArrayFieldRangeMetadata" />
+  <xs:complexType name="QueryDimensionAttributeRangeMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryDimensionRangeMetadata">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AttributeName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDimensionAttributeRangeMetadata" nillable="true" type="tns:QueryDimensionAttributeRangeMetadata" />
+  <xs:complexType name="ArrayOfQueryRelationMetadata">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryRelationMetadata" nillable="true" type="tns:QueryRelationMetadata" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQueryRelationMetadata" nillable="true" type="tns:ArrayOfQueryRelationMetadata" />
+  <xs:complexType name="QueryRelationMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata" base="q18:MetadataBase">
+        <xs:sequence>
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Enums" minOccurs="0" name="ExpansionType" type="q19:ExpansionType" />
+          <xs:element minOccurs="0" name="Field" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FieldId" type="xs:int" />
+          <xs:element minOccurs="0" name="JoinDataSource" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="JoinRelation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RelatedField" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RelatedFieldId" type="xs:int" />
+          <xs:element minOccurs="0" name="RelatedTable" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RelatedTableId" type="xs:int" />
+          <xs:element minOccurs="0" name="Table" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TableId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryRelationMetadata" nillable="true" type="tns:QueryRelationMetadata" />
+  <xs:complexType name="ArrayOfQueryFilterMetadata">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryFilterMetadata" nillable="true" type="tns:QueryFilterMetadata" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQueryFilterMetadata" nillable="true" type="tns:ArrayOfQueryFilterMetadata" />
+  <xs:complexType name="QueryFilterMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q20="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata" base="q20:MetadataBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DataSourceName" nillable="true" type="xs:string" />
+          <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Enums" minOccurs="0" name="Status" type="q21:RangeStatus" />
+          <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Enums" minOccurs="0" name="Type" type="q22:QueryRangeType" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryFilterMetadata" nillable="true" type="tns:QueryFilterMetadata" />
+  <xs:complexType name="QueryDataFilterMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryDataFilterMetadataBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDataFilterMetadata" nillable="true" type="tns:QueryDataFilterMetadata" />
+  <xs:complexType name="QueryDataFilterMetadataBase">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryFilterMetadata">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDataFilterMetadataBase" nillable="true" type="tns:QueryDataFilterMetadataBase" />
+  <xs:complexType name="QueryArrayFieldFilterMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryDataFilterMetadataBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ArrayFieldIndex" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryArrayFieldFilterMetadata" nillable="true" type="tns:QueryArrayFieldFilterMetadata" />
+  <xs:complexType name="QueryDimensionDenormalizedFilterMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryDimensionFilterMetadata">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDimensionDenormalizedFilterMetadata" nillable="true" type="tns:QueryDimensionDenormalizedFilterMetadata" />
+  <xs:complexType name="QueryDimensionFilterMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryFilterMetadata">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DimensionFieldName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDimensionFilterMetadata" nillable="true" type="tns:QueryDimensionFilterMetadata" />
+  <xs:complexType name="QueryDimensionAttributeFilterMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryDimensionFilterMetadata">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AttributeName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDimensionAttributeFilterMetadata" nillable="true" type="tns:QueryDimensionAttributeFilterMetadata" />
+  <xs:complexType name="ArrayOfQueryGroupByMetadata">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryGroupByMetadata" nillable="true" type="tns:QueryGroupByMetadata" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQueryGroupByMetadata" nillable="true" type="tns:ArrayOfQueryGroupByMetadata" />
+  <xs:complexType name="QueryGroupByMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q23="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata" base="q23:MetadataBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DataSourceName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryGroupByMetadata" nillable="true" type="tns:QueryGroupByMetadata" />
+  <xs:complexType name="QueryArrayFieldGroupByMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryDataGroupByMetadataBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ArrayFieldIndex" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryArrayFieldGroupByMetadata" nillable="true" type="tns:QueryArrayFieldGroupByMetadata" />
+  <xs:complexType name="QueryDataGroupByMetadataBase">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryGroupByMetadata">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FieldId" type="xs:int" />
+          <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDataGroupByMetadataBase" nillable="true" type="tns:QueryDataGroupByMetadataBase" />
+  <xs:complexType name="QueryDataGroupByMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryDataGroupByMetadataBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDataGroupByMetadata" nillable="true" type="tns:QueryDataGroupByMetadata" />
+  <xs:complexType name="ArrayOfQueryHavingFilterMetadata">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryHavingFilterMetadata" nillable="true" type="tns:QueryHavingFilterMetadata" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQueryHavingFilterMetadata" nillable="true" type="tns:ArrayOfQueryHavingFilterMetadata" />
+  <xs:complexType name="QueryHavingFilterMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q24="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata" base="q24:MetadataBase">
+        <xs:sequence>
+          <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Enums" minOccurs="0" name="AggregateFunction" type="q25:AggregateFunction" />
+          <xs:element minOccurs="0" name="DataSourceName" nillable="true" type="xs:string" />
+          <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Enums" minOccurs="0" name="Status" type="q26:RangeStatus" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryHavingFilterMetadata" nillable="true" type="tns:QueryHavingFilterMetadata" />
+  <xs:complexType name="QueryDataHavingFilterMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryDataHavingFilterMetadataBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDataHavingFilterMetadata" nillable="true" type="tns:QueryDataHavingFilterMetadata" />
+  <xs:complexType name="QueryDataHavingFilterMetadataBase">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryHavingFilterMetadata">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDataHavingFilterMetadataBase" nillable="true" type="tns:QueryDataHavingFilterMetadataBase" />
+  <xs:complexType name="QueryDimensionDenormalizedHavingFilterMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryDimensionHavingFilterMetadata">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDimensionDenormalizedHavingFilterMetadata" nillable="true" type="tns:QueryDimensionDenormalizedHavingFilterMetadata" />
+  <xs:complexType name="QueryDimensionHavingFilterMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryHavingFilterMetadata">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DimensionFieldName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDimensionHavingFilterMetadata" nillable="true" type="tns:QueryDimensionHavingFilterMetadata" />
+  <xs:complexType name="QueryArrayFieldHavingFilterMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryDataHavingFilterMetadataBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ArrayFieldIndex" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryArrayFieldHavingFilterMetadata" nillable="true" type="tns:QueryArrayFieldHavingFilterMetadata" />
+  <xs:complexType name="QueryDimensionAttributeHavingFilterMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryDimensionHavingFilterMetadata">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AttributeName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDimensionAttributeHavingFilterMetadata" nillable="true" type="tns:QueryDimensionAttributeHavingFilterMetadata" />
+  <xs:complexType name="ArrayOfQueryOrderByMetadata">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryOrderByMetadata" nillable="true" type="tns:QueryOrderByMetadata" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQueryOrderByMetadata" nillable="true" type="tns:ArrayOfQueryOrderByMetadata" />
+  <xs:complexType name="QueryOrderByMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q27="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata" base="q27:MetadataBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DataSource" nillable="true" type="xs:string" />
+          <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Enums" minOccurs="0" name="SortOrder" type="q28:SortOrder" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryOrderByMetadata" nillable="true" type="tns:QueryOrderByMetadata" />
+  <xs:complexType name="QueryArrayFieldOrderByMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryDataOrderByMetadataBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ArrayFieldIndex" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryArrayFieldOrderByMetadata" nillable="true" type="tns:QueryArrayFieldOrderByMetadata" />
+  <xs:complexType name="QueryDataOrderByMetadataBase">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryOrderByMetadata">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FieldId" type="xs:int" />
+          <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDataOrderByMetadataBase" nillable="true" type="tns:QueryDataOrderByMetadataBase" />
+  <xs:complexType name="QueryDimensionDenormalizedOrderByMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryDimensionOrderByMetadata">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDimensionDenormalizedOrderByMetadata" nillable="true" type="tns:QueryDimensionDenormalizedOrderByMetadata" />
+  <xs:complexType name="QueryDimensionOrderByMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryOrderByMetadata">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DimensionFieldName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDimensionOrderByMetadata" nillable="true" type="tns:QueryDimensionOrderByMetadata" />
+  <xs:complexType name="QueryDataOrderByMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryDataOrderByMetadataBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDataOrderByMetadata" nillable="true" type="tns:QueryDataOrderByMetadata" />
+  <xs:complexType name="QueryDimensionAttributeOrderByMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QueryDimensionOrderByMetadata">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AttributeName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QueryDimensionAttributeOrderByMetadata" nillable="true" type="tns:QueryDimensionAttributeOrderByMetadata" />
+</xs:schema>

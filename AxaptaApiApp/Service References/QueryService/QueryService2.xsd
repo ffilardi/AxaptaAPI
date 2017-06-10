@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Enums" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Enums" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/QueryService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="ConcurrencyModel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Auto" />
+      <xs:enumeration value="Optimistic" />
+      <xs:enumeration value="Pessimistic" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ConcurrencyModel" nillable="true" type="tns:ConcurrencyModel" />
+  <xs:simpleType name="ExpansionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Original" />
+      <xs:enumeration value="SurrogateForeignKeyExpansion" />
+      <xs:enumeration value="TypeExpansion" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ExpansionType" nillable="true" type="tns:ExpansionType" />
+  <xs:simpleType name="FetchMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OneToOne" />
+      <xs:enumeration value="OnetoN" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FetchMode" nillable="true" type="tns:FetchMode" />
+  <xs:simpleType name="SelectionField">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Average" />
+      <xs:enumeration value="Sum" />
+      <xs:enumeration value="Min" />
+      <xs:enumeration value="Max" />
+      <xs:enumeration value="Count" />
+      <xs:enumeration value="Database" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SelectionField" nillable="true" type="tns:SelectionField" />
+  <xs:simpleType name="JoinMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="InnerJoin" />
+      <xs:enumeration value="OuterJoin" />
+      <xs:enumeration value="ExistJoin" />
+      <xs:enumeration value="NotExistJoin" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="JoinMode" nillable="true" type="tns:JoinMode" />
+  <xs:simpleType name="OrderMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OrderBy" />
+      <xs:enumeration value="GroupBy" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OrderMode" nillable="true" type="tns:OrderMode" />
+  <xs:simpleType name="RangeStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Open" />
+      <xs:enumeration value="Lock" />
+      <xs:enumeration value="Hidden" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RangeStatus" nillable="true" type="tns:RangeStatus" />
+  <xs:simpleType name="UnionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Union" />
+      <xs:enumeration value="UnionAll" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UnionType" nillable="true" type="tns:UnionType" />
+  <xs:simpleType name="QueryRangeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Regular" />
+      <xs:enumeration value="FullText" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QueryRangeType" nillable="true" type="tns:QueryRangeType" />
+  <xs:simpleType name="AggregateFunction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Avg" />
+      <xs:enumeration value="Sum" />
+      <xs:enumeration value="Min" />
+      <xs:enumeration value="Max" />
+      <xs:enumeration value="Count" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AggregateFunction" nillable="true" type="tns:AggregateFunction" />
+  <xs:simpleType name="Literals">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="ForceLiterals" />
+      <xs:enumeration value="ForcePlaceholders" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Literals" nillable="true" type="tns:Literals" />
+  <xs:simpleType name="SortOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ascending" />
+      <xs:enumeration value="Descending" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SortOrder" nillable="true" type="tns:SortOrder" />
+  <xs:simpleType name="QueryType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Join" />
+      <xs:enumeration value="Union" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QueryType" nillable="true" type="tns:QueryType" />
+  <xs:simpleType name="TimeZonePreference">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unspecified" />
+      <xs:enumeration value="Auto">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="User">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NoConversion">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TimeZonePreference" nillable="true" type="tns:TimeZonePreference" />
+  <xs:simpleType name="ValidTimeStateQueryType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Current" />
+      <xs:enumeration value="AsOf" />
+      <xs:enumeration value="Range" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ValidTimeStateQueryType" nillable="true" type="tns:ValidTimeStateQueryType" />
+</xs:schema>

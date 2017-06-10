@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/QueryService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Contracts" />
+  <xs:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/QueryService?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" />
+  <xs:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/QueryService?xsd=xsd9" namespace="http://schemas.microsoft.com/Message" />
+  <xs:element name="GetQuerySchema">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Contracts" minOccurs="0" name="queryMetadata" nillable="true" type="q1:QueryMetadata" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuerySchemaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetQuerySchemaResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueryRowCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Contracts" minOccurs="0" name="queryMetadata" nillable="true" type="q2:QueryMetadata" />
+        <xs:element minOccurs="0" name="rowCountLimit" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueryRowCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetQueryRowCountResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueryRowCountWithExternalContext">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Contracts" minOccurs="0" name="queryMetadata" nillable="true" type="q3:QueryMetadata" />
+        <xs:element minOccurs="0" name="rowCountLimit" type="xs:long" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" minOccurs="0" name="externalContext" nillable="true" type="q4:ExternalContext" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueryRowCountWithExternalContextResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetQueryRowCountWithExternalContextResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecuteQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Contracts" minOccurs="0" name="queryMetadata" nillable="true" type="q5:QueryMetadata" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" minOccurs="0" name="paging" nillable="true" type="q6:Paging" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecuteQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExecuteQueryResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" minOccurs="0" name="paging" nillable="true" type="q7:Paging" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecuteQueryWithExternalContext">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Contracts" minOccurs="0" name="queryMetadata" nillable="true" type="q8:QueryMetadata" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" minOccurs="0" name="paging" nillable="true" type="q9:Paging" />
+        <xs:element minOccurs="0" name="rowCountLimit" type="xs:long" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" minOccurs="0" name="externalContext" nillable="true" type="q10:ExternalContext" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecuteQueryWithExternalContextResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExecuteQueryWithExternalContextResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" minOccurs="0" name="paging" nillable="true" type="q11:Paging" />
+        <xs:element minOccurs="0" name="rowCount" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStaticQuerySchema">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="queryName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStaticQuerySchemaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetStaticQuerySchemaResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStaticQueryRowCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="queryName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="rowCountLimit" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStaticQueryRowCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetStaticQueryRowCountResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecuteStaticQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="queryName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" minOccurs="0" name="paging" nillable="true" type="q12:Paging" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecuteStaticQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExecuteStaticQueryResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" minOccurs="0" name="paging" nillable="true" type="q13:Paging" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDynamicQueryMetadata">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="queryBuilderName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" minOccurs="0" name="queryBuilderArgs" nillable="true" type="q14:QueryBuilderArgs" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDynamicQueryMetadataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Contracts" minOccurs="0" name="GetDynamicQueryMetadataResult" nillable="true" type="q15:QueryMetadata" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDynamicQuerySchema">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="queryBuilderName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" minOccurs="0" name="queryBuilderArgs" nillable="true" type="q16:QueryBuilderArgs" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDynamicQuerySchemaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDynamicQuerySchemaResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDynamicQueryRowCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="queryBuilderName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" minOccurs="0" name="queryBuilderArgs" nillable="true" type="q17:QueryBuilderArgs" />
+        <xs:element minOccurs="0" name="rowCountLimit" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDynamicQueryRowCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDynamicQueryRowCountResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecuteDynamicQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="queryBuilderName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" minOccurs="0" name="queryBuilderArgs" nillable="true" type="q18:QueryBuilderArgs" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" minOccurs="0" name="paging" nillable="true" type="q19:Paging" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecuteDynamicQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExecuteDynamicQueryResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" minOccurs="0" name="paging" nillable="true" type="q20:Paging" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecuteStreamedStaticQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="queryName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" minOccurs="0" name="paging" nillable="true" type="q21:Paging" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecuteStreamedStaticQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.microsoft.com/Message" name="ExecuteStreamedStaticQueryResult" type="q22:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecuteStreamedQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Contracts" minOccurs="0" name="queryMetadata" nillable="true" type="q23:QueryMetadata" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" minOccurs="0" name="paging" nillable="true" type="q24:Paging" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecuteStreamedQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.microsoft.com/Message" name="ExecuteStreamedQueryResult" type="q25:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecuteStreamedDynamicQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="queryBuilderName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" minOccurs="0" name="queryBuilderArgs" nillable="true" type="q26:QueryBuilderArgs" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" minOccurs="0" name="paging" nillable="true" type="q27:Paging" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecuteStreamedDynamicQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.microsoft.com/Message" name="ExecuteStreamedDynamicQueryResult" type="q28:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

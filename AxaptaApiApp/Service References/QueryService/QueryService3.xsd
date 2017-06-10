@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/XppClasses" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/XppClasses" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/QueryService?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/QueryService?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" />
+  <xs:complexType name="KanbanOverviewQueryBuilderArgs">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" base="q1:QueryBuilderArgs">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmActiveDateTime" type="xs:dateTime" />
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmQueryArgs" nillable="true" type="q2:ArrayOfanyType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="KanbanOverviewQueryBuilderArgs" nillable="true" type="tns:KanbanOverviewQueryBuilderArgs" />
+  <xs:complexType name="SRSQueryBuilderArgs">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" base="q3:QueryBuilderArgs">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmReportQueryId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SRSQueryBuilderArgs" nillable="true" type="tns:SRSQueryBuilderArgs" />
+  <xs:complexType name="CustAccountQueryBuilderArgs">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" base="q4:QueryBuilderArgs">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmCompany" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmCustAccount" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmCustName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustAccountQueryBuilderArgs" nillable="true" type="tns:CustAccountQueryBuilderArgs" />
+  <xs:complexType name="HierarchyLinkTableQueryBuilderArgs">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" base="q5:QueryBuilderArgs">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmDataAreaId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmRefRecId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HierarchyLinkTableQueryBuilderArgs" nillable="true" type="tns:HierarchyLinkTableQueryBuilderArgs" />
+  <xs:complexType name="KanbanOverviewJobsQueryBuilderArgs">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" base="q6:QueryBuilderArgs">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmFilterOnExecutable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="parmFilterOnStatus" type="xs:boolean" />
+          <xs:element minOccurs="0" name="parmFilterOnType" type="xs:boolean" />
+          <xs:element minOccurs="0" name="parmKanbanJobStatus" type="tns:LeanKanbanJobStatus" />
+          <xs:element minOccurs="0" name="parmKanbanJobType" type="tns:LeanKanbanJobType" />
+          <xs:element minOccurs="0" name="parmLanguageId" nillable="true" type="xs:string" />
+          <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmPlanActivitiesRecId" nillable="true" type="q7:ArrayOfanyType" />
+          <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmQueryArgs" nillable="true" type="q8:ArrayOfanyType" />
+          <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmRulesRecId" nillable="true" type="q9:ArrayOfanyType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="KanbanOverviewJobsQueryBuilderArgs" nillable="true" type="tns:KanbanOverviewJobsQueryBuilderArgs" />
+  <xs:simpleType name="LeanKanbanJobStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotPlanned" />
+      <xs:enumeration value="Planned" />
+      <xs:enumeration value="Prepared" />
+      <xs:enumeration value="InProgress" />
+      <xs:enumeration value="Completed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LeanKanbanJobStatus" nillable="true" type="tns:LeanKanbanJobStatus" />
+  <xs:simpleType name="LeanKanbanJobType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Process" />
+      <xs:enumeration value="Transfer" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LeanKanbanJobType" nillable="true" type="tns:LeanKanbanJobType" />
+  <xs:complexType name="ProjCalendarQueryBuilderArgs">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" base="q10:QueryBuilderArgs">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmDataAreaId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProjCalendarQueryBuilderArgs" nillable="true" type="tns:ProjCalendarQueryBuilderArgs" />
+  <xs:complexType name="ProjCategoryQueryBuilderArgs">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" base="q11:QueryBuilderArgs">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmDataAreaId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProjCategoryQueryBuilderArgs" nillable="true" type="tns:ProjCategoryQueryBuilderArgs" />
+  <xs:complexType name="ProjContractQueryBuilderArgs">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" base="q12:QueryBuilderArgs">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmDataAreaId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProjContractQueryBuilderArgs" nillable="true" type="tns:ProjContractQueryBuilderArgs" />
+  <xs:complexType name="ProjFundingSourceQueryBuilderArgs">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" base="q13:QueryBuilderArgs">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmDataAreaId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmProjFundingType" type="tns:ProjFundingType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProjFundingSourceQueryBuilderArgs" nillable="true" type="tns:ProjFundingSourceQueryBuilderArgs" />
+  <xs:simpleType name="ProjFundingType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Customer" />
+      <xs:enumeration value="Organization" />
+      <xs:enumeration value="Grant" />
+      <xs:enumeration value="OnHoldFundingSource" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ProjFundingType" nillable="true" type="tns:ProjFundingType" />
+  <xs:complexType name="ProjGroupQueryBuilderArgs">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" base="q14:QueryBuilderArgs">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmDataAreaId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmProjType" type="tns:ProjType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProjGroupQueryBuilderArgs" nillable="true" type="tns:ProjGroupQueryBuilderArgs" />
+  <xs:simpleType name="ProjType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TimeMaterial" />
+      <xs:enumeration value="FixedPrice" />
+      <xs:enumeration value="Investment" />
+      <xs:enumeration value="Cost" />
+      <xs:enumeration value="Internal" />
+      <xs:enumeration value="Time" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ProjType" nillable="true" type="tns:ProjType" />
+  <xs:complexType name="ProjLegalEntityCurrencyQueryBuilderArgs">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" base="q15:QueryBuilderArgs">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmDataArea" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProjLegalEntityCurrencyQueryBuilderArgs" nillable="true" type="tns:ProjLegalEntityCurrencyQueryBuilderArgs" />
+  <xs:complexType name="ProjResourceQueryBuilderArgs">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" base="q16:QueryBuilderArgs">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmDataAreaId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmValidFrom" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="parmValidTo" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProjResourceQueryBuilderArgs" nillable="true" type="tns:ProjResourceQueryBuilderArgs" />
+  <xs:complexType name="ProjResourceTeamQueryBuilderArgs">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" base="q17:QueryBuilderArgs">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmDataAreaId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmProjRecId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProjResourceTeamQueryBuilderArgs" nillable="true" type="tns:ProjResourceTeamQueryBuilderArgs" />
+  <xs:complexType name="ProjSalesCurrencyQueryBuilderArgs">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" base="q18:QueryBuilderArgs">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProjSalesCurrencyQueryBuilderArgs" nillable="true" type="tns:ProjSalesCurrencyQueryBuilderArgs" />
+  <xs:complexType name="ProjTableQueryBuilderArgs">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q19="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" base="q19:QueryBuilderArgs">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmDataAreaId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProjTableQueryBuilderArgs" nillable="true" type="tns:ProjTableQueryBuilderArgs" />
+  <xs:complexType name="ProjTableRecIDQueryBuilderArgs">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q20="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" base="q20:QueryBuilderArgs">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmProjId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmRecId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProjTableRecIDQueryBuilderArgs" nillable="true" type="tns:ProjTableRecIDQueryBuilderArgs" />
+  <xs:complexType name="ProjUserCompanyQueryBuilderArgs">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" base="q21:QueryBuilderArgs">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmNetworkAlias" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProjUserCompanyQueryBuilderArgs" nillable="true" type="tns:ProjUserCompanyQueryBuilderArgs" />
+  <xs:complexType name="SrsReportProviderQueryBuilderArgs">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q22="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" base="q22:QueryBuilderArgs">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dynamicFilterRecId" type="xs:long" />
+          <xs:element minOccurs="0" name="dynamicFilterXml" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="isPreviewMode" type="xs:boolean" />
+          <xs:element minOccurs="0" name="reportProviderArgsXml" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="reportProviderName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="schemaOnly" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SrsReportProviderQueryBuilderArgs" nillable="true" type="tns:SrsReportProviderQueryBuilderArgs" />
+  <xs:complexType name="SysWorkflowModelWorkflowQueryArgs">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q23="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" base="q23:QueryBuilderArgs">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmModuleName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmShowAllModule" type="tns:NoYes" />
+          <xs:element minOccurs="0" name="parmWorkflowTypes" nillable="true" type="tns:XppList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SysWorkflowModelWorkflowQueryArgs" nillable="true" type="tns:SysWorkflowModelWorkflowQueryArgs" />
+  <xs:simpleType name="NoYes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="No" />
+      <xs:enumeration value="Yes" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="NoYes" nillable="true" type="tns:NoYes" />
+  <xs:complexType name="XppList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ValueType" type="tns:Types" />
+      <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Values" nillable="true" type="q24:ArrayOfanyType" />
+      <xs:element minOccurs="0" name="workaround" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="XppList" nillable="true" type="tns:XppList" />
+  <xs:simpleType name="Types">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="String" />
+      <xs:enumeration value="Integer" />
+      <xs:enumeration value="Real" />
+      <xs:enumeration value="Date" />
+      <xs:enumeration value="Enum" />
+      <xs:enumeration value="RString" />
+      <xs:enumeration value="UtcDateTime" />
+      <xs:enumeration value="Container" />
+      <xs:enumeration value="VarString" />
+      <xs:enumeration value="Record" />
+      <xs:enumeration value="Class" />
+      <xs:enumeration value="UserType" />
+      <xs:enumeration value="AnyType" />
+      <xs:enumeration value="BLOB" />
+      <xs:enumeration value="Void" />
+      <xs:enumeration value="Guid" />
+      <xs:enumeration value="Int64" />
+      <xs:enumeration value="Time" />
+      <xs:enumeration value="VarArg" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Types" nillable="true" type="tns:Types" />
+  <xs:complexType name="TrvProjectLookupQueryBuilderArgs">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q25="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" base="q25:QueryBuilderArgs">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmCategoryId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmCompany" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmPersonnelNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmProjectId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmProjectName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrvProjectLookupQueryBuilderArgs" nillable="true" type="tns:TrvProjectLookupQueryBuilderArgs" />
+  <xs:complexType name="VendAccountQueryBuilderArgs">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q26="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" base="q26:QueryBuilderArgs">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmCompany" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmVendAccount" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmVendName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VendAccountQueryBuilderArgs" nillable="true" type="tns:VendAccountQueryBuilderArgs" />
+</xs:schema>

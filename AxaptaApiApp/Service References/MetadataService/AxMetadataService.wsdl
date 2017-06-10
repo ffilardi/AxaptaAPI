@@ -1,0 +1,1437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AxMetadataService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="MetadataServiceEndpoint_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/MetadataService?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/MetadataService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/MetadataService?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/MetadataService?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Contracts" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/MetadataService?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/MetadataService?xsd=xsd5" namespace="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/MetadataService?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Enums" />
+      <xsd:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/MetadataService?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Contracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAxMetadataService_GetConfigKeyNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfigKeyNames" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetConfigKeyNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfigKeyNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetConfigKeyMetadataById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfigKeyMetadataById" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetConfigKeyMetadataById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfigKeyMetadataByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetConfigKeyMetadataByNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfigKeyMetadataByNames" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetConfigKeyMetadataByNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfigKeyMetadataByNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetWebControlNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWebControlNames" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetWebControlNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWebControlNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetWebControlNames_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q1:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetWebControlMetadataByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWebControlMetadataByName" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetWebControlMetadataByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWebControlMetadataByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetWebControlMetadataByName_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q2:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetWebPageDefinitionNodeNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWebPageDefinitionNodeNames" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetWebPageDefinitionNodeNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWebPageDefinitionNodeNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetWebPageDefinitionNodeNames_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q3:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetWebPageDefinitionMetadataByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWebPageDefinitionMetadataByName" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetWebPageDefinitionMetadataByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWebPageDefinitionMetadataByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetWebPageDefinitionMetadataByName_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q4:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetEnumNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnumNames" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetEnumNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnumNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetEnumNames_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q5:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetEnumMetadataByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnumMetadataByName" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetEnumMetadataByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnumMetadataByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetEnumMetadataByName_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q6:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetEnumMetadataById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnumMetadataById" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetEnumMetadataById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnumMetadataByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetEnumMetadataById_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q7:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetLabelNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLabelNames" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetLabelNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLabelNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetLabelNames_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q8:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetLabelMetadataById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLabelMetadataById" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetLabelMetadataById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLabelMetadataByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetLabelMetadataById_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q9:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetLabelMetadataForLanguageById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLabelMetadataForLanguageById" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetLabelMetadataForLanguageById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLabelMetadataForLanguageByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetLabelMetadataForLanguageById_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q10:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetExtendedDataTypeNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExtendedDataTypeNames" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetExtendedDataTypeNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExtendedDataTypeNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetExtendedDataTypeNames_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q11:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetExtendedDataTypeMetadataByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExtendedDataTypeMetadataByName" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetExtendedDataTypeMetadataByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExtendedDataTypeMetadataByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetExtendedDataTypeMetadataByName_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q12:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetExtendedDataTypeMetadataById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExtendedDataTypeMetadataById" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetExtendedDataTypeMetadataById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExtendedDataTypeMetadataByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetExtendedDataTypeMetadataById_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q13:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetDimensionMetadataByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDimensionMetadataByName" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetDimensionMetadataByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDimensionMetadataByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetDimensionMetadataByName_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q14:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetDimensionMetadataById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDimensionMetadataById" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetDimensionMetadataById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDimensionMetadataByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetDimensionMetadataById_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q15:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetTableNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTableNames" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetTableNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTableNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetTableNames_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q16:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetTableInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTableInformation" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetTableInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTableInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetTableInformation_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q17:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetTableMetadataByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTableMetadataByName" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetTableMetadataByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTableMetadataByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetTableMetadataByName_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q18:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetTableMetadataById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTableMetadataById" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetTableMetadataById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTableMetadataByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetTableMetadataById_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q19:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetTableMetadataByTypeDiscriminatorValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTableMetadataByTypeDiscriminatorValue" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetTableMetadataByTypeDiscriminatorValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTableMetadataByTypeDiscriminatorValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetTableMetadataByTypeDiscriminatorValue_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q20:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetQueryNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueryNames" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetQueryNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueryNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetQueryNames_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q21:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetSearchableQueryNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSearchableQueryNames" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetSearchableQueryNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSearchableQueryNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetSearchableQueryNames_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q22:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetQueryMetadataByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueryMetadataByName" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetQueryMetadataByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueryMetadataByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetQueryMetadataByName_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q23:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetDocumentDataSourceQueryMetadata_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentDataSourceQueryMetadata" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetDocumentDataSourceQueryMetadata_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentDataSourceQueryMetadataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetDocumentDataSourceQueryMetadata_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q24:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetMenuNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMenuNames" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetMenuNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMenuNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetMenuNames_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q25:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetMenuMetadataByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMenuMetadataByName" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetMenuMetadataByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMenuMetadataByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetMenuMetadataByName_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q26:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetMenuItemKeys_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMenuItemKeys" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetMenuItemKeys_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMenuItemKeysResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetMenuItemKeys_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q27:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetMenuItemMetadata_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMenuItemMetadata" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetMenuItemMetadata_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMenuItemMetadataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetMenuItemMetadata_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q28:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetWebMenuNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWebMenuNames" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetWebMenuNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWebMenuNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetWebMenuNames_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q29:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetWebMenuMetadataByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWebMenuMetadataByName" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetWebMenuMetadataByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWebMenuMetadataByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetWebMenuMetadataByName_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q30:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetWebMenuItemKeys_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWebMenuItemKeys" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetWebMenuItemKeys_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWebMenuItemKeysResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetWebMenuItemKeys_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q31:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetWebMenuItemMetadata_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWebMenuItemMetadata" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetWebMenuItemMetadata_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWebMenuItemMetadataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetWebMenuItemMetadata_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q32:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetServiceNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceNames" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetServiceNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetServiceNames_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q33="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q33:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetServiceMetadataByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceMetadataByName" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetServiceMetadataByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceMetadataByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetServiceMetadataByName_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q34="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q34:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetServiceGroupNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceGroupNames" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetServiceGroupNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceGroupNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetServiceGroupNames_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q35="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q35:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetServiceGroupMetadataByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceGroupMetadataByName" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetServiceGroupMetadataByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceGroupMetadataByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetServiceGroupMetadataByName_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q36="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q36:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetInfoPartNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInfoPartNames" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetInfoPartNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInfoPartNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetInfoPartNames_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q37="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q37:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetInfoPartMetadataByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInfoPartMetadataByName" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetInfoPartMetadataByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInfoPartMetadataByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetInfoPartMetadataByName_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q38="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q38:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetListPageNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListPageNames" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetListPageNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListPageNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetListPageNames_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q39="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q39:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetListPageMetadataByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListPageMetadataByName" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetListPageMetadataByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListPageMetadataByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetListPageMetadataByName_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q40="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q40:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetFormPartNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFormPartNames" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetFormPartNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFormPartNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetFormPartNames_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q41="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q41:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetFormPartMetadataByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFormPartMetadataByName" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetFormPartMetadataByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFormPartMetadataByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetFormPartMetadataByName_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q42="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q42:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetLanguages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLanguages" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetLanguages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLanguagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetCueNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCueNames" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetCueNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCueNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetCueNames_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q43="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q43:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetCueMetadataByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCueMetadataByName" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetCueMetadataByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCueMetadataByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetCueMetadataByName_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q44="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q44:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetCueGroupNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCueGroupNames" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetCueGroupNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCueGroupNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetCueGroupNames_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q45="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q45:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetCueGroupMetadataByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCueGroupMetadataByName" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetCueGroupMetadataByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCueGroupMetadataByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetCueGroupMetadataByName_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q46="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q46:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetServicesVersionInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServicesVersionInformation" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetServicesVersionInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServicesVersionInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetServicesVersionInformation_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q47="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q47:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetClassNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClassNames" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetClassNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClassNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetClassNames_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q48="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q48:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetClassMetadataByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClassMetadataByName" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetClassMetadataByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClassMetadataByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetClassMetadataByName_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q49="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q49:MetadataFault" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetClassMetadataById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClassMetadataById" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetClassMetadataById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClassMetadataByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAxMetadataService_GetClassMetadataById_MetadataFaultFault_FaultMessage">
+    <wsdl:part xmlns:q50="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" name="detail" element="q50:MetadataFault" />
+  </wsdl:message>
+  <wsdl:portType name="IAxMetadataService">
+    <wsdl:operation name="GetConfigKeyNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetConfigKeyNames" message="tns:IAxMetadataService_GetConfigKeyNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetConfigKeyNamesResponse" message="tns:IAxMetadataService_GetConfigKeyNames_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConfigKeyMetadataById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetConfigKeyMetadataById" message="tns:IAxMetadataService_GetConfigKeyMetadataById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetConfigKeyMetadataByIdResponse" message="tns:IAxMetadataService_GetConfigKeyMetadataById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConfigKeyMetadataByNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetConfigKeyMetadataByNames" message="tns:IAxMetadataService_GetConfigKeyMetadataByNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetConfigKeyMetadataByNamesResponse" message="tns:IAxMetadataService_GetConfigKeyMetadataByNames_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebControlNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetWebControlNames" message="tns:IAxMetadataService_GetWebControlNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetWebControlNamesResponse" message="tns:IAxMetadataService_GetWebControlNames_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetWebControlNamesMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetWebControlNames_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebControlMetadataByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetWebControlMetadataByName" message="tns:IAxMetadataService_GetWebControlMetadataByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetWebControlMetadataByNameResponse" message="tns:IAxMetadataService_GetWebControlMetadataByName_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetWebControlMetadataByNameMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetWebControlMetadataByName_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebPageDefinitionNodeNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetWebPageDefinitionNodeNames" message="tns:IAxMetadataService_GetWebPageDefinitionNodeNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetWebPageDefinitionNodeNamesResponse" message="tns:IAxMetadataService_GetWebPageDefinitionNodeNames_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetWebPageDefinitionNodeNamesMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetWebPageDefinitionNodeNames_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebPageDefinitionMetadataByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetWebPageDefinitionMetadataByName" message="tns:IAxMetadataService_GetWebPageDefinitionMetadataByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetWebPageDefinitionMetadataByNameResponse" message="tns:IAxMetadataService_GetWebPageDefinitionMetadataByName_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetWebPageDefinitionMetadataByNameMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetWebPageDefinitionMetadataByName_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnumNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetEnumNames" message="tns:IAxMetadataService_GetEnumNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetEnumNamesResponse" message="tns:IAxMetadataService_GetEnumNames_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetEnumNamesMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetEnumNames_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnumMetadataByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetEnumMetadataByName" message="tns:IAxMetadataService_GetEnumMetadataByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetEnumMetadataByNameResponse" message="tns:IAxMetadataService_GetEnumMetadataByName_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetEnumMetadataByNameMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetEnumMetadataByName_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnumMetadataById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetEnumMetadataById" message="tns:IAxMetadataService_GetEnumMetadataById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetEnumMetadataByIdResponse" message="tns:IAxMetadataService_GetEnumMetadataById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetEnumMetadataByIdMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetEnumMetadataById_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLabelNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetLabelNames" message="tns:IAxMetadataService_GetLabelNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetLabelNamesResponse" message="tns:IAxMetadataService_GetLabelNames_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetLabelNamesMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetLabelNames_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLabelMetadataById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetLabelMetadataById" message="tns:IAxMetadataService_GetLabelMetadataById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetLabelMetadataByIdResponse" message="tns:IAxMetadataService_GetLabelMetadataById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetLabelMetadataByIdMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetLabelMetadataById_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLabelMetadataForLanguageById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetLabelMetadataForLanguageById" message="tns:IAxMetadataService_GetLabelMetadataForLanguageById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetLabelMetadataForLanguageByIdResponse" message="tns:IAxMetadataService_GetLabelMetadataForLanguageById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetLabelMetadataForLanguageByIdMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetLabelMetadataForLanguageById_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedDataTypeNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetExtendedDataTypeNames" message="tns:IAxMetadataService_GetExtendedDataTypeNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetExtendedDataTypeNamesResponse" message="tns:IAxMetadataService_GetExtendedDataTypeNames_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetExtendedDataTypeNamesMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetExtendedDataTypeNames_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedDataTypeMetadataByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetExtendedDataTypeMetadataByName" message="tns:IAxMetadataService_GetExtendedDataTypeMetadataByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetExtendedDataTypeMetadataByNameResponse" message="tns:IAxMetadataService_GetExtendedDataTypeMetadataByName_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetExtendedDataTypeMetadataByNameMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetExtendedDataTypeMetadataByName_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedDataTypeMetadataById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetExtendedDataTypeMetadataById" message="tns:IAxMetadataService_GetExtendedDataTypeMetadataById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetExtendedDataTypeMetadataByIdResponse" message="tns:IAxMetadataService_GetExtendedDataTypeMetadataById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetExtendedDataTypeMetadataByIdMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetExtendedDataTypeMetadataById_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDimensionMetadataByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetDimensionMetadataByName" message="tns:IAxMetadataService_GetDimensionMetadataByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetDimensionMetadataByNameResponse" message="tns:IAxMetadataService_GetDimensionMetadataByName_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetDimensionMetadataByNameMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetDimensionMetadataByName_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDimensionMetadataById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetDimensionMetadataById" message="tns:IAxMetadataService_GetDimensionMetadataById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetDimensionMetadataByIdResponse" message="tns:IAxMetadataService_GetDimensionMetadataById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetDimensionMetadataByIdMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetDimensionMetadataById_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTableNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetTableNames" message="tns:IAxMetadataService_GetTableNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetTableNamesResponse" message="tns:IAxMetadataService_GetTableNames_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetTableNamesMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetTableNames_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTableInformation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetTableInformation" message="tns:IAxMetadataService_GetTableInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetTableInformationResponse" message="tns:IAxMetadataService_GetTableInformation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetTableInformationMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetTableInformation_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTableMetadataByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetTableMetadataByName" message="tns:IAxMetadataService_GetTableMetadataByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetTableMetadataByNameResponse" message="tns:IAxMetadataService_GetTableMetadataByName_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetTableMetadataByNameMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetTableMetadataByName_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTableMetadataById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetTableMetadataById" message="tns:IAxMetadataService_GetTableMetadataById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetTableMetadataByIdResponse" message="tns:IAxMetadataService_GetTableMetadataById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetTableMetadataByIdMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetTableMetadataById_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTableMetadataByTypeDiscriminatorValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetTableMetadataByTypeDiscriminatorValue" message="tns:IAxMetadataService_GetTableMetadataByTypeDiscriminatorValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetTableMetadataByTypeDiscriminatorValueResponse" message="tns:IAxMetadataService_GetTableMetadataByTypeDiscriminatorValue_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetTableMetadataByTypeDiscriminatorValueMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetTableMetadataByTypeDiscriminatorValue_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetQueryNames" message="tns:IAxMetadataService_GetQueryNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetQueryNamesResponse" message="tns:IAxMetadataService_GetQueryNames_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetQueryNamesMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetQueryNames_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSearchableQueryNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetSearchableQueryNames" message="tns:IAxMetadataService_GetSearchableQueryNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetSearchableQueryNamesResponse" message="tns:IAxMetadataService_GetSearchableQueryNames_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetSearchableQueryNamesMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetSearchableQueryNames_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryMetadataByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetQueryMetadataByName" message="tns:IAxMetadataService_GetQueryMetadataByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetQueryMetadataByNameResponse" message="tns:IAxMetadataService_GetQueryMetadataByName_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetQueryMetadataByNameMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetQueryMetadataByName_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentDataSourceQueryMetadata">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetDocumentDataSourceQueryMetadata" message="tns:IAxMetadataService_GetDocumentDataSourceQueryMetadata_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetDocumentDataSourceQueryMetadataResponse" message="tns:IAxMetadataService_GetDocumentDataSourceQueryMetadata_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetDocumentDataSourceQueryMetadataMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetDocumentDataSourceQueryMetadata_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetMenuNames" message="tns:IAxMetadataService_GetMenuNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetMenuNamesResponse" message="tns:IAxMetadataService_GetMenuNames_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetMenuNamesMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetMenuNames_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuMetadataByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetMenuMetadataByName" message="tns:IAxMetadataService_GetMenuMetadataByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetMenuMetadataByNameResponse" message="tns:IAxMetadataService_GetMenuMetadataByName_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetMenuMetadataByNameMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetMenuMetadataByName_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuItemKeys">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetMenuItemKeys" message="tns:IAxMetadataService_GetMenuItemKeys_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetMenuItemKeysResponse" message="tns:IAxMetadataService_GetMenuItemKeys_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetMenuItemKeysMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetMenuItemKeys_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuItemMetadata">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetMenuItemMetadata" message="tns:IAxMetadataService_GetMenuItemMetadata_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetMenuItemMetadataResponse" message="tns:IAxMetadataService_GetMenuItemMetadata_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetMenuItemMetadataMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetMenuItemMetadata_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebMenuNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetWebMenuNames" message="tns:IAxMetadataService_GetWebMenuNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetWebMenuNamesResponse" message="tns:IAxMetadataService_GetWebMenuNames_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetWebMenuNamesMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetWebMenuNames_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebMenuMetadataByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetWebMenuMetadataByName" message="tns:IAxMetadataService_GetWebMenuMetadataByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetWebMenuMetadataByNameResponse" message="tns:IAxMetadataService_GetWebMenuMetadataByName_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetWebMenuMetadataByNameMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetWebMenuMetadataByName_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebMenuItemKeys">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetWebMenuItemKeys" message="tns:IAxMetadataService_GetWebMenuItemKeys_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetWebMenuItemKeysResponse" message="tns:IAxMetadataService_GetWebMenuItemKeys_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetWebMenuItemKeysMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetWebMenuItemKeys_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebMenuItemMetadata">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetWebMenuItemMetadata" message="tns:IAxMetadataService_GetWebMenuItemMetadata_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetWebMenuItemMetadataResponse" message="tns:IAxMetadataService_GetWebMenuItemMetadata_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetWebMenuItemMetadataMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetWebMenuItemMetadata_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetServiceNames" message="tns:IAxMetadataService_GetServiceNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetServiceNamesResponse" message="tns:IAxMetadataService_GetServiceNames_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetServiceNamesMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetServiceNames_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceMetadataByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetServiceMetadataByName" message="tns:IAxMetadataService_GetServiceMetadataByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetServiceMetadataByNameResponse" message="tns:IAxMetadataService_GetServiceMetadataByName_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetServiceMetadataByNameMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetServiceMetadataByName_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceGroupNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetServiceGroupNames" message="tns:IAxMetadataService_GetServiceGroupNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetServiceGroupNamesResponse" message="tns:IAxMetadataService_GetServiceGroupNames_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetServiceGroupNamesMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetServiceGroupNames_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceGroupMetadataByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetServiceGroupMetadataByName" message="tns:IAxMetadataService_GetServiceGroupMetadataByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetServiceGroupMetadataByNameResponse" message="tns:IAxMetadataService_GetServiceGroupMetadataByName_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetServiceGroupMetadataByNameMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetServiceGroupMetadataByName_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoPartNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetInfoPartNames" message="tns:IAxMetadataService_GetInfoPartNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetInfoPartNamesResponse" message="tns:IAxMetadataService_GetInfoPartNames_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetInfoPartNamesMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetInfoPartNames_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoPartMetadataByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetInfoPartMetadataByName" message="tns:IAxMetadataService_GetInfoPartMetadataByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetInfoPartMetadataByNameResponse" message="tns:IAxMetadataService_GetInfoPartMetadataByName_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetInfoPartMetadataByNameMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetInfoPartMetadataByName_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListPageNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetListPageNames" message="tns:IAxMetadataService_GetListPageNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetListPageNamesResponse" message="tns:IAxMetadataService_GetListPageNames_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetListPageNamesMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetListPageNames_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListPageMetadataByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetListPageMetadataByName" message="tns:IAxMetadataService_GetListPageMetadataByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetListPageMetadataByNameResponse" message="tns:IAxMetadataService_GetListPageMetadataByName_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetListPageMetadataByNameMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetListPageMetadataByName_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormPartNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetFormPartNames" message="tns:IAxMetadataService_GetFormPartNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetFormPartNamesResponse" message="tns:IAxMetadataService_GetFormPartNames_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetFormPartNamesMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetFormPartNames_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormPartMetadataByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetFormPartMetadataByName" message="tns:IAxMetadataService_GetFormPartMetadataByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetFormPartMetadataByNameResponse" message="tns:IAxMetadataService_GetFormPartMetadataByName_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetFormPartMetadataByNameMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetFormPartMetadataByName_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLanguages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetLanguages" message="tns:IAxMetadataService_GetLanguages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetLanguagesResponse" message="tns:IAxMetadataService_GetLanguages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCueNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetCueNames" message="tns:IAxMetadataService_GetCueNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetCueNamesResponse" message="tns:IAxMetadataService_GetCueNames_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetCueNamesMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetCueNames_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCueMetadataByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetCueMetadataByName" message="tns:IAxMetadataService_GetCueMetadataByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetCueMetadataByNameResponse" message="tns:IAxMetadataService_GetCueMetadataByName_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetCueMetadataByNameMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetCueMetadataByName_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCueGroupNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetCueGroupNames" message="tns:IAxMetadataService_GetCueGroupNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetCueGroupNamesResponse" message="tns:IAxMetadataService_GetCueGroupNames_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetCueGroupNamesMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetCueGroupNames_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCueGroupMetadataByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetCueGroupMetadataByName" message="tns:IAxMetadataService_GetCueGroupMetadataByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetCueGroupMetadataByNameResponse" message="tns:IAxMetadataService_GetCueGroupMetadataByName_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetCueGroupMetadataByNameMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetCueGroupMetadataByName_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesVersionInformation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetServicesVersionInformation" message="tns:IAxMetadataService_GetServicesVersionInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetServicesVersionInformationResponse" message="tns:IAxMetadataService_GetServicesVersionInformation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetServicesVersionInformationMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetServicesVersionInformation_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClassNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetClassNames" message="tns:IAxMetadataService_GetClassNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetClassNamesResponse" message="tns:IAxMetadataService_GetClassNames_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetClassNamesMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetClassNames_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClassMetadataByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetClassMetadataByName" message="tns:IAxMetadataService_GetClassMetadataByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetClassMetadataByNameResponse" message="tns:IAxMetadataService_GetClassMetadataByName_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetClassMetadataByNameMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetClassMetadataByName_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClassMetadataById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAxMetadataService/GetClassMetadataById" message="tns:IAxMetadataService_GetClassMetadataById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAxMetadataService/GetClassMetadataByIdResponse" message="tns:IAxMetadataService_GetClassMetadataById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAxMetadataService/GetClassMetadataByIdMetadataFaultFault" name="MetadataFaultFault" message="tns:IAxMetadataService_GetClassMetadataById_MetadataFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MetadataServiceEndpoint" type="tns:IAxMetadataService">
+    <wsp:PolicyReference URI="#MetadataServiceEndpoint_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetConfigKeyNames">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetConfigKeyNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConfigKeyMetadataById">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetConfigKeyMetadataById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConfigKeyMetadataByNames">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetConfigKeyMetadataByNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebControlNames">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetWebControlNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebControlMetadataByName">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetWebControlMetadataByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebPageDefinitionNodeNames">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetWebPageDefinitionNodeNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebPageDefinitionMetadataByName">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetWebPageDefinitionMetadataByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnumNames">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetEnumNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnumMetadataByName">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetEnumMetadataByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnumMetadataById">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetEnumMetadataById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLabelNames">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetLabelNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLabelMetadataById">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetLabelMetadataById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLabelMetadataForLanguageById">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetLabelMetadataForLanguageById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedDataTypeNames">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetExtendedDataTypeNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedDataTypeMetadataByName">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetExtendedDataTypeMetadataByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedDataTypeMetadataById">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetExtendedDataTypeMetadataById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDimensionMetadataByName">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetDimensionMetadataByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDimensionMetadataById">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetDimensionMetadataById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTableNames">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetTableNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTableInformation">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetTableInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTableMetadataByName">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetTableMetadataByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTableMetadataById">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetTableMetadataById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTableMetadataByTypeDiscriminatorValue">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetTableMetadataByTypeDiscriminatorValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryNames">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetQueryNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSearchableQueryNames">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetSearchableQueryNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryMetadataByName">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetQueryMetadataByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentDataSourceQueryMetadata">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetDocumentDataSourceQueryMetadata" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuNames">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetMenuNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuMetadataByName">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetMenuMetadataByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuItemKeys">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetMenuItemKeys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuItemMetadata">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetMenuItemMetadata" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebMenuNames">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetWebMenuNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebMenuMetadataByName">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetWebMenuMetadataByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebMenuItemKeys">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetWebMenuItemKeys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebMenuItemMetadata">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetWebMenuItemMetadata" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceNames">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetServiceNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceMetadataByName">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetServiceMetadataByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceGroupNames">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetServiceGroupNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceGroupMetadataByName">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetServiceGroupMetadataByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoPartNames">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetInfoPartNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoPartMetadataByName">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetInfoPartMetadataByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetListPageNames">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetListPageNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetListPageMetadataByName">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetListPageMetadataByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormPartNames">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetFormPartNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormPartMetadataByName">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetFormPartMetadataByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLanguages">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetLanguages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCueNames">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetCueNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCueMetadataByName">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetCueMetadataByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCueGroupNames">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetCueGroupNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCueGroupMetadataByName">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetCueGroupMetadataByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesVersionInformation">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetServicesVersionInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetClassNames">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetClassNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetClassMetadataByName">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetClassMetadataByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetClassMetadataById">
+      <soap12:operation soapAction="http://tempuri.org/IAxMetadataService/GetClassMetadataById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MetadataFaultFault">
+        <soap12:fault use="literal" name="MetadataFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AxMetadataService">
+    <wsdl:port name="MetadataServiceEndpoint" binding="tns:MetadataServiceEndpoint">
+      <soap12:address location="net.tcp://ax2012r2a:8201/DynamicsAx/Services/MetadataService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://ax2012r2a:8201/DynamicsAx/Services/MetadataService</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>Admin@contoso.com</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

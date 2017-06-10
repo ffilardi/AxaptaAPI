@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.QueryService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/QueryService?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Enums" />
+  <xs:complexType name="ExternalContext">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExternalRecordIdentifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExternalRecordTableName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RelationshipName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExternalContext" nillable="true" type="tns:ExternalContext" />
+  <xs:complexType name="Paging">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="Paging" nillable="true" type="tns:Paging" />
+  <xs:complexType name="PositionBasedPaging">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Paging">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NumberOfRecordsToFetch" type="xs:long" />
+          <xs:element minOccurs="0" name="StartingPosition" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PositionBasedPaging" nillable="true" type="tns:PositionBasedPaging" />
+  <xs:complexType name="ValueBasedPaging">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ValueBasedPagingBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RecordLimit" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ValueBasedPaging" nillable="true" type="tns:ValueBasedPaging" />
+  <xs:complexType name="ValueBasedPagingBase">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Paging">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Bookmark" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="ReadBackward" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ValueBasedPagingBase" nillable="true" type="tns:ValueBasedPagingBase" />
+  <xs:complexType name="TopLevelValueBasedPaging">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ValueBasedPaging">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LimitTopLevelDataSourcesOnly" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TopLevelValueBasedPaging" nillable="true" type="tns:TopLevelValueBasedPaging" />
+  <xs:complexType name="AdvancedValueBasedPaging">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ValueBasedPagingBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RecordLimits" nillable="true" type="tns:ArrayOfDataSourceRecordLimit" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AdvancedValueBasedPaging" nillable="true" type="tns:AdvancedValueBasedPaging" />
+  <xs:complexType name="ArrayOfDataSourceRecordLimit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataSourceRecordLimit" nillable="true" type="tns:DataSourceRecordLimit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataSourceRecordLimit" nillable="true" type="tns:ArrayOfDataSourceRecordLimit" />
+  <xs:complexType name="DataSourceRecordLimit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataSourceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordLimit" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataSourceRecordLimit" nillable="true" type="tns:DataSourceRecordLimit" />
+  <xs:complexType name="QueryBuilderArgs">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="JoinPolymorphicTables" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReturnFlatDataSet" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReturnOnlyVisible" type="xs:boolean" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Enums" minOccurs="0" name="TimeZonePreference" type="q1:TimeZonePreference" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryBuilderArgs" nillable="true" type="tns:QueryBuilderArgs" />
+</xs:schema>

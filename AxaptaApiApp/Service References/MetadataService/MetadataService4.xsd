@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" elementFormDefault="qualified" targetNamespace="http://schemas.micosoft.com/dynamics/ax/aif/services/metadata/2008/10" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/MetadataService?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Contracts" />
+  <xs:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/MetadataService?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/MetadataService?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata" />
+  <xs:import schemaLocation="http://ax2012r2a:8101/DynamicsAx/Services/MetadataService?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Enums" />
+  <xs:complexType name="MetadataFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MetadataFault" nillable="true" type="tns:MetadataFault" />
+  <xs:complexType name="MetadataItemFault">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:MetadataFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ItemTypeName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MetadataItemFault" nillable="true" type="tns:MetadataItemFault" />
+  <xs:complexType name="InvalidItemFault">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:MetadataItemFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ItemName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ItemPropertyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ItemPropertyTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ItemPropertyValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InvalidItemFault" nillable="true" type="tns:InvalidItemFault" />
+  <xs:complexType name="InvalidKeyFault">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:MetadataItemFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="KeyPropertyName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InvalidKeyFault" nillable="true" type="tns:InvalidKeyFault" />
+  <xs:complexType name="BatchFault">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:MetadataItemFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Entries" nillable="true" type="tns:ArrayOfBatchOperationEntry" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BatchFault" nillable="true" type="tns:BatchFault" />
+  <xs:complexType name="ArrayOfBatchOperationEntry">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BatchOperationEntry" nillable="true" type="tns:BatchOperationEntry" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBatchOperationEntry" nillable="true" type="tns:ArrayOfBatchOperationEntry" />
+  <xs:complexType name="BatchOperationEntry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ItemFault" nillable="true" type="tns:MetadataItemFault" />
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BatchOperationEntry" nillable="true" type="tns:BatchOperationEntry" />
+  <xs:complexType name="DocumentServiceMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Contracts" base="q1:ServiceMetadata">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ExpandDimensions" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ExpandSurrogateForeignKeys" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Key" nillable="true" type="tns:DocumentKeyMetadata" />
+          <xs:element minOccurs="0" name="Query" nillable="true" type="q1:QueryMetadata" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DocumentServiceMetadata" nillable="true" type="tns:DocumentServiceMetadata" />
+  <xs:complexType name="DocumentKeyMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata" base="q2:MetadataBase">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FieldNames" nillable="true" type="q3:ArrayOfstring" />
+          <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DocumentKeyMetadata" nillable="true" type="tns:DocumentKeyMetadata" />
+  <xs:complexType name="ArrayOfServiceGroupMetadata">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiceGroupMetadata" nillable="true" type="tns:ServiceGroupMetadata" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServiceGroupMetadata" nillable="true" type="tns:ArrayOfServiceGroupMetadata" />
+  <xs:complexType name="ServiceGroupMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata" base="q4:MetadataBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AutoDeploy" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceReferences" nillable="true" type="tns:ArrayOfServiceNodeReferenceMetadata" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceGroupMetadata" nillable="true" type="tns:ServiceGroupMetadata" />
+  <xs:complexType name="ArrayOfServiceNodeReferenceMetadata">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiceNodeReferenceMetadata" nillable="true" type="tns:ServiceNodeReferenceMetadata" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServiceNodeReferenceMetadata" nillable="true" type="tns:ArrayOfServiceNodeReferenceMetadata" />
+  <xs:complexType name="ServiceNodeReferenceMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata" base="q5:MetadataBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceFullyQualifiedName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceNodeReferenceMetadata" nillable="true" type="tns:ServiceNodeReferenceMetadata" />
+  <xs:complexType name="ArrayOfClassMetadata">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClassMetadata" nillable="true" type="tns:ClassMetadata" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClassMetadata" nillable="true" type="tns:ArrayOfClassMetadata" />
+  <xs:complexType name="ClassMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata" base="q6:MetadataBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="HasObjectMethod" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HasStaticMethod" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Interfaces" nillable="true" type="q7:ArrayOfint" />
+          <xs:element minOccurs="0" name="IsAbstract" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsFinal" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsInterface" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsKernel" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsRunnable" type="xs:boolean" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Contracts" minOccurs="0" name="Methods" nillable="true" type="q8:ArrayOfClassMethodMetadata" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ClassMetadata" nillable="true" type="tns:ClassMetadata" />
+  <xs:complexType name="ArrayOfClassMethodParameterMetadata">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClassMethodParameterMetadata" nillable="true" type="tns:ClassMethodParameterMetadata" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClassMethodParameterMetadata" nillable="true" type="tns:ArrayOfClassMethodParameterMetadata" />
+  <xs:complexType name="ClassMethodParameterMetadata">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata" base="q9:MetadataBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsOptional" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParameterId" type="xs:int" />
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services.Metadata.Enums" minOccurs="0" name="ParameterType" type="q10:Types" />
+          <xs:element minOccurs="0" name="Sequence" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ClassMethodParameterMetadata" nillable="true" type="tns:ClassMethodParameterMetadata" />
+</xs:schema>
