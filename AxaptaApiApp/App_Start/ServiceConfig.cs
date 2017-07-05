@@ -15,6 +15,7 @@ namespace AxaptaApiApp
             ActiveDirectory,
             ActiveDirectorySingleUser,
             ThirdPartyProvider,
+            Impersonate,
             NotDefined
         };
 
@@ -36,7 +37,8 @@ namespace AxaptaApiApp
 
         public static AuthenticationMode GetAuthenticationMode()
         {
-            if (Int32.TryParse(ConfigurationManager.AppSettings["API_AUTH_MODE"], out int mode))
+            int mode = 0;
+            if (Int32.TryParse(ConfigurationManager.AppSettings["API_AUTH_MODE"], out mode))
             {
                 switch (mode)
                 {
@@ -46,6 +48,8 @@ namespace AxaptaApiApp
                         return AuthenticationMode.ActiveDirectorySingleUser;
                     case 3:
                         return AuthenticationMode.ThirdPartyProvider;
+                    case 4:
+                        return AuthenticationMode.Impersonate;
                     default:
                         return AuthenticationMode.NotDefined;
                 }
