@@ -20,6 +20,7 @@ namespace AxaptaApiApp.Handlers
                     break;
                 case ServiceConfig.AuthenticationMode.ActiveDirectorySingleUser:
                 case ServiceConfig.AuthenticationMode.ThirdPartyProvider:
+                case ServiceConfig.AuthenticationMode.Impersonate:
                     identity = ServiceConfig.ParseUserCredential();
                     break;
             }
