@@ -8,4 +8,4 @@ AxaptaAPI project was created to expose AX 2012 SOAP AIF web-services as RESTful
 The API was created to be used with AX 2012 (any release). No version for AX7 will be done, since it already works using REST/OData services. A portability to AX 2009 is technically possible but out of the scope of this project.
 
 ### Documentation
-Check our Wiki [here](https://github.com/ffilardi/axaptaapi/wiki) for details about installation and configuration.
+Check our documentation [here](docs/Home.md) for details about installation and configuration.
